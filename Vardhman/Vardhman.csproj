@@ -1,0 +1,733 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{37BC411A-C194-4ED5-945D-C29A34D994FD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Vardhman</RootNamespace>
+    <AssemblyName>Vardhman</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <ApplicationIcon>Orangagon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.Framework, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\windows\assembly\GAC_MSIL\System.Web.Services\2.0.0.0__b03f5f7f11d50a3a\System.Web.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account Head.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Account Head.Designer.cs">
+      <DependentUpon>Account Head.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Connection.cs" />
+    <Compile Include="App_Code\dataset_fill.cs" />
+    <Compile Include="App_Code\number.cs" />
+    <Compile Include="backupandrestore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="backupandrestore.Designer.cs">
+      <DependentUpon>backupandrestore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Billing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Billing.designer.cs">
+      <DependentUpon>Billing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Calcmeterdetail.cs" />
+    <Compile Include="billreportworg.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>billreportworg.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="blank.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>blank.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Check Bounse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Check Bounse.Designer.cs">
+      <DependentUpon>Check Bounse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Check_items.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Check_items.Designer.cs">
+      <DependentUpon>Check_items.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bill_Report_With_Rg.cs">
+      <DependentUpon>Bill_Report_With_Rg.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="billreportOriginal.cs">
+      <DependentUpon>billreportOriginal.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Bill_Report_With_RgOriginal.cs">
+      <DependentUpon>Bill_Report_With_RgOriginal.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="create_backup.cs" />
+    <Compile Include="create_group.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="create_group.designer.cs">
+      <DependentUpon>create_group.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dataset_newledger.cs">
+      <DependentUpon>dataset_newledger.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="dataset_newledger.designer.cs">
+      <DependentUpon>dataset_newledger.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="interest caculator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="interest caculator.Designer.cs">
+      <DependentUpon>interest caculator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="intrest_calculation.cs" />
+    <Compile Include="ITEM_TYPE_MERGE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ITEM_TYPE_MERGE.designer.cs">
+      <DependentUpon>ITEM_TYPE_MERGE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="line_group_creation.cs" />
+    <Compile Include="line_grp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="line_grp.designer.cs">
+      <DependentUpon>line_grp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManualBilling.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManualBilling.designer.cs">
+      <DependentUpon>ManualBilling.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListManualBills.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListManualBills.Designer.cs">
+      <DependentUpon>ListManualBills.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManualRecepit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManualRecepit.Designer.cs">
+      <DependentUpon>ManualRecepit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Copy of recepit_border chk.cs">
+      <DependentUpon>Copy of recepit_border chk.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="CrystalReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="dataset_pricelist.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dataset_pricelist.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dataset_billing.cs">
+      <DependentUpon>dataset_billing.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="dataset_billing.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dataset_billing.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Deletion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Deletion.designer.cs">
+      <DependentUpon>Deletion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="differentialbackup.cs" />
+    <Compile Include="emptybill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="emptybill.Designer.cs">
+      <DependentUpon>emptybill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dateselection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dateselection.Designer.cs">
+      <DependentUpon>dateselection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Company_Entry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Company_Entry.Designer.cs">
+      <DependentUpon>Company_Entry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="accountselect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="accountselect.Designer.cs">
+      <DependentUpon>accountselect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_billprint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_billprint.Designer.cs">
+      <DependentUpon>form_billprint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Insertion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Insertion.Designer.cs">
+      <DependentUpon>Insertion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="insupd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="insupd.Designer.cs">
+      <DependentUpon>insupd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Item Check.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Item Check.designer.cs">
+      <DependentUpon>Item Check.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Item Entry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Item Entry.Designer.cs">
+      <DependentUpon>Item Entry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Keys.cs" />
+    <Compile Include="Item Update Popup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Item Update Popup.designer.cs">
+      <DependentUpon>Item Update Popup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="itemchk.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="itemchk.Designer.cs">
+      <DependentUpon>itemchk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="item_update_popup_no_insert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="item_update_popup_no_insert.designer.cs">
+      <DependentUpon>item_update_popup_no_insert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ledger.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ledger.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ledger_recepit_summary_rpt.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ledger_recepit_summary_rpt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Ledger_showall.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ledger_showall.Designer.cs">
+      <DependentUpon>Ledger_showall.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Match.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Match.designer.cs">
+      <DependentUpon>Match.cs</DependentUpon>
+    </Compile>
+    <Compile Include="new ledger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="new ledger.designer.cs">
+      <DependentUpon>new ledger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="new_type_name%27.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="new_type_name%27.designer.cs">
+      <DependentUpon>new_type_name%27.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Password.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Password.designer.cs">
+      <DependentUpon>Password.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Price List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Price List.designer.cs">
+      <DependentUpon>Price List.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Price_List_Print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Price_List_Print.designer.cs">
+      <DependentUpon>Price_List_Print.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Account Head.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Account Head.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="backupandrestore.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>backupandrestore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Billing.resx">
+      <DependentUpon>Billing.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="billreportworg.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>billreportworg.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="blank.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>blank.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Check Bounse.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Check Bounse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Check_items.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Check_items.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bill_Report_With_Rg.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Bill_Report_With_Rg.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="billreportOriginal.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>billreportOriginal.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bill_Report_With_RgOriginal.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Bill_Report_With_RgOriginal.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="create_group.resx">
+      <DependentUpon>create_group.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="interest caculator.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>interest caculator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ITEM_TYPE_MERGE.resx">
+      <DependentUpon>ITEM_TYPE_MERGE.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="line_grp.resx">
+      <DependentUpon>line_grp.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManualBilling.resx">
+      <DependentUpon>ManualBilling.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListManualBills.resx">
+      <DependentUpon>ListManualBills.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManualRecepit.resx">
+      <DependentUpon>ManualRecepit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Copy of recepit_border chk.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Copy of recepit_border chk.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Deletion.resx">
+      <DependentUpon>Deletion.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="emptybill.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>emptybill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dateselection.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>dateselection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Company_Entry.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Company_Entry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="accountselect.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>accountselect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_billprint.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>form_billprint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Insertion.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Insertion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="insupd.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>insupd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item Check.resx">
+      <DependentUpon>Item Check.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item Entry.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Item Entry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item Update Popup.resx">
+      <DependentUpon>Item Update Popup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="itemchk.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>itemchk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="item_update_popup_no_insert.resx">
+      <DependentUpon>item_update_popup_no_insert.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ledger_showall.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Ledger_showall.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Match.resx">
+      <DependentUpon>Match.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="new ledger.resx">
+      <DependentUpon>new ledger.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="new_type_name%27.resx">
+      <DependentUpon>new_type_name%27.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Password.resx">
+      <DependentUpon>Password.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Price List.resx">
+      <DependentUpon>Price List.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Price_List_Print.resx">
+      <DependentUpon>Price_List_Print.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recepit.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Recepit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="recepit_border chk.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>recepit_border chk.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="recepit_check.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>recepit_check.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report_intrest_ledger.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>report_intrest_ledger.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report_Ledger.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>report_Ledger.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report_price_list.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>report_price_list.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report_summary.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Report_summary.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report_Viewercs.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Report_Viewercs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rpt_grp_balance.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_grp_balance.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="toteler.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>toteler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transport.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Transport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item_Type.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Item_Type.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl1.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="dataset_billing.xsc">
+      <DependentUpon>dataset_billing.xsd</DependentUpon>
+    </None>
+    <None Include="dataset_billing.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dataset_billing.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dataset_billing.xss">
+      <DependentUpon>dataset_billing.xsd</DependentUpon>
+    </None>
+    <None Include="ledger.xsc">
+      <DependentUpon>ledger.xsd</DependentUpon>
+    </None>
+    <None Include="ledger.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ledger.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ledger.xss">
+      <DependentUpon>ledger.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="App_Code\roundOff.cs" />
+    <Compile Include="App_Code\RateCalculation.cs" />
+    <Compile Include="Recepit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recepit.Designer.cs">
+      <DependentUpon>Recepit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="recepit_border chk.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>recepit_border chk.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="recepit_check.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>recepit_check.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report_intrest_ledger.cs">
+      <SubType>Component</SubType>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>report_intrest_ledger.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="report_Ledger.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>report_Ledger.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report_price_list.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>report_price_list.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report_summary.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Report_summary.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report_Viewercs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report_Viewercs.Designer.cs">
+      <DependentUpon>Report_Viewercs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rpt_grp_balance.cs">
+      <SubType>Component</SubType>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_grp_balance.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Supporter.cs" />
+    <Compile Include="toteler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="toteler.Designer.cs">
+      <DependentUpon>toteler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transport.Designer.cs">
+      <DependentUpon>Transport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Item_Type.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Item_Type.Designer.cs">
+      <DependentUpon>Item_Type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Logo_Shop.png" />
+    <Content Include="Orangagon.ico" />
+    <None Include="dataset_newledger.xsc">
+      <DependentUpon>dataset_newledger.xsd</DependentUpon>
+    </None>
+    <None Include="dataset_newledger.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dataset_newledger.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dataset_newledger.xss">
+      <DependentUpon>dataset_newledger.xsd</DependentUpon>
+    </None>
+    <None Include="dataset_pricelist.xsc">
+      <DependentUpon>dataset_pricelist.xsd</DependentUpon>
+    </None>
+    <None Include="dataset_pricelist.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dataset_pricelist.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dataset_pricelist.xss">
+      <DependentUpon>dataset_pricelist.xsd</DependentUpon>
+    </None>
+    <None Include="ledger_recepit_summary_rpt.xsc">
+      <DependentUpon>ledger_recepit_summary_rpt.xsd</DependentUpon>
+    </None>
+    <None Include="ledger_recepit_summary_rpt.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ledger_recepit_summary_rpt.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ledger_recepit_summary_rpt.xss">
+      <DependentUpon>ledger_recepit_summary_rpt.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\lottle dot1.png" />
+    <None Include="Resources\lottle dot.png" />
+    <None Include="Resources\glossy_button_blank_orange_rectangle1.png" />
+    <None Include="Resources\glossy_button_blank_orange_rectangle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

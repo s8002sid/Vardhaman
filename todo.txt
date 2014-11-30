@@ -1,0 +1,6 @@
+cd
+cash
+state
+delete
+summary report
+bill closing balance

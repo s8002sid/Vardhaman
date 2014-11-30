@@ -1,0 +1,17 @@
+D:\Project\Vardhman\Vardhman\obj\Debug\Vardhman.exe
+D:\Project\Vardhman\Vardhman\obj\Debug\Vardhman.pdb
+D:\Project\Vardhman\Vardhman\bin\Debug\Vardhman.exe
+D:\Project\Vardhman\Vardhman\bin\Debug\Vardhman.pdb
+D:\Project\Vardhman\Vardhman\obj\Debug\ResolveAssemblyReference.cache
+D:\Project\Vardhman\Vardhman\obj\Debug\Vardhman.Billing.resources
+D:\Project\Vardhman\Vardhman\obj\Debug\Vardhman.Form1.resources
+D:\Project\Vardhman\Vardhman\obj\Debug\Vardhman.Company_Entry.resources
+D:\Project\Vardhman\Vardhman\obj\Debug\Vardhman.Form2.resources
+D:\Project\Vardhman\Vardhman\obj\Debug\Vardhman.Item_Entry.resources
+D:\Project\Vardhman\Vardhman\obj\Debug\Vardhman.Properties.Resources.resources
+D:\Project\Vardhman\Vardhman\obj\Debug\Vardhman.toteler.resources
+D:\Project\Vardhman\Vardhman\obj\Debug\Vardhman.Transport.resources
+D:\Project\Vardhman\Vardhman\obj\Debug\Vardhman.Type.resources
+D:\Project\Vardhman\Vardhman\obj\Debug\Vardhman.UserControl1.resources
+D:\Project\Vardhman\Vardhman\obj\Debug\GenerateResource-ResGen.read.1.tlog
+D:\Project\Vardhman\Vardhman\obj\Debug\GenerateResource-ResGen.write.1.tlog

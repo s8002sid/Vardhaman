@@ -1,0 +1,12 @@
+delete from bill_detail
+delete from bill_master
+delete from check_bounse_entry
+delete from temp_bill_detail
+delete from temp_recepit
+delete from temp_bill_master
+delete from recepit
+delete from place
+delete from item
+delete from itemtype
+delete from customer
+delete from company
