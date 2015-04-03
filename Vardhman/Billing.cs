@@ -11,7 +11,7 @@ namespace Vardhman
     public partial class Billing_dataentry : Form
     {
         AutoCompleteStringCollection src = new AutoCompleteStringCollection();
-        bool manual;
+        bool manual, manual_vat;
         Connection con = new Connection();
         int changed, company;
         int bill;
@@ -24,7 +24,7 @@ namespace Vardhman
         private void Billing_Load(object sender, EventArgs e)
         {
             con.connent();
-            manual = false;
+            manual = manual_vat = false;
             company = 1;
             changed = 0;
             callmetercal = 0;
@@ -344,7 +344,7 @@ namespace Vardhman
         }
         private void total()
         {
-            double total = 0,expper,exp,trans,grandtotal , rg;
+            double total = 0,expper,exp,trans,grandtotal , rg, vatper, vat;
             if (textBox9.Text == "")
                 rg = 0;
             else rg = Convert.ToDouble(textBox9.Text);
@@ -361,6 +361,10 @@ namespace Vardhman
                 expper = Convert.ToDouble(textBox6.Text);
             else
                 expper = 0;
+            if (textBox11.Text != "")
+                vatper = Convert.ToDouble(textBox11.Text);
+            else
+                vatper = 0;
             if (manual == false)
                 exp = Convert.ToDouble(roundOff.round(total * expper / 100));
             else
@@ -369,22 +373,31 @@ namespace Vardhman
                 Supporter.set_two_digit_precision(textBox4.Text, out abc);
                 exp =Convert.ToDouble(abc);
             }
+            if (manual_vat == false)
+                vat = Convert.ToDouble(roundOff.round(total * vatper / 100));
+            else
+            {
+                string abc;
+                Supporter.set_two_digit_precision(textBox12.Text, out abc);
+                vat = Convert.ToDouble(abc);
+            }
             if (textBox1.Text == "")
                 trans = 0;
             else
                 trans = Convert.ToDouble(textBox1.Text);
             if (rad_cd.Checked == true)
             {
-                grandtotal =Convert.ToDouble(roundOff.round(Convert.ToString(total - exp + trans)));
+                grandtotal =Convert.ToDouble(roundOff.round(Convert.ToString(total - exp + trans + vat)));
             }
             else
-                grandtotal =Convert.ToDouble(roundOff.round(Convert.ToString(total + exp + trans)));
+                grandtotal =Convert.ToDouble(roundOff.round(Convert.ToString(total + exp + trans + vat)));
             textBox3.Text = roundOff.round(total1);
             if (rad_cd.Checked == true)
-                textBox4.Text = roundOff.withpoint(Convert.ToString(Math.Abs(grandtotal - total - trans )));
+                textBox4.Text = roundOff.withpoint(Convert.ToString(Math.Abs(grandtotal - total - trans - vat)));
             else
-                textBox4.Text = roundOff.withpoint(Convert.ToString(Math.Abs((grandtotal-total-trans ))));
+                textBox4.Text = roundOff.withpoint(Convert.ToString(Math.Abs((grandtotal-total-trans -vat))));
             textBox1.Text = roundOff.withpoint(trans.ToString());
+            textBox12.Text = roundOff.withpoint(vat.ToString());
             textBox5.Text =roundOff.withpoint(grandtotal.ToString());
         }
 
@@ -479,6 +492,8 @@ namespace Vardhman
             }
             if (textBox6.Text == "")
                 textBox6.Text = "0.00";
+            if (textBox11.Text == "")
+                textBox11.Text = "0.00";
             //if (textBox6.Text.Trim() == "")
             //{
             //    MessageBox.Show("cannot save Expense Percent is empty", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -492,6 +507,11 @@ namespace Vardhman
             if (textBox4.Text.Trim() == "")
             {
                 MessageBox.Show("cannot save Expenses is empty", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return 0;
+            }
+            if (textBox12.Text.Trim() == "")
+            {
+                MessageBox.Show("cannot save Vat is empty", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return 0;
             }
             if (textBox5.Text.Trim() == "")
@@ -659,7 +679,7 @@ namespace Vardhman
                     iscd = "0";
                 else
                     iscd = "1";
-                string z = con.exesclr(string.Format("exec add_bill_master'{0}' , '{1}' , '{2}' ,  {3} , {4} , {5} , {6} , '{7}' , {8} , '{9}' , {10} , '{11}' , '{12}' , '{13}' , {14} , {15}", comboBox1.Text.Trim(), comboBox3.Text.Trim(), dateTimePicker1.Text.ToString().Trim().Split(Convert.ToChar(" "))[0], textBox2.Text.Trim(), textBox3.Text.Trim(), textBox6.Text.Trim(), textBox4.Text.Trim(), comboBox2.Text.Trim(), textBox1.Text.Trim(), textBox8.Text.Trim(), textBox5.Text.Trim(), textBox7.Text.Trim(), type , textBox10.Text , rgtotal , iscd));
+                string z = con.exesclr(string.Format("exec add_bill_master'{0}' , '{1}' , '{2}' ,  {3} , {4} , {5} , {6} , '{7}' , {8} , '{9}' , {10} , '{11}' , '{12}' , '{13}' , {14} , {15}, {16}, {17}", comboBox1.Text.Trim(), comboBox3.Text.Trim(), dateTimePicker1.Text.ToString().Trim().Split(Convert.ToChar(" "))[0], textBox2.Text.Trim(), textBox3.Text.Trim(), textBox6.Text.Trim(), textBox4.Text.Trim(), comboBox2.Text.Trim(), textBox1.Text.Trim(), textBox8.Text.Trim(), textBox5.Text.Trim(), textBox7.Text.Trim(), type, textBox10.Text, rgtotal, iscd, textBox11.Text.Trim(), textBox12.Text.Trim()));
                 if (z == "0")
                 {
                     MessageBox.Show("Company not created first create the company", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -739,7 +759,7 @@ namespace Vardhman
                     iscd = "0";
                 else
                     iscd = "1";
-                string z = con.exesclr(string.Format("exec upd_bill_master'{0}' , '{1}' , '{2}' ,  {3} , {4} , {5} , {6} , '{7}' , {8} , '{9}' , {10} , '{11}' , '{12}' , {13} , '{14}' , {15}", comboBox1.Text.Trim(), comboBox3.Text.Trim(), dateTimePicker1.Text.ToString().Trim().Split(Convert.ToChar(" "))[0], textBox2.Text.Trim(), textBox3.Text.Trim(), textBox6.Text.Trim(), textBox4.Text.Trim(), comboBox2.Text.Trim(), textBox1.Text.Trim(), textBox8.Text.Trim(), textBox5.Text.Trim(), textBox7.Text.Trim(), type , rgtotal , textBox10.Text , iscd));
+                string z = con.exesclr(string.Format("exec upd_bill_master'{0}' , '{1}' , '{2}' ,  {3} , {4} , {5} , {6} , '{7}' , {8} , '{9}' , {10} , '{11}' , '{12}' , {13} , '{14}' , {15}, {16}, {17}", comboBox1.Text.Trim(), comboBox3.Text.Trim(), dateTimePicker1.Text.ToString().Trim().Split(Convert.ToChar(" "))[0], textBox2.Text.Trim(), textBox3.Text.Trim(), textBox6.Text.Trim(), textBox4.Text.Trim(), comboBox2.Text.Trim(), textBox1.Text.Trim(), textBox8.Text.Trim(), textBox5.Text.Trim(), textBox7.Text.Trim(), type, rgtotal, textBox10.Text, iscd, textBox11.Text.Trim(), textBox12.Text.Trim()));
                 if (z == "0")
                 {
                     MessageBox.Show("Company not created first create the company", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -813,6 +833,8 @@ namespace Vardhman
             checkBox1.Checked = false;
             textBox9.Text = "0.00";
             textBox6.Text = "2.00";
+            textBox11.Text = "1.00";
+            textBox12.Text = "0.00";
             rad_cd.Checked = false;
             rad_exp.Checked = true;
             textBox7.Text = "";
@@ -1012,8 +1034,8 @@ namespace Vardhman
                 return;
             clear();
             textBox2.ReadOnly = true;
-            DataTable dt = con.getTable(string.Format("select name , city , date as date , total , expensesper , expenses , transport , transportcharge , transportnumber , grandtotal , through , paymenttype , note , rgtotal from view_bill_master where billno = '{0}'", bill.ToString()));
-            string rgtotal , name, city, date, total, expensesper, expenses, transport, transportcharge, transportnumber, grandtotal, through, paymenttype;
+            DataTable dt = con.getTable(string.Format("select name , city , date as date , total , expensesper , expenses , transport , transportcharge , transportnumber , grandtotal , through , paymenttype , note , rgtotal, vatper, vat from view_bill_master where billno = '{0}'", bill.ToString()));
+            string rgtotal , name, city, date, total, expensesper, expenses, transport, transportcharge, transportnumber, grandtotal, through, paymenttype, vatper, vat;
             name = dt.Rows[0][0].ToString();
             city = dt.Rows[0][1].ToString();
             date = dt.Rows[0][2].ToString();
@@ -1028,6 +1050,8 @@ namespace Vardhman
             paymenttype = dt.Rows[0][11].ToString();
             textBox10.Text = dt.Rows[0][12].ToString();
             rgtotal = dt.Rows[0][13].ToString();
+            vatper = dt.Rows[0][14].ToString();
+            vat = dt.Rows[0][15].ToString();
             comboBox1.Text = name;
             comboBox3.Text = city;
             textBox7.Text = through;
@@ -1041,6 +1065,8 @@ namespace Vardhman
             else
                 checkBox1.Checked = true;
             textBox6.Text = expensesper;
+            textBox11.Text = vatper;
+            textBox12.Text = vat;
             comboBox2.Text = transport;
             textBox8.Text = transportnumber;
             textBox3.Text = total;
@@ -1306,6 +1332,21 @@ namespace Vardhman
                 manual = false;
             else
                 manual = true;
+            total();
+        }
+
+        private void textBox11_Leave(object sender, EventArgs e)
+        {
+            if (textBox11.Text.Trim() != "")
+                manual_vat = false;
+            else
+                manual_vat = true;
+            total();
+        }
+
+        private void textBox12_Leave(object sender, EventArgs e)
+        {
+            manual_vat = true;
             total();
         }
     }
