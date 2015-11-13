@@ -833,7 +833,7 @@ namespace Vardhman
             checkBox1.Checked = false;
             textBox9.Text = "0.00";
             textBox6.Text = "2.00";
-            textBox11.Text = "1.00";
+            textBox11.Text = "0.00";
             textBox12.Text = "0.00";
             rad_cd.Checked = false;
             rad_exp.Checked = true;
