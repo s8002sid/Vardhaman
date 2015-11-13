@@ -28,11 +28,11 @@ namespace Vardhman
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.X = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -69,6 +69,7 @@ namespace Vardhman
             this.RGQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RGRate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RGamount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button12 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rad_exp = new System.Windows.Forms.RadioButton();
@@ -99,7 +100,10 @@ namespace Vardhman
             this.label6 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.button12 = new System.Windows.Forms.Button();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -134,14 +138,14 @@ namespace Vardhman
             this.Meter,
             this.Rate,
             this.Amount});
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle30.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle30.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle30.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle30;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
@@ -201,10 +205,10 @@ namespace Vardhman
             // Quantity
             // 
             this.Quantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.Format = "N0";
-            dataGridViewCellStyle6.NullValue = null;
-            this.Quantity.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle26.Format = "N0";
+            dataGridViewCellStyle26.NullValue = null;
+            this.Quantity.DefaultCellStyle = dataGridViewCellStyle26;
             this.Quantity.HeaderText = "Quantity";
             this.Quantity.MinimumWidth = 100;
             this.Quantity.Name = "Quantity";
@@ -212,10 +216,10 @@ namespace Vardhman
             // Meter
             // 
             this.Meter.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.Format = "N2";
-            dataGridViewCellStyle7.NullValue = null;
-            this.Meter.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle27.Format = "N2";
+            dataGridViewCellStyle27.NullValue = null;
+            this.Meter.DefaultCellStyle = dataGridViewCellStyle27;
             this.Meter.HeaderText = "Meter";
             this.Meter.MinimumWidth = 100;
             this.Meter.Name = "Meter";
@@ -223,10 +227,10 @@ namespace Vardhman
             // Rate
             // 
             this.Rate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle8.Format = "N2";
-            dataGridViewCellStyle8.NullValue = null;
-            this.Rate.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle28.Format = "N2";
+            dataGridViewCellStyle28.NullValue = null;
+            this.Rate.DefaultCellStyle = dataGridViewCellStyle28;
             this.Rate.HeaderText = "Rate";
             this.Rate.MinimumWidth = 100;
             this.Rate.Name = "Rate";
@@ -234,10 +238,10 @@ namespace Vardhman
             // Amount
             // 
             this.Amount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle9.Format = "N2";
-            dataGridViewCellStyle9.NullValue = null;
-            this.Amount.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle29.Format = "N2";
+            dataGridViewCellStyle29.NullValue = null;
+            this.Amount.DefaultCellStyle = dataGridViewCellStyle29;
             this.Amount.HeaderText = "Amount";
             this.Amount.MinimumWidth = 100;
             this.Amount.Name = "Amount";
@@ -463,6 +467,10 @@ namespace Vardhman
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.AutoScroll = true;
+            this.splitContainer2.Panel2.Controls.Add(this.textBox11);
+            this.splitContainer2.Panel2.Controls.Add(this.label7);
+            this.splitContainer2.Panel2.Controls.Add(this.textBox12);
+            this.splitContainer2.Panel2.Controls.Add(this.label9);
             this.splitContainer2.Panel2.Controls.Add(this.button12);
             this.splitContainer2.Panel2.Controls.Add(this.button11);
             this.splitContainer2.Panel2.Controls.Add(this.groupBox1);
@@ -575,6 +583,17 @@ namespace Vardhman
             this.RGamount.Name = "RGamount";
             this.RGamount.ReadOnly = true;
             // 
+            // button12
+            // 
+            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button12.Location = new System.Drawing.Point(411, 33);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(53, 46);
+            this.button12.TabIndex = 12;
+            this.button12.Text = "Togle Size";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
             // button11
             // 
             this.button11.Enabled = false;
@@ -591,7 +610,7 @@ namespace Vardhman
             // 
             this.groupBox1.Controls.Add(this.rad_exp);
             this.groupBox1.Controls.Add(this.rad_cd);
-            this.groupBox1.Location = new System.Drawing.Point(464, 36);
+            this.groupBox1.Location = new System.Drawing.Point(464, 27);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(121, 34);
             this.groupBox1.TabIndex = 35;
@@ -637,7 +656,7 @@ namespace Vardhman
             this.textBox10.Location = new System.Drawing.Point(71, 85);
             this.textBox10.Multiline = true;
             this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(254, 57);
+            this.textBox10.Size = new System.Drawing.Size(254, 62);
             this.textBox10.TabIndex = 31;
             this.textBox10.TabStop = false;
             // 
@@ -699,7 +718,7 @@ namespace Vardhman
             // textBox8
             // 
             this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(555, 121);
+            this.textBox8.Location = new System.Drawing.Point(555, 125);
             this.textBox8.MaxLength = 10;
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(81, 22);
@@ -711,7 +730,7 @@ namespace Vardhman
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(356, 121);
+            this.label10.Location = new System.Drawing.Point(356, 125);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(117, 16);
             this.label10.TabIndex = 25;
@@ -720,7 +739,7 @@ namespace Vardhman
             // textBox6
             // 
             this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(633, 45);
+            this.textBox6.Location = new System.Drawing.Point(633, 35);
             this.textBox6.MaxLength = 6;
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(81, 22);
@@ -733,7 +752,7 @@ namespace Vardhman
             // 
             this.lbl_exp_per.AutoSize = true;
             this.lbl_exp_per.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_exp_per.Location = new System.Drawing.Point(582, 47);
+            this.lbl_exp_per.Location = new System.Drawing.Point(587, 38);
             this.lbl_exp_per.Name = "lbl_exp_per";
             this.lbl_exp_per.Size = new System.Drawing.Size(43, 16);
             this.lbl_exp_per.TabIndex = 21;
@@ -742,7 +761,7 @@ namespace Vardhman
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(761, 85);
+            this.textBox1.Location = new System.Drawing.Point(761, 94);
             this.textBox1.MaxLength = 6;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(81, 22);
@@ -766,7 +785,7 @@ namespace Vardhman
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(640, 88);
+            this.label4.Location = new System.Drawing.Point(640, 97);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(113, 16);
             this.label4.TabIndex = 7;
@@ -776,7 +795,7 @@ namespace Vardhman
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(356, 86);
+            this.label3.Location = new System.Drawing.Point(356, 95);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 16);
             this.label3.TabIndex = 6;
@@ -788,7 +807,7 @@ namespace Vardhman
             this.comboBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(458, 83);
+            this.comboBox2.Location = new System.Drawing.Point(458, 92);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(178, 24);
             this.comboBox2.TabIndex = 5;
@@ -822,7 +841,7 @@ namespace Vardhman
             // textBox5
             // 
             this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(761, 121);
+            this.textBox5.Location = new System.Drawing.Point(761, 125);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(148, 22);
             this.textBox5.TabIndex = 5;
@@ -831,7 +850,7 @@ namespace Vardhman
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(675, 121);
+            this.label8.Location = new System.Drawing.Point(675, 125);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(71, 16);
             this.label8.TabIndex = 15;
@@ -840,7 +859,7 @@ namespace Vardhman
             // textBox4
             // 
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(761, 49);
+            this.textBox4.Location = new System.Drawing.Point(761, 39);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(148, 22);
             this.textBox4.TabIndex = 3;
@@ -850,7 +869,7 @@ namespace Vardhman
             // 
             this.lbl_exp.AutoSize = true;
             this.lbl_exp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_exp.Location = new System.Drawing.Point(726, 47);
+            this.lbl_exp.Location = new System.Drawing.Point(726, 40);
             this.lbl_exp.Name = "lbl_exp";
             this.lbl_exp.Size = new System.Drawing.Size(31, 16);
             this.lbl_exp.TabIndex = 13;
@@ -899,16 +918,45 @@ namespace Vardhman
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // button12
+            // textBox11
             // 
-            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button12.Location = new System.Drawing.Point(411, 33);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(53, 46);
-            this.button12.TabIndex = 12;
-            this.button12.Text = "Togle Size";
-            this.button12.UseVisualStyleBackColor = true;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
+            this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox11.Location = new System.Drawing.Point(633, 62);
+            this.textBox11.MaxLength = 6;
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(81, 22);
+            this.textBox11.TabIndex = 36;
+            this.textBox11.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
+            this.textBox11.Leave += new System.EventHandler(this.textBox11_Leave);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(587, 65);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(40, 16);
+            this.label7.TabIndex = 39;
+            this.label7.Text = "Vat%";
+            // 
+            // textBox12
+            // 
+            this.textBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox12.Location = new System.Drawing.Point(761, 66);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(148, 22);
+            this.textBox12.TabIndex = 37;
+            this.textBox12.Leave += new System.EventHandler(this.textBox12_Leave);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(726, 67);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(28, 16);
+            this.label9.TabIndex = 38;
+            this.label9.Text = "Vat";
             // 
             // ManualBilling
             // 
@@ -1013,5 +1061,9 @@ namespace Vardhman
         private System.Windows.Forms.Label lblid;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.Label label9;
     }
 }
