@@ -370,6 +370,16 @@ namespace Vardhman {
             
             private global::System.Data.DataColumn columnRecepit;
             
+            private global::System.Data.DataColumn columnExpense;
+            
+            private global::System.Data.DataColumn columnCD;
+            
+            private global::System.Data.DataColumn columnVat;
+            
+            private global::System.Data.DataColumn columndate_orig;
+            
+            private global::System.Data.DataColumn columntransport;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public LedgerDataTable() {
                 this.TableName = "Ledger";
@@ -443,6 +453,41 @@ namespace Vardhman {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn ExpenseColumn {
+                get {
+                    return this.columnExpense;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn CDColumn {
+                get {
+                    return this.columnCD;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn VatColumn {
+                get {
+                    return this.columnVat;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn date_origColumn {
+                get {
+                    return this.columndate_orig;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn transportColumn {
+                get {
+                    return this.columntransport;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -471,7 +516,7 @@ namespace Vardhman {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public LedgerRow AddLedgerRow(string Name, string Date1, string Detail, double Exp, double Payment, double Recepit) {
+            public LedgerRow AddLedgerRow(string Name, string Date1, string Detail, double Exp, double Payment, double Recepit, double Expense, double CD, double Vat, System.DateTime date_orig, double transport) {
                 LedgerRow rowLedgerRow = ((LedgerRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Name,
@@ -479,7 +524,12 @@ namespace Vardhman {
                         Detail,
                         Exp,
                         Payment,
-                        Recepit};
+                        Recepit,
+                        Expense,
+                        CD,
+                        Vat,
+                        date_orig,
+                        transport};
                 rowLedgerRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowLedgerRow);
                 return rowLedgerRow;
@@ -510,6 +560,11 @@ namespace Vardhman {
                 this.columnExp = base.Columns["Exp"];
                 this.columnPayment = base.Columns["Payment"];
                 this.columnRecepit = base.Columns["Recepit"];
+                this.columnExpense = base.Columns["Expense"];
+                this.columnCD = base.Columns["CD"];
+                this.columnVat = base.Columns["Vat"];
+                this.columndate_orig = base.Columns["date_orig"];
+                this.columntransport = base.Columns["transport"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -526,6 +581,16 @@ namespace Vardhman {
                 base.Columns.Add(this.columnPayment);
                 this.columnRecepit = new global::System.Data.DataColumn("Recepit", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRecepit);
+                this.columnExpense = new global::System.Data.DataColumn("Expense", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnExpense);
+                this.columnCD = new global::System.Data.DataColumn("CD", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCD);
+                this.columnVat = new global::System.Data.DataColumn("Vat", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVat);
+                this.columndate_orig = new global::System.Data.DataColumn("date_orig", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndate_orig);
+                this.columntransport = new global::System.Data.DataColumn("transport", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntransport);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1627,6 +1692,81 @@ namespace Vardhman {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public double Expense {
+                get {
+                    try {
+                        return ((double)(this[this.tableLedger.ExpenseColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Expense\' in table \'Ledger\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLedger.ExpenseColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public double CD {
+                get {
+                    try {
+                        return ((double)(this[this.tableLedger.CDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CD\' in table \'Ledger\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLedger.CDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public double Vat {
+                get {
+                    try {
+                        return ((double)(this[this.tableLedger.VatColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Vat\' in table \'Ledger\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLedger.VatColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public System.DateTime date_orig {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableLedger.date_origColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'date_orig\' in table \'Ledger\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLedger.date_origColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public double transport {
+                get {
+                    try {
+                        return ((double)(this[this.tableLedger.transportColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'transport\' in table \'Ledger\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLedger.transportColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public bool IsNameNull() {
                 return this.IsNull(this.tableLedger.NameColumn);
             }
@@ -1684,6 +1824,56 @@ namespace Vardhman {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public void SetRecepitNull() {
                 this[this.tableLedger.RecepitColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool IsExpenseNull() {
+                return this.IsNull(this.tableLedger.ExpenseColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void SetExpenseNull() {
+                this[this.tableLedger.ExpenseColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool IsCDNull() {
+                return this.IsNull(this.tableLedger.CDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void SetCDNull() {
+                this[this.tableLedger.CDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool IsVatNull() {
+                return this.IsNull(this.tableLedger.VatColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void SetVatNull() {
+                this[this.tableLedger.VatColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool Isdate_origNull() {
+                return this.IsNull(this.tableLedger.date_origColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void Setdate_origNull() {
+                this[this.tableLedger.date_origColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool IstransportNull() {
+                return this.IsNull(this.tableLedger.transportColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void SettransportNull() {
+                this[this.tableLedger.transportColumn] = global::System.Convert.DBNull;
             }
         }
         

@@ -172,6 +172,10 @@
     <Compile Include="ITEM_TYPE_MERGE.designer.cs">
       <DependentUpon>ITEM_TYPE_MERGE.cs</DependentUpon>
     </Compile>
+    <Compile Include="ledger_recepit_summary_rpt.cs">
+      <DependentUpon>ledger_recepit_summary_rpt.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="line_group_creation.cs" />
     <Compile Include="line_grp.cs">
       <SubType>Form</SubType>
