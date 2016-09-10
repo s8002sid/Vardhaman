@@ -88,12 +88,6 @@
     <Compile Include="App_Code\Connection.cs" />
     <Compile Include="App_Code\dataset_fill.cs" />
     <Compile Include="App_Code\number.cs" />
-    <Compile Include="backupandrestore.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="backupandrestore.Designer.cs">
-      <DependentUpon>backupandrestore.cs</DependentUpon>
-    </Compile>
     <Compile Include="Billing.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,32 +101,14 @@
       <DependentUpon>billreportworg.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="blank.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>blank.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Check_items.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Check_items.Designer.cs">
       <DependentUpon>Check_items.cs</DependentUpon>
     </Compile>
-    <Compile Include="Bill_Report_With_Rg.cs">
-      <DependentUpon>Bill_Report_With_Rg.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <Compile Include="billreportOriginal.cs">
       <DependentUpon>billreportOriginal.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Bill_Report_With_RgOriginal.cs">
-      <DependentUpon>Bill_Report_With_RgOriginal.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
@@ -189,12 +165,6 @@
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="CrystalReport1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReport1.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="dataset_pricelist.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -227,18 +197,6 @@
     </Compile>
     <Compile Include="dateselection.Designer.cs">
       <DependentUpon>dateselection.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Company_Entry.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Company_Entry.Designer.cs">
-      <DependentUpon>Company_Entry.cs</DependentUpon>
-    </Compile>
-    <Compile Include="accountselect.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="accountselect.Designer.cs">
-      <DependentUpon>accountselect.cs</DependentUpon>
     </Compile>
     <Compile Include="form_billprint.cs">
       <SubType>Form</SubType>
@@ -317,10 +275,6 @@
       <SubType>Designer</SubType>
       <DependentUpon>Account Head.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="backupandrestore.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>backupandrestore.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Billing.resx">
       <DependentUpon>Billing.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -330,26 +284,14 @@
       <LastGenOutput>billreportworg.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="blank.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>blank.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Check_items.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Check_items.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Bill_Report_With_Rg.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Bill_Report_With_Rg.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="billreportOriginal.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>billreportOriginal.cs</LastGenOutput>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Bill_Report_With_RgOriginal.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Bill_Report_With_RgOriginal.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="interest caculator.resx">
       <SubType>Designer</SubType>
@@ -375,10 +317,6 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Copy of recepit_border chk.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="CrystalReport1.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Deletion.resx">
       <DependentUpon>Deletion.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -390,14 +328,6 @@
     <EmbeddedResource Include="dateselection.resx">
       <SubType>Designer</SubType>
       <DependentUpon>dateselection.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Company_Entry.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>Company_Entry.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="accountselect.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>accountselect.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form_billprint.resx">
       <SubType>Designer</SubType>
