@@ -30,7 +30,6 @@ namespace Vardhman
         Recepit recepit;
         Account_Head account;
         emptybill empty;
-
         ITEM_TYPE_MERGE itemTypeMerge;
         new_ledger newLedger;
         ManualRecepit manualRecepit;
@@ -38,6 +37,7 @@ namespace Vardhman
         Price_List priceList;
         Deletion deletion;
         Ledger_showall ledger;
+
         public void init_container(Vardhman.childContainer c)
         {
             switch(c)
@@ -92,6 +92,13 @@ namespace Vardhman
                     break;
             }
             panel1.Show();
+        }
+        private void ShowForm(Form frm)
+        {
+            panel1.Visible = false;
+            frm.BringToFront();
+            frm.Show();
+            frm.WindowState = FormWindowState.Maximized;
         }
         public Main()
         {
@@ -150,26 +157,17 @@ namespace Vardhman
 
         private void button1_Click(object sender, EventArgs e)
         {
-            bill.Show();
-            bill.BringToFront();
-            bill.WindowState = FormWindowState.Maximized;
-            panel1.Visible = false;
+            ShowForm(bill);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            recepit.Show();
-            recepit.BringToFront();
-            recepit.WindowState = FormWindowState.Maximized;
-            panel1.Visible = false;
+            ShowForm(recepit);
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-                account.Show();
-                account.BringToFront();
-                account.WindowState = FormWindowState.Maximized;
-                panel1.Hide();            
+            ShowForm(account);            
         }
 
         private void homeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -179,23 +177,11 @@ namespace Vardhman
 
         private void button4_Click(object sender, EventArgs e)
         {
-            empty.Show();
-            empty.BringToFront();
-            empty.WindowState = FormWindowState.Maximized;
-            panel1.Hide();
+            ShowForm(empty);
         }
         private void Ledger()
         {
-            panel1.Visible = false;
-            panel1.Visible = false;
-            ledger.Show();
-            ledger.BringToFront();
-            ledger.WindowState = FormWindowState.Maximized;
-        }
-
-        private void ledgerToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Ledger();
+            ShowForm(ledger);
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -220,10 +206,6 @@ namespace Vardhman
             summary();
         }
 
-        private void summaryToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            summary();
-        }
         private void autobackup()
         {
             Connection con = new Connection();
@@ -303,50 +285,32 @@ namespace Vardhman
 
         private void button10_Click_1(object sender, EventArgs e)
         {
-            panel1.Visible = false;
-            deletion.BringToFront();
-            deletion.Show();
-            deletion.WindowState = FormWindowState.Maximized;
+            ShowForm(deletion);
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            panel1.Visible = false;
-            priceList.BringToFront();
-            priceList.Show();
-            priceList.WindowState = FormWindowState.Maximized;
+            ShowForm(priceList);
         }
 
         private void button12_Click(object sender, EventArgs e)
         {
-            panel1.Visible = false;
-            manualBilling.BringToFront();
-            manualBilling.Show();
-            manualBilling.WindowState = FormWindowState.Maximized;
+            ShowForm(manualBilling);
         }
 
         private void button13_Click(object sender, EventArgs e)
         {
-            panel1.Visible = false;
-            manualRecepit.BringToFront();
-            manualRecepit.Show();
-            manualRecepit.WindowState = FormWindowState.Maximized;
+            ShowForm(manualRecepit);
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
-            panel1.Visible = false;
-            newLedger.BringToFront();
-            newLedger.Show();
-            newLedger.WindowState = FormWindowState.Maximized;
+            ShowForm(newLedger);
         }
 
         private void button16_Click(object sender, EventArgs e)
         {
-            panel1.Visible = false;
-            itemTypeMerge.BringToFront();
-            itemTypeMerge.Show();
-            itemTypeMerge.WindowState = FormWindowState.Maximized;
+            ShowForm(itemTypeMerge);
         }
     }
 }
