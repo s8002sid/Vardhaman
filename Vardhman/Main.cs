@@ -10,6 +10,13 @@ using System.Data.SqlClient;
 
 namespace Vardhman
 {
+    public enum childContainer
+    {
+        e_Billing,
+        e_Recepit,
+        e_Account_Head,
+        e_ItemEntry
+    };
     public partial class Main : Form
     {
         Billing_dataentry bill;
@@ -17,6 +24,17 @@ namespace Vardhman
         Account_Head account;
         emptybill empty = new emptybill();
         Item_Entry item;
+        public void dispose_container(Vardhman.childContainer c)
+        {
+            switch(c)
+            {
+                case childContainer.e_Billing:
+                    bill = null;
+                    bill = new Billing_dataentry();
+                    bill.MdiParent = this;
+                    break;
+            }
+        }
         public Main()
         {
             InitializeComponent();
@@ -69,22 +87,10 @@ namespace Vardhman
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
-            {
-                bill.Show();
-                bill.BringToFront();
-                bill.WindowState = FormWindowState.Maximized;
-                panel1.Visible = false;
-            }
-            catch
-            {
-                bill = new Billing_dataentry();
-                panel1.Visible = false;
-                bill.MdiParent = this;
-                bill.Show();
-                bill.BringToFront();
-                bill.WindowState = FormWindowState.Maximized;
-            }
+            bill.Show();
+            bill.BringToFront();
+            bill.WindowState = FormWindowState.Maximized;
+            panel1.Visible = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
