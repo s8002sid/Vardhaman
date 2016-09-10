@@ -128,7 +128,6 @@ namespace Vardhman
 
         private void btn_MouseHover(object sender, EventArgs e)
         {
-
             Button b = (Button)sender;
             b.BackgroundImage = global::Vardhman.Properties.Resources.hover;
         }

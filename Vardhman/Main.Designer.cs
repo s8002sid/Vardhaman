@@ -89,7 +89,7 @@ namespace Vardhman
             this.btn_item_type_merge.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_item_type_merge.BackgroundImage")));
             this.btn_item_type_merge.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_item_type_merge.FlatAppearance.BorderSize = 0;
-            this.btn_item_type_merge.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_item_type_merge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_item_type_merge.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_item_type_merge.ForeColor = System.Drawing.Color.Black;
             this.btn_item_type_merge.Location = new System.Drawing.Point(703, 420);
@@ -100,7 +100,7 @@ namespace Vardhman
             this.btn_item_type_merge.UseVisualStyleBackColor = false;
             this.btn_item_type_merge.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             this.btn_item_type_merge.Click += new System.EventHandler(this.btn_item_type_merge_Click);
-            this.btn_item_type_merge.MouseHover += new System.EventHandler(this.btn_MouseHover);
+            this.btn_item_type_merge.MouseEnter += new System.EventHandler(this.btn_MouseHover);
             // 
             // btn_new_ledger
             // 
@@ -109,7 +109,7 @@ namespace Vardhman
             this.btn_new_ledger.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_new_ledger.BackgroundImage")));
             this.btn_new_ledger.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_new_ledger.FlatAppearance.BorderSize = 0;
-            this.btn_new_ledger.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_new_ledger.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_new_ledger.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_new_ledger.ForeColor = System.Drawing.Color.Black;
             this.btn_new_ledger.Location = new System.Drawing.Point(7, 228);
@@ -120,7 +120,7 @@ namespace Vardhman
             this.btn_new_ledger.UseVisualStyleBackColor = false;
             this.btn_new_ledger.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             this.btn_new_ledger.Click += new System.EventHandler(this.btn_new_ledger_Click);
-            this.btn_new_ledger.MouseHover += new System.EventHandler(this.btn_MouseHover);
+            this.btn_new_ledger.MouseEnter += new System.EventHandler(this.btn_MouseHover);
             // 
             // btn_manual_recepit_entry
             // 
@@ -130,7 +130,7 @@ namespace Vardhman
             this.btn_manual_recepit_entry.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_manual_recepit_entry.BackgroundImage")));
             this.btn_manual_recepit_entry.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_manual_recepit_entry.FlatAppearance.BorderSize = 0;
-            this.btn_manual_recepit_entry.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_manual_recepit_entry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_manual_recepit_entry.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_manual_recepit_entry.ForeColor = System.Drawing.Color.Black;
             this.btn_manual_recepit_entry.Location = new System.Drawing.Point(703, 221);
@@ -141,7 +141,7 @@ namespace Vardhman
             this.btn_manual_recepit_entry.UseVisualStyleBackColor = false;
             this.btn_manual_recepit_entry.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             this.btn_manual_recepit_entry.Click += new System.EventHandler(this.btn_manual_recepit_entry_Click);
-            this.btn_manual_recepit_entry.MouseHover += new System.EventHandler(this.btn_MouseHover);
+            this.btn_manual_recepit_entry.MouseEnter += new System.EventHandler(this.btn_MouseHover);
             // 
             // btn_manual_bill_entry
             // 
@@ -151,7 +151,7 @@ namespace Vardhman
             this.btn_manual_bill_entry.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_manual_bill_entry.BackgroundImage")));
             this.btn_manual_bill_entry.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_manual_bill_entry.FlatAppearance.BorderSize = 0;
-            this.btn_manual_bill_entry.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_manual_bill_entry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_manual_bill_entry.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_manual_bill_entry.ForeColor = System.Drawing.Color.Black;
             this.btn_manual_bill_entry.Location = new System.Drawing.Point(703, 124);
@@ -162,7 +162,7 @@ namespace Vardhman
             this.btn_manual_bill_entry.UseVisualStyleBackColor = false;
             this.btn_manual_bill_entry.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             this.btn_manual_bill_entry.Click += new System.EventHandler(this.btn_manual_bill_entry_Click);
-            this.btn_manual_bill_entry.MouseHover += new System.EventHandler(this.btn_MouseHover);
+            this.btn_manual_bill_entry.MouseEnter += new System.EventHandler(this.btn_MouseHover);
             // 
             // btn_deletion
             // 
@@ -172,7 +172,7 @@ namespace Vardhman
             this.btn_deletion.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_deletion.BackgroundImage")));
             this.btn_deletion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_deletion.FlatAppearance.BorderSize = 0;
-            this.btn_deletion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_deletion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_deletion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_deletion.ForeColor = System.Drawing.Color.Black;
             this.btn_deletion.Location = new System.Drawing.Point(703, 28);
@@ -183,7 +183,7 @@ namespace Vardhman
             this.btn_deletion.UseVisualStyleBackColor = false;
             this.btn_deletion.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             this.btn_deletion.Click += new System.EventHandler(this.btn_deletion_Click);
-            this.btn_deletion.MouseHover += new System.EventHandler(this.btn_MouseHover);
+            this.btn_deletion.MouseEnter += new System.EventHandler(this.btn_MouseHover);
             // 
             // btn_new_account
             // 
@@ -192,7 +192,7 @@ namespace Vardhman
             this.btn_new_account.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_new_account.BackgroundImage")));
             this.btn_new_account.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_new_account.FlatAppearance.BorderSize = 0;
-            this.btn_new_account.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_new_account.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_new_account.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_new_account.ForeColor = System.Drawing.Color.Black;
             this.btn_new_account.Location = new System.Drawing.Point(7, 510);
@@ -203,7 +203,7 @@ namespace Vardhman
             this.btn_new_account.UseVisualStyleBackColor = false;
             this.btn_new_account.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             this.btn_new_account.Click += new System.EventHandler(this.btn_new_account_Click);
-            this.btn_new_account.MouseHover += new System.EventHandler(this.btn_MouseHover);
+            this.btn_new_account.MouseEnter += new System.EventHandler(this.btn_MouseHover);
             // 
             // btn_summary
             // 
@@ -212,7 +212,7 @@ namespace Vardhman
             this.btn_summary.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_summary.BackgroundImage")));
             this.btn_summary.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_summary.FlatAppearance.BorderSize = 0;
-            this.btn_summary.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_summary.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_summary.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_summary.ForeColor = System.Drawing.Color.Black;
             this.btn_summary.Location = new System.Drawing.Point(7, 416);
@@ -223,7 +223,7 @@ namespace Vardhman
             this.btn_summary.UseVisualStyleBackColor = false;
             this.btn_summary.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             this.btn_summary.Click += new System.EventHandler(this.btn_summary_Click);
-            this.btn_summary.MouseHover += new System.EventHandler(this.btn_MouseHover);
+            this.btn_summary.MouseEnter += new System.EventHandler(this.btn_MouseHover);
             // 
             // btn_price_list
             // 
@@ -233,7 +233,7 @@ namespace Vardhman
             this.btn_price_list.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_price_list.BackgroundImage")));
             this.btn_price_list.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_price_list.FlatAppearance.BorderSize = 0;
-            this.btn_price_list.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_price_list.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_price_list.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_price_list.ForeColor = System.Drawing.Color.Black;
             this.btn_price_list.Location = new System.Drawing.Point(703, 322);
@@ -244,7 +244,7 @@ namespace Vardhman
             this.btn_price_list.UseVisualStyleBackColor = false;
             this.btn_price_list.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             this.btn_price_list.Click += new System.EventHandler(this.btn_price_list_Click);
-            this.btn_price_list.MouseHover += new System.EventHandler(this.btn_MouseHover);
+            this.btn_price_list.MouseEnter += new System.EventHandler(this.btn_MouseHover);
             // 
             // btn_empty_bill
             // 
@@ -272,7 +272,7 @@ namespace Vardhman
             this.btn_ledger.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_ledger.BackgroundImage")));
             this.btn_ledger.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_ledger.FlatAppearance.BorderSize = 0;
-            this.btn_ledger.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_ledger.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ledger.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ledger.ForeColor = System.Drawing.Color.Black;
             this.btn_ledger.Location = new System.Drawing.Point(7, 322);
@@ -283,7 +283,7 @@ namespace Vardhman
             this.btn_ledger.UseVisualStyleBackColor = false;
             this.btn_ledger.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             this.btn_ledger.Click += new System.EventHandler(this.btn_ledger_Click);
-            this.btn_ledger.MouseHover += new System.EventHandler(this.btn_MouseHover);
+            this.btn_ledger.MouseEnter += new System.EventHandler(this.btn_MouseHover);
             // 
             // btn_recepit
             // 
@@ -292,7 +292,7 @@ namespace Vardhman
             this.btn_recepit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_recepit.BackgroundImage")));
             this.btn_recepit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_recepit.FlatAppearance.BorderSize = 0;
-            this.btn_recepit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_recepit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_recepit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_recepit.ForeColor = System.Drawing.Color.Black;
             this.btn_recepit.Location = new System.Drawing.Point(7, 134);
@@ -303,7 +303,7 @@ namespace Vardhman
             this.btn_recepit.UseVisualStyleBackColor = false;
             this.btn_recepit.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             this.btn_recepit.Click += new System.EventHandler(this.btn_recepit_Click);
-            this.btn_recepit.MouseHover += new System.EventHandler(this.btn_MouseHover);
+            this.btn_recepit.MouseEnter += new System.EventHandler(this.btn_MouseHover);
             // 
             // btn_billing
             // 
@@ -312,7 +312,7 @@ namespace Vardhman
             this.btn_billing.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_billing.BackgroundImage")));
             this.btn_billing.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_billing.FlatAppearance.BorderSize = 0;
-            this.btn_billing.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_billing.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_billing.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_billing.ForeColor = System.Drawing.Color.Black;
             this.btn_billing.Location = new System.Drawing.Point(7, 40);
@@ -323,7 +323,7 @@ namespace Vardhman
             this.btn_billing.UseVisualStyleBackColor = false;
             this.btn_billing.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
             this.btn_billing.Click += new System.EventHandler(this.btn_billing_Click);
-            this.btn_billing.MouseHover += new System.EventHandler(this.btn_MouseHover);
+            this.btn_billing.MouseEnter += new System.EventHandler(this.btn_MouseHover);
             // 
             // pictureBox1
             // 
