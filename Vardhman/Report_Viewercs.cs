@@ -146,17 +146,6 @@ namespace Vardhman
                 report1.SetDataSource(ds3);
                 crystalReportViewer1.ReportSource = report1;
             }
-            else if (rptname == "pricelist")
-            {
-                dataset_pricelist dspl = new dataset_pricelist();
-                SqlCommand cmdpl = new SqlCommand(string.Format("select name , company , type , rate as price from price_list_print"), con);
-                SqlDataAdapter dapl = new SqlDataAdapter(cmdpl);
-                dapl.Fill(dspl.Tables["Item"]);
-
-                report_price_list rpl = new report_price_list();
-                rpl.SetDataSource(dspl);
-                crystalReportViewer1.ReportSource = rpl;
-            }
             else if(rptname == "groupbalance")
             {
                 dataset_newledger dsnl = new dataset_newledger();

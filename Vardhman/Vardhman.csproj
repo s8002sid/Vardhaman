@@ -394,10 +394,6 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>report_Ledger.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="report_price_list.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>report_price_list.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Report_summary.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Report_summary.cs</LastGenOutput>
@@ -480,12 +476,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>report_Ledger.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="report_price_list.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>report_price_list.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Report_summary.cs">
