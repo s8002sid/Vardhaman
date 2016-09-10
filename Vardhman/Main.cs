@@ -120,52 +120,46 @@ namespace Vardhman
         {
             pictureBox1.Location = new Point(this.Width / 2 - pictureBox1.Width / 2, this.Height / 2 - pictureBox1.Height / 2);
             btn_empty_bill.Anchor = (AnchorStyles.Bottom | AnchorStyles.Right);
-            init_container(childContainer.e_Billing);
-            init_container(childContainer.e_Recepit);
-            init_container(childContainer.e_AccountHead);
-            init_container(childContainer.e_EmptyBill);
-            init_container(childContainer.e_ItemTypeMerge);
-            init_container(childContainer.e_NewLedger);
-            init_container(childContainer.e_ManualRecepit);
-            init_container(childContainer.e_ManualBilling);
-            init_container(childContainer.e_PriceList);
-            init_container(childContainer.e_Deletion);
-            init_container(childContainer.e_Ledger);
+            foreach (childContainer val in Enum.GetValues(typeof(childContainer)))
+            {
+                init_container(val);
+            }
         }
 
-        private void button1_MouseHover(object sender, EventArgs e)
+        private void btn_MouseHover(object sender, EventArgs e)
         {
+
             Button b = (Button)sender;
-            b.BackgroundImage = global::Vardhman.Properties.Resources.hover;            
+            b.BackgroundImage = global::Vardhman.Properties.Resources.hover;
         }
 
-        private void button1_MouseLeave(object sender, EventArgs e)
+        private void btn_MouseLeave(object sender, EventArgs e)
         {
             Button b = (Button)sender;
             b.BackgroundImage = global::Vardhman.Properties.Resources.simple;
         }
 
-        private void button4_MouseEnter(object sender, EventArgs e)
+        private void btn_empty_bill_MouseEnter(object sender, EventArgs e)
         {
             btn_empty_bill.BackgroundImage = global::Vardhman.Properties.Resources.pressed;
         }
 
-        private void button4_MouseLeave(object sender, EventArgs e)
+        private void btn_empty_bill_MouseLeave(object sender, EventArgs e)
         {
             btn_empty_bill.BackgroundImage = global::Vardhman.Properties.Resources.normal;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_billing_Click(object sender, EventArgs e)
         {
             ShowForm(bill);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btn_recepit_Click(object sender, EventArgs e)
         {
             ShowForm(recepit);
         }
 
-        private void button8_Click(object sender, EventArgs e)
+        private void btn_new_account_Click(object sender, EventArgs e)
         {
             ShowForm(account);            
         }
@@ -175,7 +169,7 @@ namespace Vardhman
             panel1.Visible = true;
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void btn_empty_bill_Click(object sender, EventArgs e)
         {
             ShowForm(empty);
         }
@@ -184,7 +178,7 @@ namespace Vardhman
             ShowForm(ledger);
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btn_ledger_Click(object sender, EventArgs e)
         {
             Ledger();
         }
@@ -201,7 +195,7 @@ namespace Vardhman
             }
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void btn_summary_Click(object sender, EventArgs e)
         {
             summary();
         }
@@ -283,32 +277,33 @@ namespace Vardhman
             conn.Close();
         }
 
-        private void button10_Click_1(object sender, EventArgs e)
+        private void btn_deletion_Click(object sender, EventArgs e)
         {
             ShowForm(deletion);
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void btn_price_list_Click(object sender, EventArgs e)
         {
             ShowForm(priceList);
         }
 
-        private void button12_Click(object sender, EventArgs e)
+        private void btn_manual_bill_entry_Click(object sender, EventArgs e)
         {
             ShowForm(manualBilling);
         }
 
-        private void button13_Click(object sender, EventArgs e)
+        private void btn_manual_recepit_entry_Click(object sender, EventArgs e)
         {
+            
             ShowForm(manualRecepit);
         }
 
-        private void button14_Click(object sender, EventArgs e)
+        private void btn_new_ledger_Click(object sender, EventArgs e)
         {
             ShowForm(newLedger);
         }
 
-        private void button16_Click(object sender, EventArgs e)
+        private void btn_item_type_merge_Click(object sender, EventArgs e)
         {
             ShowForm(itemTypeMerge);
         }

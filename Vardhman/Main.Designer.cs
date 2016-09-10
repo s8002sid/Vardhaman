@@ -98,7 +98,9 @@ namespace Vardhman
             this.btn_item_type_merge.TabIndex = 23;
             this.btn_item_type_merge.Text = "Item Type Merge";
             this.btn_item_type_merge.UseVisualStyleBackColor = false;
-            this.btn_item_type_merge.Click += new System.EventHandler(this.button16_Click);
+            this.btn_item_type_merge.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
+            this.btn_item_type_merge.Click += new System.EventHandler(this.btn_item_type_merge_Click);
+            this.btn_item_type_merge.MouseHover += new System.EventHandler(this.btn_MouseHover);
             // 
             // btn_new_ledger
             // 
@@ -116,7 +118,9 @@ namespace Vardhman
             this.btn_new_ledger.TabIndex = 21;
             this.btn_new_ledger.Text = "New Ledger";
             this.btn_new_ledger.UseVisualStyleBackColor = false;
-            this.btn_new_ledger.Click += new System.EventHandler(this.button14_Click);
+            this.btn_new_ledger.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
+            this.btn_new_ledger.Click += new System.EventHandler(this.btn_new_ledger_Click);
+            this.btn_new_ledger.MouseHover += new System.EventHandler(this.btn_MouseHover);
             // 
             // btn_manual_recepit_entry
             // 
@@ -135,7 +139,9 @@ namespace Vardhman
             this.btn_manual_recepit_entry.TabIndex = 20;
             this.btn_manual_recepit_entry.Text = "Manual Recepit Entry";
             this.btn_manual_recepit_entry.UseVisualStyleBackColor = false;
-            this.btn_manual_recepit_entry.Click += new System.EventHandler(this.button13_Click);
+            this.btn_manual_recepit_entry.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
+            this.btn_manual_recepit_entry.Click += new System.EventHandler(this.btn_manual_recepit_entry_Click);
+            this.btn_manual_recepit_entry.MouseHover += new System.EventHandler(this.btn_MouseHover);
             // 
             // btn_manual_bill_entry
             // 
@@ -154,7 +160,9 @@ namespace Vardhman
             this.btn_manual_bill_entry.TabIndex = 19;
             this.btn_manual_bill_entry.Text = "Manual Bill Entry";
             this.btn_manual_bill_entry.UseVisualStyleBackColor = false;
-            this.btn_manual_bill_entry.Click += new System.EventHandler(this.button12_Click);
+            this.btn_manual_bill_entry.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
+            this.btn_manual_bill_entry.Click += new System.EventHandler(this.btn_manual_bill_entry_Click);
+            this.btn_manual_bill_entry.MouseHover += new System.EventHandler(this.btn_MouseHover);
             // 
             // btn_deletion
             // 
@@ -173,7 +181,9 @@ namespace Vardhman
             this.btn_deletion.TabIndex = 16;
             this.btn_deletion.Text = "Deletion";
             this.btn_deletion.UseVisualStyleBackColor = false;
-            this.btn_deletion.Click += new System.EventHandler(this.button10_Click_1);
+            this.btn_deletion.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
+            this.btn_deletion.Click += new System.EventHandler(this.btn_deletion_Click);
+            this.btn_deletion.MouseHover += new System.EventHandler(this.btn_MouseHover);
             // 
             // btn_new_account
             // 
@@ -191,9 +201,9 @@ namespace Vardhman
             this.btn_new_account.TabIndex = 13;
             this.btn_new_account.Text = "New Account";
             this.btn_new_account.UseVisualStyleBackColor = false;
-            this.btn_new_account.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
-            this.btn_new_account.Click += new System.EventHandler(this.button8_Click);
-            this.btn_new_account.MouseEnter += new System.EventHandler(this.button1_MouseHover);
+            this.btn_new_account.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
+            this.btn_new_account.Click += new System.EventHandler(this.btn_new_account_Click);
+            this.btn_new_account.MouseHover += new System.EventHandler(this.btn_MouseHover);
             // 
             // btn_summary
             // 
@@ -211,9 +221,9 @@ namespace Vardhman
             this.btn_summary.TabIndex = 12;
             this.btn_summary.Text = "Summary";
             this.btn_summary.UseVisualStyleBackColor = false;
-            this.btn_summary.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
-            this.btn_summary.Click += new System.EventHandler(this.button5_Click);
-            this.btn_summary.MouseEnter += new System.EventHandler(this.button1_MouseHover);
+            this.btn_summary.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
+            this.btn_summary.Click += new System.EventHandler(this.btn_summary_Click);
+            this.btn_summary.MouseHover += new System.EventHandler(this.btn_MouseHover);
             // 
             // btn_price_list
             // 
@@ -232,9 +242,9 @@ namespace Vardhman
             this.btn_price_list.TabIndex = 11;
             this.btn_price_list.Text = "Price List";
             this.btn_price_list.UseVisualStyleBackColor = false;
-            this.btn_price_list.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
-            this.btn_price_list.Click += new System.EventHandler(this.button6_Click);
-            this.btn_price_list.MouseEnter += new System.EventHandler(this.button1_MouseHover);
+            this.btn_price_list.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
+            this.btn_price_list.Click += new System.EventHandler(this.btn_price_list_Click);
+            this.btn_price_list.MouseHover += new System.EventHandler(this.btn_MouseHover);
             // 
             // btn_empty_bill
             // 
@@ -251,9 +261,9 @@ namespace Vardhman
             this.btn_empty_bill.Size = new System.Drawing.Size(39, 31);
             this.btn_empty_bill.TabIndex = 8;
             this.btn_empty_bill.UseVisualStyleBackColor = false;
-            this.btn_empty_bill.MouseLeave += new System.EventHandler(this.button4_MouseLeave);
-            this.btn_empty_bill.Click += new System.EventHandler(this.button4_Click);
-            this.btn_empty_bill.MouseEnter += new System.EventHandler(this.button4_MouseEnter);
+            this.btn_empty_bill.MouseLeave += new System.EventHandler(this.btn_empty_bill_MouseLeave);
+            this.btn_empty_bill.Click += new System.EventHandler(this.btn_empty_bill_Click);
+            this.btn_empty_bill.MouseEnter += new System.EventHandler(this.btn_empty_bill_MouseEnter);
             // 
             // btn_ledger
             // 
@@ -271,9 +281,9 @@ namespace Vardhman
             this.btn_ledger.TabIndex = 7;
             this.btn_ledger.Text = "Ledger";
             this.btn_ledger.UseVisualStyleBackColor = false;
-            this.btn_ledger.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
-            this.btn_ledger.Click += new System.EventHandler(this.button3_Click);
-            this.btn_ledger.MouseEnter += new System.EventHandler(this.button1_MouseHover);
+            this.btn_ledger.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
+            this.btn_ledger.Click += new System.EventHandler(this.btn_ledger_Click);
+            this.btn_ledger.MouseHover += new System.EventHandler(this.btn_MouseHover);
             // 
             // btn_recepit
             // 
@@ -291,9 +301,9 @@ namespace Vardhman
             this.btn_recepit.TabIndex = 6;
             this.btn_recepit.Text = "Recepit";
             this.btn_recepit.UseVisualStyleBackColor = false;
-            this.btn_recepit.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
-            this.btn_recepit.Click += new System.EventHandler(this.button2_Click);
-            this.btn_recepit.MouseEnter += new System.EventHandler(this.button1_MouseHover);
+            this.btn_recepit.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
+            this.btn_recepit.Click += new System.EventHandler(this.btn_recepit_Click);
+            this.btn_recepit.MouseHover += new System.EventHandler(this.btn_MouseHover);
             // 
             // btn_billing
             // 
@@ -311,9 +321,9 @@ namespace Vardhman
             this.btn_billing.TabIndex = 4;
             this.btn_billing.Text = "Billing";
             this.btn_billing.UseVisualStyleBackColor = false;
-            this.btn_billing.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
-            this.btn_billing.Click += new System.EventHandler(this.button1_Click);
-            this.btn_billing.MouseEnter += new System.EventHandler(this.button1_MouseHover);
+            this.btn_billing.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
+            this.btn_billing.Click += new System.EventHandler(this.btn_billing_Click);
+            this.btn_billing.MouseHover += new System.EventHandler(this.btn_MouseHover);
             // 
             // pictureBox1
             // 
