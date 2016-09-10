@@ -32,14 +32,10 @@ namespace Vardhman
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_item_type_merge = new System.Windows.Forms.Button();
-            this.btn_group_creation = new System.Windows.Forms.Button();
             this.btn_new_ledger = new System.Windows.Forms.Button();
             this.btn_manual_recepit_entry = new System.Windows.Forms.Button();
             this.btn_manual_bill_entry = new System.Windows.Forms.Button();
-            this.btn_price_list_edit = new System.Windows.Forms.Button();
             this.btn_deletion = new System.Windows.Forms.Button();
-            this.btn_check_bounce_entry = new System.Windows.Forms.Button();
-            this.btn_tottaller = new System.Windows.Forms.Button();
             this.btn_new_account = new System.Windows.Forms.Button();
             this.btn_summary = new System.Windows.Forms.Button();
             this.btn_price_list = new System.Windows.Forms.Button();
@@ -67,14 +63,10 @@ namespace Vardhman
             // 
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.btn_item_type_merge);
-            this.panel1.Controls.Add(this.btn_group_creation);
             this.panel1.Controls.Add(this.btn_new_ledger);
             this.panel1.Controls.Add(this.btn_manual_recepit_entry);
             this.panel1.Controls.Add(this.btn_manual_bill_entry);
-            this.panel1.Controls.Add(this.btn_price_list_edit);
             this.panel1.Controls.Add(this.btn_deletion);
-            this.panel1.Controls.Add(this.btn_check_bounce_entry);
-            this.panel1.Controls.Add(this.btn_tottaller);
             this.panel1.Controls.Add(this.btn_new_account);
             this.panel1.Controls.Add(this.btn_summary);
             this.panel1.Controls.Add(this.btn_price_list);
@@ -107,26 +99,6 @@ namespace Vardhman
             this.btn_item_type_merge.Text = "Item Type Merge";
             this.btn_item_type_merge.UseVisualStyleBackColor = false;
             this.btn_item_type_merge.Click += new System.EventHandler(this.button16_Click);
-            // 
-            // btn_group_creation
-            // 
-            this.btn_group_creation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_group_creation.AutoEllipsis = true;
-            this.btn_group_creation.BackColor = System.Drawing.Color.White;
-            this.btn_group_creation.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_group_creation.BackgroundImage")));
-            this.btn_group_creation.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_group_creation.FlatAppearance.BorderSize = 0;
-            this.btn_group_creation.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_group_creation.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_group_creation.ForeColor = System.Drawing.Color.Black;
-            this.btn_group_creation.Location = new System.Drawing.Point(358, 124);
-            this.btn_group_creation.Name = "btn_group_creation";
-            this.btn_group_creation.Size = new System.Drawing.Size(218, 78);
-            this.btn_group_creation.TabIndex = 22;
-            this.btn_group_creation.Text = "Group creation";
-            this.btn_group_creation.UseVisualStyleBackColor = false;
-            this.btn_group_creation.Visible = false;
-            this.btn_group_creation.Click += new System.EventHandler(this.button15_Click);
             // 
             // btn_new_ledger
             // 
@@ -184,26 +156,6 @@ namespace Vardhman
             this.btn_manual_bill_entry.UseVisualStyleBackColor = false;
             this.btn_manual_bill_entry.Click += new System.EventHandler(this.button12_Click);
             // 
-            // btn_price_list_edit
-            // 
-            this.btn_price_list_edit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_price_list_edit.AutoEllipsis = true;
-            this.btn_price_list_edit.BackColor = System.Drawing.Color.White;
-            this.btn_price_list_edit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_price_list_edit.BackgroundImage")));
-            this.btn_price_list_edit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_price_list_edit.FlatAppearance.BorderSize = 0;
-            this.btn_price_list_edit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_price_list_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_price_list_edit.ForeColor = System.Drawing.Color.Black;
-            this.btn_price_list_edit.Location = new System.Drawing.Point(369, 313);
-            this.btn_price_list_edit.Name = "btn_price_list_edit";
-            this.btn_price_list_edit.Size = new System.Drawing.Size(218, 78);
-            this.btn_price_list_edit.TabIndex = 18;
-            this.btn_price_list_edit.Text = "Price List Edit";
-            this.btn_price_list_edit.UseVisualStyleBackColor = false;
-            this.btn_price_list_edit.Visible = false;
-            this.btn_price_list_edit.Click += new System.EventHandler(this.button11_Click);
-            // 
             // btn_deletion
             // 
             this.btn_deletion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -222,47 +174,6 @@ namespace Vardhman
             this.btn_deletion.Text = "Deletion";
             this.btn_deletion.UseVisualStyleBackColor = false;
             this.btn_deletion.Click += new System.EventHandler(this.button10_Click_1);
-            // 
-            // btn_check_bounce_entry
-            // 
-            this.btn_check_bounce_entry.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_check_bounce_entry.AutoEllipsis = true;
-            this.btn_check_bounce_entry.BackColor = System.Drawing.Color.White;
-            this.btn_check_bounce_entry.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_check_bounce_entry.BackgroundImage")));
-            this.btn_check_bounce_entry.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_check_bounce_entry.FlatAppearance.BorderSize = 0;
-            this.btn_check_bounce_entry.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_check_bounce_entry.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_check_bounce_entry.ForeColor = System.Drawing.Color.Black;
-            this.btn_check_bounce_entry.Location = new System.Drawing.Point(358, 28);
-            this.btn_check_bounce_entry.Name = "btn_check_bounce_entry";
-            this.btn_check_bounce_entry.Size = new System.Drawing.Size(218, 78);
-            this.btn_check_bounce_entry.TabIndex = 15;
-            this.btn_check_bounce_entry.Text = "Check Bounce Entry";
-            this.btn_check_bounce_entry.UseVisualStyleBackColor = false;
-            this.btn_check_bounce_entry.Visible = false;
-            this.btn_check_bounce_entry.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // btn_tottaller
-            // 
-            this.btn_tottaller.AutoEllipsis = true;
-            this.btn_tottaller.BackColor = System.Drawing.Color.White;
-            this.btn_tottaller.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_tottaller.BackgroundImage")));
-            this.btn_tottaller.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_tottaller.FlatAppearance.BorderSize = 0;
-            this.btn_tottaller.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_tottaller.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_tottaller.ForeColor = System.Drawing.Color.Black;
-            this.btn_tottaller.Location = new System.Drawing.Point(328, 481);
-            this.btn_tottaller.Name = "btn_tottaller";
-            this.btn_tottaller.Size = new System.Drawing.Size(218, 78);
-            this.btn_tottaller.TabIndex = 14;
-            this.btn_tottaller.Text = "Totaller";
-            this.btn_tottaller.UseVisualStyleBackColor = false;
-            this.btn_tottaller.Visible = false;
-            this.btn_tottaller.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
-            this.btn_tottaller.Click += new System.EventHandler(this.button9_Click);
-            this.btn_tottaller.MouseEnter += new System.EventHandler(this.button1_MouseHover);
             // 
             // btn_new_account
             // 
@@ -491,18 +402,14 @@ namespace Vardhman
         private System.Windows.Forms.Button btn_new_account;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
-        private System.Windows.Forms.Button btn_tottaller;
         private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem backupToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem recoveryToolStripMenuItem;
-        private System.Windows.Forms.Button btn_check_bounce_entry;
         private System.Windows.Forms.Button btn_deletion;
-        private System.Windows.Forms.Button btn_price_list_edit;
         private System.Windows.Forms.Button btn_manual_recepit_entry;
         private System.Windows.Forms.Button btn_manual_bill_entry;
         private System.Windows.Forms.Button btn_new_ledger;
-        private System.Windows.Forms.Button btn_group_creation;
         private System.Windows.Forms.Button btn_item_type_merge;
     }
 }

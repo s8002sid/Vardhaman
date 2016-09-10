@@ -16,8 +16,6 @@ namespace Vardhman
         Recepit recepit;
         Account_Head account;
         emptybill empty = new emptybill();
-        Check_Bounse chkbounce = new Check_Bounse();
-        toteler t;
         Item_Entry item;
         public Main()
         {
@@ -45,7 +43,6 @@ namespace Vardhman
             recepit.MdiParent = this;
             account = new Account_Head();
             account.MdiParent = this;
-            chkbounce.MdiParent = this;
         }
 
         private void button1_MouseHover(object sender, EventArgs e)
@@ -148,26 +145,6 @@ namespace Vardhman
                 empty.ShowDialog();
             }
         }
-
-        private void ckeckBounceToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                panel1.Visible = false;
-                chkbounce.Show();
-                chkbounce.WindowState = FormWindowState.Maximized;
-            }
-            catch
-            {
-                
-                chkbounce = new Check_Bounse();
-                chkbounce.MdiParent = this;
-                panel1.Visible = false;
-                chkbounce.Show();
-                chkbounce.WindowState = FormWindowState.Maximized;
-                chkbounce.BringToFront();
-            }
-        }
         private void ledger()
         {
             //accountselect frm = new accountselect();
@@ -252,27 +229,6 @@ namespace Vardhman
             }
         }
 
-        private void button9_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                t.MdiParent = this;
-                t.WindowState = FormWindowState.Maximized;
-                panel1.Visible = false;
-                t.Show();
-                t.BringToFront();
-            }
-            catch
-            {
-                t = new toteler();
-                t.MdiParent = this;
-                panel1.Visible = false;
-                t.WindowState = FormWindowState.Maximized;
-                t.Show();
-                t.BringToFront();
-            }
-        }
-
         private void button10_Click(object sender, EventArgs e)
         {
             try
@@ -338,26 +294,6 @@ namespace Vardhman
             conn.Close();
         }
 
-        private void button7_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                panel1.Visible = false;
-                chkbounce.Show();
-                chkbounce.WindowState = FormWindowState.Maximized;
-            }
-            catch
-            {
-
-                chkbounce = new Check_Bounse();
-                panel1.Visible = false;
-                chkbounce.MdiParent = this;
-                chkbounce.Show();
-                chkbounce.BringToFront();
-                chkbounce.WindowState = FormWindowState.Maximized;
-            }
-        }
-
         private void button10_Click_1(object sender, EventArgs e)
         {
             Deletion d = new Deletion();
@@ -371,16 +307,6 @@ namespace Vardhman
         private void button6_Click(object sender, EventArgs e)
         {
             Price_List d = new Price_List();
-            panel1.Visible = false;
-            d.BringToFront();
-            d.MdiParent = this;
-            d.Show();
-            d.WindowState = FormWindowState.Maximized;
-        }
-
-        private void button11_Click(object sender, EventArgs e)
-        {
-            Price_List_Print d = new Price_List_Print();
             panel1.Visible = false;
             d.BringToFront();
             d.MdiParent = this;
@@ -411,16 +337,6 @@ namespace Vardhman
         private void button14_Click(object sender, EventArgs e)
         {
             new_ledger d = new new_ledger();
-            panel1.Visible = false;
-            d.BringToFront();
-            d.MdiParent = this;
-            d.Show();
-            d.WindowState = FormWindowState.Maximized;
-        }
-
-        private void button15_Click(object sender, EventArgs e)
-        {
-            create_group d = new create_group();
             panel1.Visible = false;
             d.BringToFront();
             d.MdiParent = this;
