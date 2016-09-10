@@ -270,12 +270,6 @@
     <Compile Include="Item Check.designer.cs">
       <DependentUpon>Item Check.cs</DependentUpon>
     </Compile>
-    <Compile Include="Item Entry.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Item Entry.Designer.cs">
-      <DependentUpon>Item Entry.cs</DependentUpon>
-    </Compile>
     <Compile Include="App_Code\Keys.cs" />
     <Compile Include="Item Update Popup.cs">
       <SubType>Form</SubType>
@@ -454,10 +448,6 @@
     <EmbeddedResource Include="Item Check.resx">
       <DependentUpon>Item Check.cs</DependentUpon>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Item Entry.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>Item Entry.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Item Update Popup.resx">
       <DependentUpon>Item Update Popup.cs</DependentUpon>

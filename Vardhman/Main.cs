@@ -14,15 +14,30 @@ namespace Vardhman
     {
         e_Billing,
         e_Recepit,
-        e_Account_Head,
-        e_EmptyBill
+        e_AccountHead,
+        e_EmptyBill,
+        e_ItemTypeMerge,
+        e_NewLedger,
+        e_ManualRecepit,
+        e_ManualBilling,
+        e_PriceList,
+        e_Deletion,
+        e_Ledger
     };
     public partial class Main : Form
     {
         Billing_dataentry bill;
         Recepit recepit;
         Account_Head account;
-        emptybill empty = new emptybill();
+        emptybill empty;
+
+        ITEM_TYPE_MERGE itemTypeMerge;
+        new_ledger newLedger;
+        ManualRecepit manualRecepit;
+        ManualBilling manualBilling;
+        Price_List priceList;
+        Deletion deletion;
+        Ledger_showall ledger;
         public void init_container(Vardhman.childContainer c)
         {
             switch(c)
@@ -37,15 +52,46 @@ namespace Vardhman
                     recepit = new Recepit();
                     recepit.MdiParent = this;
                     break;
-                case childContainer.e_Account_Head:
+                case childContainer.e_AccountHead:
                     account = null;
                     account = new Account_Head();
                     account.MdiParent = this;
                     break;
                 case childContainer.e_EmptyBill:
+                    empty = null;
                     empty = new emptybill();
+                    empty.MdiParent = this;
+                    break;
+                case childContainer.e_ItemTypeMerge:
+                    itemTypeMerge = new ITEM_TYPE_MERGE();
+                    itemTypeMerge.MdiParent = this;
+                    break;
+                case childContainer.e_NewLedger:
+                    newLedger = new new_ledger();
+                    newLedger.MdiParent = this;
+                    break;
+                case childContainer.e_ManualRecepit:
+                    manualRecepit = new ManualRecepit();
+                    manualRecepit.MdiParent = this;
+                    break;
+                case childContainer.e_ManualBilling:
+                    manualBilling = new ManualBilling();
+                    manualBilling.MdiParent = this;
+                    break;
+                case childContainer.e_PriceList:
+                    priceList = new Price_List();
+                    priceList.MdiParent = this;
+                    break;
+                case childContainer.e_Deletion:
+                    deletion = new Deletion();
+                    deletion.MdiParent = this;
+                    break;
+                case childContainer.e_Ledger:
+                    ledger = new Ledger_showall();
+                    ledger.MdiParent = this;
                     break;
             }
+            panel1.Show();
         }
         public Main()
         {
@@ -67,12 +113,17 @@ namespace Vardhman
         {
             pictureBox1.Location = new Point(this.Width / 2 - pictureBox1.Width / 2, this.Height / 2 - pictureBox1.Height / 2);
             btn_empty_bill.Anchor = (AnchorStyles.Bottom | AnchorStyles.Right);
-            bill = new Billing_dataentry();
-            bill.MdiParent = this;
-            recepit = new Recepit();
-            recepit.MdiParent = this;
-            account = new Account_Head();
-            account.MdiParent = this;
+            init_container(childContainer.e_Billing);
+            init_container(childContainer.e_Recepit);
+            init_container(childContainer.e_AccountHead);
+            init_container(childContainer.e_EmptyBill);
+            init_container(childContainer.e_ItemTypeMerge);
+            init_container(childContainer.e_NewLedger);
+            init_container(childContainer.e_ManualRecepit);
+            init_container(childContainer.e_ManualBilling);
+            init_container(childContainer.e_PriceList);
+            init_container(childContainer.e_Deletion);
+            init_container(childContainer.e_Ledger);
         }
 
         private void button1_MouseHover(object sender, EventArgs e)
@@ -128,38 +179,28 @@ namespace Vardhman
 
         private void button4_Click(object sender, EventArgs e)
         {
-            empty.ShowDialog();
-            empty = new emptybill();
-            empty.ShowDialog();
+            empty.Show();
+            empty.BringToFront();
+            empty.WindowState = FormWindowState.Maximized;
+            panel1.Hide();
         }
-        private void ledger()
+        private void Ledger()
         {
-            //accountselect frm = new accountselect();
-            //if (frm.ShowDialog() == DialogResult.OK)
-            //{
-            //    Report_Viewercs rp = new Report_Viewercs();
-            //    rp.name = frm.name;
-            //    rp.city = frm.city;
-            //    rp.loadrpt("Ledger");
-            //    rp.ShowDialog();
-            //}
             panel1.Visible = false;
-            Ledger_showall ls = new Ledger_showall();
-            ls.MdiParent = this;
             panel1.Visible = false;
-            ls.Show();
-            ls.BringToFront();
-            ls.WindowState = FormWindowState.Maximized;
+            ledger.Show();
+            ledger.BringToFront();
+            ledger.WindowState = FormWindowState.Maximized;
         }
 
         private void ledgerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ledger();
+            Ledger();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            ledger();
+            Ledger();
         }
         private void summary()
         {
@@ -262,62 +303,50 @@ namespace Vardhman
 
         private void button10_Click_1(object sender, EventArgs e)
         {
-            Deletion d = new Deletion();
             panel1.Visible = false;
-            d.BringToFront();
-            d.MdiParent = this;
-            d.Show();
-            d.WindowState = FormWindowState.Maximized;
+            deletion.BringToFront();
+            deletion.Show();
+            deletion.WindowState = FormWindowState.Maximized;
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            Price_List d = new Price_List();
             panel1.Visible = false;
-            d.BringToFront();
-            d.MdiParent = this;
-            d.Show();
-            d.WindowState = FormWindowState.Maximized;
+            priceList.BringToFront();
+            priceList.Show();
+            priceList.WindowState = FormWindowState.Maximized;
         }
 
         private void button12_Click(object sender, EventArgs e)
         {
-            ManualBilling d = new ManualBilling();
             panel1.Visible = false;
-            d.BringToFront();
-            d.MdiParent = this;
-            d.Show();
-            d.WindowState = FormWindowState.Maximized;
+            manualBilling.BringToFront();
+            manualBilling.Show();
+            manualBilling.WindowState = FormWindowState.Maximized;
         }
 
         private void button13_Click(object sender, EventArgs e)
         {
-            ManualRecepit d = new ManualRecepit();
             panel1.Visible = false;
-            d.BringToFront();
-            d.MdiParent = this;
-            d.Show();
-            d.WindowState = FormWindowState.Maximized;
+            manualRecepit.BringToFront();
+            manualRecepit.Show();
+            manualRecepit.WindowState = FormWindowState.Maximized;
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
-            new_ledger d = new new_ledger();
             panel1.Visible = false;
-            d.BringToFront();
-            d.MdiParent = this;
-            d.Show();
-            d.WindowState = FormWindowState.Maximized;
+            newLedger.BringToFront();
+            newLedger.Show();
+            newLedger.WindowState = FormWindowState.Maximized;
         }
 
         private void button16_Click(object sender, EventArgs e)
         {
-            ITEM_TYPE_MERGE d = new ITEM_TYPE_MERGE();
             panel1.Visible = false;
-            d.BringToFront();
-            d.MdiParent = this;
-            d.Show();
-            d.WindowState = FormWindowState.Maximized;
+            itemTypeMerge.BringToFront();
+            itemTypeMerge.Show();
+            itemTypeMerge.WindowState = FormWindowState.Maximized;
         }
     }
 }

@@ -287,7 +287,7 @@ namespace Vardhman
         private void Account_Head_FormClosing(object sender, FormClosingEventArgs e)
         {
             Main m = (Main)(this.MdiParent);
-            m.init_container(childContainer.e_Account_Head);
+            m.init_container(childContainer.e_AccountHead);
         }
     }
 }

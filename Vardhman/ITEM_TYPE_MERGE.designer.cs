@@ -111,6 +111,7 @@
             this.Name = "ITEM_TYPE_MERGE";
             this.Text = "ITEM_TYPE_MERGE";
             this.SizeChanged += new System.EventHandler(this.ITEM_TYPE_MERGE_SizeChanged);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ITEM_TYPE_MERGE_FormClosing);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

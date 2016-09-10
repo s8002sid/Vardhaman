@@ -305,6 +305,7 @@ namespace Vardhman
             this.Name = "Ledger_showall";
             this.Text = "Ledger_showall";
             this.Load += new System.EventHandler(this.Ledger_showall_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Ledger_showall_FormClosing);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);

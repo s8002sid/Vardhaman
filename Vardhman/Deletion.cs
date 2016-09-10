@@ -105,5 +105,11 @@ namespace Vardhman
         {
             fill();
         }
+
+        private void Deletion_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Main m = (Main)(this.MdiParent);
+            m.init_container(childContainer.e_Deletion);
+        }
     }
 }

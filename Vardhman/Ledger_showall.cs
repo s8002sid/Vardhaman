@@ -240,5 +240,11 @@ namespace Vardhman
         {
             string abc;
         }
+
+        private void Ledger_showall_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Main m = (Main)(this.MdiParent);
+            m.init_container(childContainer.e_Ledger);
+        }
     }
 }

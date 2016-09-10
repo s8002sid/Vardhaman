@@ -279,5 +279,11 @@ namespace Vardhman
             MessageBox.Show("Item Saved / Updated Successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             clear();
         }
+
+        private void Price_List_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Main m = (Main)(this.MdiParent);
+            m.init_container(childContainer.e_PriceList);
+        }
     }
 }

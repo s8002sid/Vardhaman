@@ -821,5 +821,11 @@ namespace Vardhman
                 calculatetotal();
             }
         }
+
+        private void new_ledger_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Main m = (Main)(this.MdiParent);
+            m.init_container(childContainer.e_NewLedger);
+        }
     }
 }

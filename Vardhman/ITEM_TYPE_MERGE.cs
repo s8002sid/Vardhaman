@@ -56,5 +56,11 @@ namespace Vardhman
         {
             groupBox1.Location =new Point( this.Width / 2 - groupBox1.Width / 2, this.Height / 2 - groupBox1.Height / 2);
         }
+
+        private void ITEM_TYPE_MERGE_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Main m = (Main)(this.MdiParent);
+            m.init_container(childContainer.e_ItemTypeMerge);
+        }
     }
 }
