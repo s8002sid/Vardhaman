@@ -371,7 +371,8 @@ namespace Vardhman
         {
             if (MessageBox.Show("Are you sure to exit all your unsaved data will be lost", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.Cancel)
                 e.Cancel = true; ;
-
+            Main m = (Main)(this.MdiParent);
+            m.init_container(childContainer.e_Recepit);
         }
 
         private void button4_Click(object sender, EventArgs e)

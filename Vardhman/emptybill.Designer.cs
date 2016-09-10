@@ -53,6 +53,7 @@ namespace Vardhman
             this.Name = "emptybill";
             this.Text = "emptybill";
             this.Load += new System.EventHandler(this.emptybill_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.emptybill_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

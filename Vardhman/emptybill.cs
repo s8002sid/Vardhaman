@@ -21,5 +21,11 @@ namespace Vardhman
             Connection con = new Connection();
             dataGridView1.DataSource = con.getTable(x);
         }
+
+        private void emptybill_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Main m = (Main)(this.MdiParent);
+            m.init_container(childContainer.e_EmptyBill);
+        }
     }
 }

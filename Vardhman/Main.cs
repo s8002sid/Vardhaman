@@ -15,7 +15,7 @@ namespace Vardhman
         e_Billing,
         e_Recepit,
         e_Account_Head,
-        e_ItemEntry
+        e_EmptyBill
     };
     public partial class Main : Form
     {
@@ -23,8 +23,7 @@ namespace Vardhman
         Recepit recepit;
         Account_Head account;
         emptybill empty = new emptybill();
-        Item_Entry item;
-        public void dispose_container(Vardhman.childContainer c)
+        public void init_container(Vardhman.childContainer c)
         {
             switch(c)
             {
@@ -32,6 +31,19 @@ namespace Vardhman
                     bill = null;
                     bill = new Billing_dataentry();
                     bill.MdiParent = this;
+                    break;
+                case childContainer.e_Recepit:
+                    recepit = null;
+                    recepit = new Recepit();
+                    recepit.MdiParent = this;
+                    break;
+                case childContainer.e_Account_Head:
+                    account = null;
+                    account = new Account_Head();
+                    account.MdiParent = this;
+                    break;
+                case childContainer.e_EmptyBill:
+                    empty = new emptybill();
                     break;
             }
         }
@@ -95,43 +107,18 @@ namespace Vardhman
 
         private void button2_Click(object sender, EventArgs e)
         {
-            try
-            {
-                recepit.Show();
-                recepit.BringToFront();
-                recepit.WindowState = FormWindowState.Maximized;
-                panel1.Visible = false;
-            }
-            catch
-            {
-                recepit = new Recepit(); 
-                recepit.MdiParent = this; 
-                recepit.Show();
-                recepit.BringToFront();
-                recepit.WindowState = FormWindowState.Maximized;
-                panel1.Visible = false;
-            }
+            recepit.Show();
+            recepit.BringToFront();
+            recepit.WindowState = FormWindowState.Maximized;
+            panel1.Visible = false;
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            try
-            {
                 account.Show();
                 account.BringToFront();
                 account.WindowState = FormWindowState.Maximized;
-                panel1.Hide();
-            }
-            catch
-            {
-                account = new Account_Head();
-                account.MdiParent = this;
-                account.Show();
-                panel1.Visible = false;
-                account.WindowState = FormWindowState.Maximized;
-                panel1.BringToFront();
-            }
-            
+                panel1.Hide();            
         }
 
         private void homeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -141,15 +128,9 @@ namespace Vardhman
 
         private void button4_Click(object sender, EventArgs e)
         {
-            try
-            {
-                empty.ShowDialog();
-            }
-            catch
-            {
-                empty = new emptybill();
-                empty.ShowDialog();
-            }
+            empty.ShowDialog();
+            empty = new emptybill();
+            empty.ShowDialog();
         }
         private void ledger()
         {
@@ -232,27 +213,6 @@ namespace Vardhman
                 string filepath = Path.Combine(newpath, "fullbackup.bak");
                 if (!File.Exists(filepath))
                     con.exeNonQurey(string.Format("exec full_backup '{0}'", filepath));
-            }
-        }
-
-        private void button10_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                item.MdiParent = this;
-                item.WindowState = FormWindowState.Maximized;
-                panel1.Visible = false;
-                item.Show();
-                item.BringToFront();
-            }
-            catch
-            {
-                item = new Item_Entry();
-                item.MdiParent = this;
-                panel1.Visible = false;
-                item.WindowState = FormWindowState.Maximized;
-                item.Show();
-                item.BringToFront();
             }
         }
 

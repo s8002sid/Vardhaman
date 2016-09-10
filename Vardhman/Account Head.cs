@@ -283,5 +283,11 @@ namespace Vardhman
                 textBox1.Text = ""; textBox1.Focus();
             }
         }
+
+        private void Account_Head_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Main m = (Main)(this.MdiParent);
+            m.init_container(childContainer.e_Account_Head);
+        }
     }
 }

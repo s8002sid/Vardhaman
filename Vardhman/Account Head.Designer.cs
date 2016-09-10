@@ -545,6 +545,7 @@ namespace Vardhman
             this.Name = "Account_Head";
             this.Text = "Account Creation";
             this.Load += new System.EventHandler(this.Account_Head_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Account_Head_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
