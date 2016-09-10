@@ -31,6 +31,33 @@ namespace Vardhman
             }
             con.disconnect();
         }
+        public static void db_backup_query(string path)
+        {
+            Connection con = new Connection();
+            con.connent();
+            con.exeNonQurey(string.Format("exec full_backup '{0}'", path));
+            con.disconnect();
+        }
+
+        public static void db_restore_query(string backupPath, string restorePath)
+        {
+            Connection con = new Connection("master");
+            con.connent();
+            con.exeNonQurey(string.Format("BACKUP DATABASE vardhman TO DISK = '{0}'", backupPath));
+            con.exeNonQurey(string.Format("RESTORE DATABASE vardhman FROM DISK = '{0}'", restorePath));
+            con.disconnect();
+        }
+
+        public static string generate_backup_filename()
+        {
+            string filename = DateTime.Now.Day.ToString() + "-" + 
+                                DateTime.Now.Month.ToString() + "-" + 
+                                DateTime.Now.Year + "-" + 
+                                DateTime.Now.Hour.ToString() + "." + 
+                                DateTime.Now.Minute + "." + 
+                                DateTime.Now.Second;
+            return filename;
+        }
         private static void checknumberoffile(string path)
         {
             string []files = Directory.GetFiles(path);

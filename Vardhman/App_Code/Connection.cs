@@ -29,6 +29,21 @@ public class Connection
             MessageBox.Show(e.Message.ToString());
         }
     }
+    public Connection(string initialCatalog)
+    {
+        try
+        {
+            str = new SqlConnectionStringBuilder();
+            str.DataSource = @".\sqlexpress";
+            str.InitialCatalog = initialCatalog;
+            str.IntegratedSecurity = true;
+            conn = new SqlConnection(str.ConnectionString);
+        }
+        catch (Exception e)
+        {
+            MessageBox.Show(e.Message.ToString());
+        }
+    }
     public SqlConnectionStringBuilder connectionstring()
     {
         return str;

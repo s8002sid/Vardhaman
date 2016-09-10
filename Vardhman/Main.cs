@@ -173,16 +173,13 @@ namespace Vardhman
         {
             ShowForm(empty);
         }
-        private void Ledger()
+
+        private void btn_ledger_Click(object sender, EventArgs e)
         {
             ShowForm(ledger);
         }
 
-        private void btn_ledger_Click(object sender, EventArgs e)
-        {
-            Ledger();
-        }
-        private void summary()
+        private void btn_summary_Click(object sender, EventArgs e)
         {
             dateselection frm = new dateselection();
             if (frm.ShowDialog() == DialogResult.OK)
@@ -195,56 +192,15 @@ namespace Vardhman
             }
         }
 
-        private void btn_summary_Click(object sender, EventArgs e)
-        {
-            summary();
-        }
-
-        private void autobackup()
-        {
-            Connection con = new Connection();
-            con.connent();
-            string x = con.exesclr("exec chk_autobackuppath");
-            if (x == "0")
-            {
-                if (folderBrowserDialog1.ShowDialog() == DialogResult.Cancel)
-                    return;
-                string activedir = folderBrowserDialog1.SelectedPath;
-                con.exeNonQurey(string.Format("insert into autobackuppath([path]) values('{0}')", activedir));
-                string folder = DateTime.Now.Day.ToString() + '_' + DateTime.Now.Month + '_' + DateTime.Now.Year;
-                string newpath = Path.Combine(activedir, folder);
-                if (!Directory.Exists(newpath))
-                    Directory.CreateDirectory(newpath);
-                string filepath = Path.Combine(newpath, "fullbackup.bak");
-                if (!File.Exists(filepath))
-                    con.exeNonQurey(string.Format("exec full_backup '{0}'", filepath));
-            }
-            else
-            {
-
-                string activedir = con.exesclr("select max([path]) as path from autobackuppath");;
-                string folder = DateTime.Now.Day.ToString() + '_' + DateTime.Now.Month + '_' + DateTime.Now.Year;
-                string newpath = Path.Combine(activedir, folder);
-                if (!Directory.Exists(newpath))
-                    Directory.CreateDirectory(newpath);
-                string filepath = Path.Combine(newpath, "fullbackup.bak");
-                if (!File.Exists(filepath))
-                    con.exeNonQurey(string.Format("exec full_backup '{0}'", filepath));
-            }
-        }
-
         private void backupToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (folderBrowserDialog1.ShowDialog() == DialogResult.Cancel)
                 return;
             string x = folderBrowserDialog1.SelectedPath;
-            string filename = DateTime.Now.Day.ToString() + DateTime.Now.Month.ToString() + DateTime.Now.Year + DateTime.Now.Hour.ToString() + DateTime.Now.Minute + DateTime.Now.Second;
+            string filename = create_backup.generate_backup_filename();
             string path = Path.Combine(x, filename + ".bak");
-            Connection con = new Connection();
-            con.connent();
-            con.exeNonQurey(string.Format("exec full_backup '{0}'" , path));
-            MessageBox.Show("Backup Completed with filename in format date , month , year , hour , min , sec", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            con.disconnect();
+            create_backup.db_backup_query(path);
+            MessageBox.Show("Backup Completed, backup file: "+ path, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void recoveryToolStripMenuItem_Click(object sender, EventArgs e)
@@ -254,27 +210,14 @@ namespace Vardhman
                 return;
             
             string x = folderBrowserDialog1.SelectedPath;
-            string filename = DateTime.Now.Day.ToString() + DateTime.Now.Month.ToString() + DateTime.Now.Year + DateTime.Now.Hour.ToString() + DateTime.Now.Minute + DateTime.Now.Second;
+            string filename = create_backup.generate_backup_filename();
             string path = Path.Combine(x, filename + ".bak");
 
-            SqlConnectionStringBuilder str;
-            SqlConnection conn;
-            str = new SqlConnectionStringBuilder();
-            str.DataSource = @".\sqlexpress";
-            str.InitialCatalog = "master";
-            str.IntegratedSecurity = true;
-            conn = new SqlConnection(str.ConnectionString);
-            conn.Open();
-            SqlCommand cmd;
-            cmd = new SqlCommand(string.Format("BACKUP DATABASE vardhman TO DISK = '{0}'", path) , conn);
-            cmd.ExecuteNonQuery();
             if (openFileDialog1.ShowDialog() == DialogResult.Cancel)
                 return;
             x = openFileDialog1.FileName;
-            cmd = new SqlCommand(string.Format("RESTORE DATABASE vardhman FROM DISK = '{0}'", x) , conn);
-            cmd.ExecuteNonQuery();
+            create_backup.db_restore_query(path, x);
             MessageBox.Show("Restore Completed", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            conn.Close();
         }
 
         private void btn_deletion_Click(object sender, EventArgs e)
