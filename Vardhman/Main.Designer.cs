@@ -31,31 +31,31 @@ namespace Vardhman
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_item_type_merge = new System.Windows.Forms.Button();
+            this.btn_group_creation = new System.Windows.Forms.Button();
+            this.btn_new_ledger = new System.Windows.Forms.Button();
+            this.btn_manual_recepit_entry = new System.Windows.Forms.Button();
+            this.btn_manual_bill_entry = new System.Windows.Forms.Button();
+            this.btn_price_list_edit = new System.Windows.Forms.Button();
+            this.btn_deletion = new System.Windows.Forms.Button();
+            this.btn_check_bounce_entry = new System.Windows.Forms.Button();
+            this.btn_tottaller = new System.Windows.Forms.Button();
+            this.btn_new_account = new System.Windows.Forms.Button();
+            this.btn_summary = new System.Windows.Forms.Button();
+            this.btn_price_list = new System.Windows.Forms.Button();
+            this.btn_empty_bill = new System.Windows.Forms.Button();
+            this.btn_ledger = new System.Windows.Forms.Button();
+            this.btn_recepit = new System.Windows.Forms.Button();
+            this.btn_billing = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.recoveryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button16 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -66,28 +66,354 @@ namespace Vardhman
             // panel1
             // 
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.button16);
-            this.panel1.Controls.Add(this.button15);
-            this.panel1.Controls.Add(this.button14);
-            this.panel1.Controls.Add(this.button13);
-            this.panel1.Controls.Add(this.button12);
-            this.panel1.Controls.Add(this.button11);
-            this.panel1.Controls.Add(this.button10);
-            this.panel1.Controls.Add(this.button7);
-            this.panel1.Controls.Add(this.button9);
-            this.panel1.Controls.Add(this.button8);
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button6);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btn_item_type_merge);
+            this.panel1.Controls.Add(this.btn_group_creation);
+            this.panel1.Controls.Add(this.btn_new_ledger);
+            this.panel1.Controls.Add(this.btn_manual_recepit_entry);
+            this.panel1.Controls.Add(this.btn_manual_bill_entry);
+            this.panel1.Controls.Add(this.btn_price_list_edit);
+            this.panel1.Controls.Add(this.btn_deletion);
+            this.panel1.Controls.Add(this.btn_check_bounce_entry);
+            this.panel1.Controls.Add(this.btn_tottaller);
+            this.panel1.Controls.Add(this.btn_new_account);
+            this.panel1.Controls.Add(this.btn_summary);
+            this.panel1.Controls.Add(this.btn_price_list);
+            this.panel1.Controls.Add(this.btn_empty_bill);
+            this.panel1.Controls.Add(this.btn_ledger);
+            this.panel1.Controls.Add(this.btn_recepit);
+            this.panel1.Controls.Add(this.btn_billing);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(933, 695);
             this.panel1.TabIndex = 14;
+            // 
+            // btn_item_type_merge
+            // 
+            this.btn_item_type_merge.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_item_type_merge.AutoEllipsis = true;
+            this.btn_item_type_merge.BackColor = System.Drawing.Color.White;
+            this.btn_item_type_merge.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_item_type_merge.BackgroundImage")));
+            this.btn_item_type_merge.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_item_type_merge.FlatAppearance.BorderSize = 0;
+            this.btn_item_type_merge.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_item_type_merge.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_item_type_merge.ForeColor = System.Drawing.Color.Black;
+            this.btn_item_type_merge.Location = new System.Drawing.Point(703, 420);
+            this.btn_item_type_merge.Name = "btn_item_type_merge";
+            this.btn_item_type_merge.Size = new System.Drawing.Size(218, 78);
+            this.btn_item_type_merge.TabIndex = 23;
+            this.btn_item_type_merge.Text = "Item Type Merge";
+            this.btn_item_type_merge.UseVisualStyleBackColor = false;
+            this.btn_item_type_merge.Click += new System.EventHandler(this.button16_Click);
+            // 
+            // btn_group_creation
+            // 
+            this.btn_group_creation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_group_creation.AutoEllipsis = true;
+            this.btn_group_creation.BackColor = System.Drawing.Color.White;
+            this.btn_group_creation.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_group_creation.BackgroundImage")));
+            this.btn_group_creation.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_group_creation.FlatAppearance.BorderSize = 0;
+            this.btn_group_creation.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_group_creation.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_group_creation.ForeColor = System.Drawing.Color.Black;
+            this.btn_group_creation.Location = new System.Drawing.Point(358, 124);
+            this.btn_group_creation.Name = "btn_group_creation";
+            this.btn_group_creation.Size = new System.Drawing.Size(218, 78);
+            this.btn_group_creation.TabIndex = 22;
+            this.btn_group_creation.Text = "Group creation";
+            this.btn_group_creation.UseVisualStyleBackColor = false;
+            this.btn_group_creation.Visible = false;
+            this.btn_group_creation.Click += new System.EventHandler(this.button15_Click);
+            // 
+            // btn_new_ledger
+            // 
+            this.btn_new_ledger.AutoEllipsis = true;
+            this.btn_new_ledger.BackColor = System.Drawing.Color.White;
+            this.btn_new_ledger.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_new_ledger.BackgroundImage")));
+            this.btn_new_ledger.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_new_ledger.FlatAppearance.BorderSize = 0;
+            this.btn_new_ledger.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_new_ledger.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_new_ledger.ForeColor = System.Drawing.Color.Black;
+            this.btn_new_ledger.Location = new System.Drawing.Point(7, 228);
+            this.btn_new_ledger.Name = "btn_new_ledger";
+            this.btn_new_ledger.Size = new System.Drawing.Size(218, 78);
+            this.btn_new_ledger.TabIndex = 21;
+            this.btn_new_ledger.Text = "New Ledger";
+            this.btn_new_ledger.UseVisualStyleBackColor = false;
+            this.btn_new_ledger.Click += new System.EventHandler(this.button14_Click);
+            // 
+            // btn_manual_recepit_entry
+            // 
+            this.btn_manual_recepit_entry.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_manual_recepit_entry.AutoEllipsis = true;
+            this.btn_manual_recepit_entry.BackColor = System.Drawing.Color.White;
+            this.btn_manual_recepit_entry.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_manual_recepit_entry.BackgroundImage")));
+            this.btn_manual_recepit_entry.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_manual_recepit_entry.FlatAppearance.BorderSize = 0;
+            this.btn_manual_recepit_entry.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_manual_recepit_entry.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_manual_recepit_entry.ForeColor = System.Drawing.Color.Black;
+            this.btn_manual_recepit_entry.Location = new System.Drawing.Point(703, 221);
+            this.btn_manual_recepit_entry.Name = "btn_manual_recepit_entry";
+            this.btn_manual_recepit_entry.Size = new System.Drawing.Size(218, 78);
+            this.btn_manual_recepit_entry.TabIndex = 20;
+            this.btn_manual_recepit_entry.Text = "Manual Recepit Entry";
+            this.btn_manual_recepit_entry.UseVisualStyleBackColor = false;
+            this.btn_manual_recepit_entry.Click += new System.EventHandler(this.button13_Click);
+            // 
+            // btn_manual_bill_entry
+            // 
+            this.btn_manual_bill_entry.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_manual_bill_entry.AutoEllipsis = true;
+            this.btn_manual_bill_entry.BackColor = System.Drawing.Color.White;
+            this.btn_manual_bill_entry.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_manual_bill_entry.BackgroundImage")));
+            this.btn_manual_bill_entry.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_manual_bill_entry.FlatAppearance.BorderSize = 0;
+            this.btn_manual_bill_entry.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_manual_bill_entry.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_manual_bill_entry.ForeColor = System.Drawing.Color.Black;
+            this.btn_manual_bill_entry.Location = new System.Drawing.Point(703, 124);
+            this.btn_manual_bill_entry.Name = "btn_manual_bill_entry";
+            this.btn_manual_bill_entry.Size = new System.Drawing.Size(218, 78);
+            this.btn_manual_bill_entry.TabIndex = 19;
+            this.btn_manual_bill_entry.Text = "Manual Bill Entry";
+            this.btn_manual_bill_entry.UseVisualStyleBackColor = false;
+            this.btn_manual_bill_entry.Click += new System.EventHandler(this.button12_Click);
+            // 
+            // btn_price_list_edit
+            // 
+            this.btn_price_list_edit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_price_list_edit.AutoEllipsis = true;
+            this.btn_price_list_edit.BackColor = System.Drawing.Color.White;
+            this.btn_price_list_edit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_price_list_edit.BackgroundImage")));
+            this.btn_price_list_edit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_price_list_edit.FlatAppearance.BorderSize = 0;
+            this.btn_price_list_edit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_price_list_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_price_list_edit.ForeColor = System.Drawing.Color.Black;
+            this.btn_price_list_edit.Location = new System.Drawing.Point(369, 313);
+            this.btn_price_list_edit.Name = "btn_price_list_edit";
+            this.btn_price_list_edit.Size = new System.Drawing.Size(218, 78);
+            this.btn_price_list_edit.TabIndex = 18;
+            this.btn_price_list_edit.Text = "Price List Edit";
+            this.btn_price_list_edit.UseVisualStyleBackColor = false;
+            this.btn_price_list_edit.Visible = false;
+            this.btn_price_list_edit.Click += new System.EventHandler(this.button11_Click);
+            // 
+            // btn_deletion
+            // 
+            this.btn_deletion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_deletion.AutoEllipsis = true;
+            this.btn_deletion.BackColor = System.Drawing.Color.White;
+            this.btn_deletion.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_deletion.BackgroundImage")));
+            this.btn_deletion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_deletion.FlatAppearance.BorderSize = 0;
+            this.btn_deletion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_deletion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_deletion.ForeColor = System.Drawing.Color.Black;
+            this.btn_deletion.Location = new System.Drawing.Point(703, 28);
+            this.btn_deletion.Name = "btn_deletion";
+            this.btn_deletion.Size = new System.Drawing.Size(218, 78);
+            this.btn_deletion.TabIndex = 16;
+            this.btn_deletion.Text = "Deletion";
+            this.btn_deletion.UseVisualStyleBackColor = false;
+            this.btn_deletion.Click += new System.EventHandler(this.button10_Click_1);
+            // 
+            // btn_check_bounce_entry
+            // 
+            this.btn_check_bounce_entry.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_check_bounce_entry.AutoEllipsis = true;
+            this.btn_check_bounce_entry.BackColor = System.Drawing.Color.White;
+            this.btn_check_bounce_entry.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_check_bounce_entry.BackgroundImage")));
+            this.btn_check_bounce_entry.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_check_bounce_entry.FlatAppearance.BorderSize = 0;
+            this.btn_check_bounce_entry.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_check_bounce_entry.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_check_bounce_entry.ForeColor = System.Drawing.Color.Black;
+            this.btn_check_bounce_entry.Location = new System.Drawing.Point(358, 28);
+            this.btn_check_bounce_entry.Name = "btn_check_bounce_entry";
+            this.btn_check_bounce_entry.Size = new System.Drawing.Size(218, 78);
+            this.btn_check_bounce_entry.TabIndex = 15;
+            this.btn_check_bounce_entry.Text = "Check Bounce Entry";
+            this.btn_check_bounce_entry.UseVisualStyleBackColor = false;
+            this.btn_check_bounce_entry.Visible = false;
+            this.btn_check_bounce_entry.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // btn_tottaller
+            // 
+            this.btn_tottaller.AutoEllipsis = true;
+            this.btn_tottaller.BackColor = System.Drawing.Color.White;
+            this.btn_tottaller.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_tottaller.BackgroundImage")));
+            this.btn_tottaller.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_tottaller.FlatAppearance.BorderSize = 0;
+            this.btn_tottaller.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_tottaller.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_tottaller.ForeColor = System.Drawing.Color.Black;
+            this.btn_tottaller.Location = new System.Drawing.Point(328, 481);
+            this.btn_tottaller.Name = "btn_tottaller";
+            this.btn_tottaller.Size = new System.Drawing.Size(218, 78);
+            this.btn_tottaller.TabIndex = 14;
+            this.btn_tottaller.Text = "Totaller";
+            this.btn_tottaller.UseVisualStyleBackColor = false;
+            this.btn_tottaller.Visible = false;
+            this.btn_tottaller.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
+            this.btn_tottaller.Click += new System.EventHandler(this.button9_Click);
+            this.btn_tottaller.MouseEnter += new System.EventHandler(this.button1_MouseHover);
+            // 
+            // btn_new_account
+            // 
+            this.btn_new_account.AutoEllipsis = true;
+            this.btn_new_account.BackColor = System.Drawing.Color.White;
+            this.btn_new_account.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_new_account.BackgroundImage")));
+            this.btn_new_account.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_new_account.FlatAppearance.BorderSize = 0;
+            this.btn_new_account.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_new_account.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_new_account.ForeColor = System.Drawing.Color.Black;
+            this.btn_new_account.Location = new System.Drawing.Point(7, 510);
+            this.btn_new_account.Name = "btn_new_account";
+            this.btn_new_account.Size = new System.Drawing.Size(218, 78);
+            this.btn_new_account.TabIndex = 13;
+            this.btn_new_account.Text = "New Account";
+            this.btn_new_account.UseVisualStyleBackColor = false;
+            this.btn_new_account.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
+            this.btn_new_account.Click += new System.EventHandler(this.button8_Click);
+            this.btn_new_account.MouseEnter += new System.EventHandler(this.button1_MouseHover);
+            // 
+            // btn_summary
+            // 
+            this.btn_summary.AutoEllipsis = true;
+            this.btn_summary.BackColor = System.Drawing.Color.White;
+            this.btn_summary.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_summary.BackgroundImage")));
+            this.btn_summary.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_summary.FlatAppearance.BorderSize = 0;
+            this.btn_summary.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_summary.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_summary.ForeColor = System.Drawing.Color.Black;
+            this.btn_summary.Location = new System.Drawing.Point(7, 416);
+            this.btn_summary.Name = "btn_summary";
+            this.btn_summary.Size = new System.Drawing.Size(218, 78);
+            this.btn_summary.TabIndex = 12;
+            this.btn_summary.Text = "Summary";
+            this.btn_summary.UseVisualStyleBackColor = false;
+            this.btn_summary.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
+            this.btn_summary.Click += new System.EventHandler(this.button5_Click);
+            this.btn_summary.MouseEnter += new System.EventHandler(this.button1_MouseHover);
+            // 
+            // btn_price_list
+            // 
+            this.btn_price_list.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_price_list.AutoEllipsis = true;
+            this.btn_price_list.BackColor = System.Drawing.Color.White;
+            this.btn_price_list.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_price_list.BackgroundImage")));
+            this.btn_price_list.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_price_list.FlatAppearance.BorderSize = 0;
+            this.btn_price_list.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_price_list.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_price_list.ForeColor = System.Drawing.Color.Black;
+            this.btn_price_list.Location = new System.Drawing.Point(703, 322);
+            this.btn_price_list.Name = "btn_price_list";
+            this.btn_price_list.Size = new System.Drawing.Size(218, 78);
+            this.btn_price_list.TabIndex = 11;
+            this.btn_price_list.Text = "Price List";
+            this.btn_price_list.UseVisualStyleBackColor = false;
+            this.btn_price_list.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
+            this.btn_price_list.Click += new System.EventHandler(this.button6_Click);
+            this.btn_price_list.MouseEnter += new System.EventHandler(this.button1_MouseHover);
+            // 
+            // btn_empty_bill
+            // 
+            this.btn_empty_bill.AutoEllipsis = true;
+            this.btn_empty_bill.BackColor = System.Drawing.Color.Transparent;
+            this.btn_empty_bill.BackgroundImage = global::Vardhman.Properties.Resources.normal;
+            this.btn_empty_bill.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_empty_bill.FlatAppearance.BorderSize = 0;
+            this.btn_empty_bill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_empty_bill.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_empty_bill.ForeColor = System.Drawing.Color.Black;
+            this.btn_empty_bill.Location = new System.Drawing.Point(834, 534);
+            this.btn_empty_bill.Name = "btn_empty_bill";
+            this.btn_empty_bill.Size = new System.Drawing.Size(39, 31);
+            this.btn_empty_bill.TabIndex = 8;
+            this.btn_empty_bill.UseVisualStyleBackColor = false;
+            this.btn_empty_bill.MouseLeave += new System.EventHandler(this.button4_MouseLeave);
+            this.btn_empty_bill.Click += new System.EventHandler(this.button4_Click);
+            this.btn_empty_bill.MouseEnter += new System.EventHandler(this.button4_MouseEnter);
+            // 
+            // btn_ledger
+            // 
+            this.btn_ledger.AutoEllipsis = true;
+            this.btn_ledger.BackColor = System.Drawing.Color.White;
+            this.btn_ledger.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_ledger.BackgroundImage")));
+            this.btn_ledger.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_ledger.FlatAppearance.BorderSize = 0;
+            this.btn_ledger.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_ledger.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ledger.ForeColor = System.Drawing.Color.Black;
+            this.btn_ledger.Location = new System.Drawing.Point(7, 322);
+            this.btn_ledger.Name = "btn_ledger";
+            this.btn_ledger.Size = new System.Drawing.Size(218, 78);
+            this.btn_ledger.TabIndex = 7;
+            this.btn_ledger.Text = "Ledger";
+            this.btn_ledger.UseVisualStyleBackColor = false;
+            this.btn_ledger.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
+            this.btn_ledger.Click += new System.EventHandler(this.button3_Click);
+            this.btn_ledger.MouseEnter += new System.EventHandler(this.button1_MouseHover);
+            // 
+            // btn_recepit
+            // 
+            this.btn_recepit.AutoEllipsis = true;
+            this.btn_recepit.BackColor = System.Drawing.Color.White;
+            this.btn_recepit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_recepit.BackgroundImage")));
+            this.btn_recepit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_recepit.FlatAppearance.BorderSize = 0;
+            this.btn_recepit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_recepit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_recepit.ForeColor = System.Drawing.Color.Black;
+            this.btn_recepit.Location = new System.Drawing.Point(7, 134);
+            this.btn_recepit.Name = "btn_recepit";
+            this.btn_recepit.Size = new System.Drawing.Size(218, 78);
+            this.btn_recepit.TabIndex = 6;
+            this.btn_recepit.Text = "Recepit";
+            this.btn_recepit.UseVisualStyleBackColor = false;
+            this.btn_recepit.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
+            this.btn_recepit.Click += new System.EventHandler(this.button2_Click);
+            this.btn_recepit.MouseEnter += new System.EventHandler(this.button1_MouseHover);
+            // 
+            // btn_billing
+            // 
+            this.btn_billing.AutoEllipsis = true;
+            this.btn_billing.BackColor = System.Drawing.Color.White;
+            this.btn_billing.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_billing.BackgroundImage")));
+            this.btn_billing.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_billing.FlatAppearance.BorderSize = 0;
+            this.btn_billing.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_billing.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_billing.ForeColor = System.Drawing.Color.Black;
+            this.btn_billing.Location = new System.Drawing.Point(7, 40);
+            this.btn_billing.Name = "btn_billing";
+            this.btn_billing.Size = new System.Drawing.Size(218, 78);
+            this.btn_billing.TabIndex = 4;
+            this.btn_billing.Text = "Billing";
+            this.btn_billing.UseVisualStyleBackColor = false;
+            this.btn_billing.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
+            this.btn_billing.Click += new System.EventHandler(this.button1_Click);
+            this.btn_billing.MouseEnter += new System.EventHandler(this.button1_MouseHover);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(231, 211);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(520, 95);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // menuStrip1
             // 
@@ -102,6 +428,18 @@ namespace Vardhman
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // homeToolStripMenuItem
+            // 
+            this.homeToolStripMenuItem.AutoSize = false;
+            this.homeToolStripMenuItem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("homeToolStripMenuItem.BackgroundImage")));
+            this.homeToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.homeToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.homeToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("homeToolStripMenuItem.Image")));
+            this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
+            this.homeToolStripMenuItem.Size = new System.Drawing.Size(40, 21);
+            this.homeToolStripMenuItem.Text = "              ";
+            this.homeToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
+            // 
             // backupToolStripMenuItem
             // 
             this.backupToolStripMenuItem.Name = "backupToolStripMenuItem";
@@ -115,344 +453,6 @@ namespace Vardhman
             this.recoveryToolStripMenuItem.Size = new System.Drawing.Size(73, 21);
             this.recoveryToolStripMenuItem.Text = "Recovery";
             this.recoveryToolStripMenuItem.Click += new System.EventHandler(this.recoveryToolStripMenuItem_Click);
-            // 
-            // homeToolStripMenuItem
-            // 
-            this.homeToolStripMenuItem.AutoSize = false;
-            this.homeToolStripMenuItem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("homeToolStripMenuItem.BackgroundImage")));
-            this.homeToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.homeToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.homeToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("homeToolStripMenuItem.Image")));
-            this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
-            this.homeToolStripMenuItem.Size = new System.Drawing.Size(40, 21);
-            this.homeToolStripMenuItem.Text = "              ";
-            this.homeToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
-            // 
-            // button16
-            // 
-            this.button16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button16.AutoEllipsis = true;
-            this.button16.BackColor = System.Drawing.Color.White;
-            this.button16.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button16.BackgroundImage")));
-            this.button16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button16.FlatAppearance.BorderSize = 0;
-            this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button16.ForeColor = System.Drawing.Color.Black;
-            this.button16.Location = new System.Drawing.Point(703, 420);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(218, 78);
-            this.button16.TabIndex = 23;
-            this.button16.Text = "Item Type Merge";
-            this.button16.UseVisualStyleBackColor = false;
-            this.button16.Click += new System.EventHandler(this.button16_Click);
-            // 
-            // button15
-            // 
-            this.button15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button15.AutoEllipsis = true;
-            this.button15.BackColor = System.Drawing.Color.White;
-            this.button15.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button15.BackgroundImage")));
-            this.button15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button15.FlatAppearance.BorderSize = 0;
-            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button15.ForeColor = System.Drawing.Color.Black;
-            this.button15.Location = new System.Drawing.Point(358, 124);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(218, 78);
-            this.button15.TabIndex = 22;
-            this.button15.Text = "Group creation";
-            this.button15.UseVisualStyleBackColor = false;
-            this.button15.Visible = false;
-            this.button15.Click += new System.EventHandler(this.button15_Click);
-            // 
-            // button14
-            // 
-            this.button14.AutoEllipsis = true;
-            this.button14.BackColor = System.Drawing.Color.White;
-            this.button14.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button14.BackgroundImage")));
-            this.button14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button14.FlatAppearance.BorderSize = 0;
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button14.ForeColor = System.Drawing.Color.Black;
-            this.button14.Location = new System.Drawing.Point(7, 228);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(218, 78);
-            this.button14.TabIndex = 21;
-            this.button14.Text = "New Ledger";
-            this.button14.UseVisualStyleBackColor = false;
-            this.button14.Click += new System.EventHandler(this.button14_Click);
-            // 
-            // button13
-            // 
-            this.button13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button13.AutoEllipsis = true;
-            this.button13.BackColor = System.Drawing.Color.White;
-            this.button13.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button13.BackgroundImage")));
-            this.button13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button13.FlatAppearance.BorderSize = 0;
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button13.ForeColor = System.Drawing.Color.Black;
-            this.button13.Location = new System.Drawing.Point(703, 221);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(218, 78);
-            this.button13.TabIndex = 20;
-            this.button13.Text = "Manual Recepit Entry";
-            this.button13.UseVisualStyleBackColor = false;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
-            // 
-            // button12
-            // 
-            this.button12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button12.AutoEllipsis = true;
-            this.button12.BackColor = System.Drawing.Color.White;
-            this.button12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button12.BackgroundImage")));
-            this.button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button12.FlatAppearance.BorderSize = 0;
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button12.ForeColor = System.Drawing.Color.Black;
-            this.button12.Location = new System.Drawing.Point(703, 124);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(218, 78);
-            this.button12.TabIndex = 19;
-            this.button12.Text = "Manual Bill Entry";
-            this.button12.UseVisualStyleBackColor = false;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
-            // 
-            // button11
-            // 
-            this.button11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button11.AutoEllipsis = true;
-            this.button11.BackColor = System.Drawing.Color.White;
-            this.button11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button11.BackgroundImage")));
-            this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button11.FlatAppearance.BorderSize = 0;
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.ForeColor = System.Drawing.Color.Black;
-            this.button11.Location = new System.Drawing.Point(369, 313);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(218, 78);
-            this.button11.TabIndex = 18;
-            this.button11.Text = "Price List Edit";
-            this.button11.UseVisualStyleBackColor = false;
-            this.button11.Visible = false;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
-            // 
-            // button10
-            // 
-            this.button10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button10.AutoEllipsis = true;
-            this.button10.BackColor = System.Drawing.Color.White;
-            this.button10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button10.BackgroundImage")));
-            this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button10.FlatAppearance.BorderSize = 0;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.ForeColor = System.Drawing.Color.Black;
-            this.button10.Location = new System.Drawing.Point(703, 28);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(218, 78);
-            this.button10.TabIndex = 16;
-            this.button10.Text = "Deletion";
-            this.button10.UseVisualStyleBackColor = false;
-            this.button10.Click += new System.EventHandler(this.button10_Click_1);
-            // 
-            // button7
-            // 
-            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button7.AutoEllipsis = true;
-            this.button7.BackColor = System.Drawing.Color.White;
-            this.button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button7.BackgroundImage")));
-            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.Black;
-            this.button7.Location = new System.Drawing.Point(358, 28);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(218, 78);
-            this.button7.TabIndex = 15;
-            this.button7.Text = "Check Bounce Entry";
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Visible = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // button9
-            // 
-            this.button9.AutoEllipsis = true;
-            this.button9.BackColor = System.Drawing.Color.White;
-            this.button9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button9.BackgroundImage")));
-            this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.ForeColor = System.Drawing.Color.Black;
-            this.button9.Location = new System.Drawing.Point(328, 481);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(218, 78);
-            this.button9.TabIndex = 14;
-            this.button9.Text = "Totaller";
-            this.button9.UseVisualStyleBackColor = false;
-            this.button9.Visible = false;
-            this.button9.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
-            this.button9.Click += new System.EventHandler(this.button9_Click);
-            this.button9.MouseEnter += new System.EventHandler(this.button1_MouseHover);
-            // 
-            // button8
-            // 
-            this.button8.AutoEllipsis = true;
-            this.button8.BackColor = System.Drawing.Color.White;
-            this.button8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button8.BackgroundImage")));
-            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.Color.Black;
-            this.button8.Location = new System.Drawing.Point(7, 510);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(218, 78);
-            this.button8.TabIndex = 13;
-            this.button8.Text = "New Account";
-            this.button8.UseVisualStyleBackColor = false;
-            this.button8.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
-            this.button8.Click += new System.EventHandler(this.button8_Click);
-            this.button8.MouseEnter += new System.EventHandler(this.button1_MouseHover);
-            // 
-            // button5
-            // 
-            this.button5.AutoEllipsis = true;
-            this.button5.BackColor = System.Drawing.Color.White;
-            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.Black;
-            this.button5.Location = new System.Drawing.Point(7, 416);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(218, 78);
-            this.button5.TabIndex = 12;
-            this.button5.Text = "Summary";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            this.button5.MouseEnter += new System.EventHandler(this.button1_MouseHover);
-            // 
-            // button6
-            // 
-            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button6.AutoEllipsis = true;
-            this.button6.BackColor = System.Drawing.Color.White;
-            this.button6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button6.BackgroundImage")));
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.Black;
-            this.button6.Location = new System.Drawing.Point(703, 322);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(218, 78);
-            this.button6.TabIndex = 11;
-            this.button6.Text = "Price List";
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            this.button6.MouseEnter += new System.EventHandler(this.button1_MouseHover);
-            // 
-            // button4
-            // 
-            this.button4.AutoEllipsis = true;
-            this.button4.BackColor = System.Drawing.Color.Transparent;
-            this.button4.BackgroundImage = global::Vardhman.Properties.Resources.normal;
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.Black;
-            this.button4.Location = new System.Drawing.Point(834, 534);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(39, 31);
-            this.button4.TabIndex = 8;
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.MouseLeave += new System.EventHandler(this.button4_MouseLeave);
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            this.button4.MouseEnter += new System.EventHandler(this.button4_MouseEnter);
-            // 
-            // button3
-            // 
-            this.button3.AutoEllipsis = true;
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(7, 322);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(218, 78);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "Ledger";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            this.button3.MouseEnter += new System.EventHandler(this.button1_MouseHover);
-            // 
-            // button2
-            // 
-            this.button2.AutoEllipsis = true;
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(7, 134);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(218, 78);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Recepit";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            this.button2.MouseEnter += new System.EventHandler(this.button1_MouseHover);
-            // 
-            // button1
-            // 
-            this.button1.AutoEllipsis = true;
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(7, 40);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(218, 78);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Billing";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            this.button1.MouseEnter += new System.EventHandler(this.button1_MouseHover);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(231, 211);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(520, 95);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
             // 
             // Main
             // 
@@ -470,9 +470,9 @@ namespace Vardhman
             this.Load += new System.EventHandler(this.Main_Load);
             this.SizeChanged += new System.EventHandler(this.Main_SizeChanged);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -481,28 +481,28 @@ namespace Vardhman
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_billing;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button btn_recepit;
+        private System.Windows.Forms.Button btn_ledger;
+        private System.Windows.Forms.Button btn_empty_bill;
+        private System.Windows.Forms.Button btn_summary;
+        private System.Windows.Forms.Button btn_price_list;
+        private System.Windows.Forms.Button btn_new_account;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button btn_tottaller;
         private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem backupToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem recoveryToolStripMenuItem;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Button btn_check_bounce_entry;
+        private System.Windows.Forms.Button btn_deletion;
+        private System.Windows.Forms.Button btn_price_list_edit;
+        private System.Windows.Forms.Button btn_manual_recepit_entry;
+        private System.Windows.Forms.Button btn_manual_bill_entry;
+        private System.Windows.Forms.Button btn_new_ledger;
+        private System.Windows.Forms.Button btn_group_creation;
+        private System.Windows.Forms.Button btn_item_type_merge;
     }
 }

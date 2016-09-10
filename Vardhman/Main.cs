@@ -32,13 +32,13 @@ namespace Vardhman
         private void Main_SizeChanged(object sender, EventArgs e)
         {
             pictureBox1.Location = new Point(this.Width / 2 - pictureBox1.Width / 2, this.Height / 2 - pictureBox1.Height / 2);
-            button4.Location = new Point(this.Width-button4.Width*2, this.Height-button4.Height*3);
+            btn_empty_bill.Location = new Point(this.Width-btn_empty_bill.Width*2, this.Height-btn_empty_bill.Height*3);
         }
 
         private void Main_Load(object sender, EventArgs e)
         {
             pictureBox1.Location = new Point(this.Width / 2 - pictureBox1.Width / 2, this.Height / 2 - pictureBox1.Height / 2);
-            button4.Anchor = (AnchorStyles.Bottom | AnchorStyles.Right);
+            btn_empty_bill.Anchor = (AnchorStyles.Bottom | AnchorStyles.Right);
             bill = new Billing_dataentry();
             bill.MdiParent = this;
             recepit = new Recepit();
@@ -62,12 +62,12 @@ namespace Vardhman
 
         private void button4_MouseEnter(object sender, EventArgs e)
         {
-            button4.BackgroundImage = global::Vardhman.Properties.Resources.pressed;
+            btn_empty_bill.BackgroundImage = global::Vardhman.Properties.Resources.pressed;
         }
 
         private void button4_MouseLeave(object sender, EventArgs e)
         {
-            button4.BackgroundImage = global::Vardhman.Properties.Resources.normal;
+            btn_empty_bill.BackgroundImage = global::Vardhman.Properties.Resources.normal;
         }
 
         private void button1_Click(object sender, EventArgs e)
