@@ -370,7 +370,10 @@ namespace Vardhman
         private void Recepit_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (MessageBox.Show("Are you sure to exit all your unsaved data will be lost", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.Cancel)
-                e.Cancel = true; ;
+            {
+                e.Cancel = true;
+                return;
+            }
             Main m = (Main)(this.MdiParent);
             m.init_container(childContainer.e_Recepit);
         }

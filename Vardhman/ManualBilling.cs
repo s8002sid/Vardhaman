@@ -995,10 +995,13 @@ namespace Vardhman
         private void Billing_dataentry_FormClosing(object sender, FormClosingEventArgs e)
         {
             if(dataGridView1.Rows.Count>1)
-            if (MessageBox.Show("Are you sure you want to close this make sure that all unsaved data will be lost", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.Cancel)
-                e.Cancel = true;
-        Main m = (Main)(this.MdiParent);
-        m.init_container(childContainer.e_ManualBilling);
+                if (MessageBox.Show("Are you sure you want to close this make sure that all unsaved data will be lost", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.Cancel)
+                {
+                    e.Cancel = true;
+                    return;
+                }
+            Main m = (Main)(this.MdiParent);
+            m.init_container(childContainer.e_ManualBilling);
         }
         public void getbill(int num)
         {
