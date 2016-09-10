@@ -165,12 +165,6 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="line_group_creation.cs" />
-    <Compile Include="line_grp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="line_grp.designer.cs">
-      <DependentUpon>line_grp.cs</DependentUpon>
-    </Compile>
     <Compile Include="ManualBilling.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -252,12 +246,6 @@
     <Compile Include="form_billprint.Designer.cs">
       <DependentUpon>form_billprint.cs</DependentUpon>
     </Compile>
-    <Compile Include="Insertion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Insertion.Designer.cs">
-      <DependentUpon>Insertion.cs</DependentUpon>
-    </Compile>
     <Compile Include="insupd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -271,23 +259,11 @@
       <DependentUpon>Item Check.cs</DependentUpon>
     </Compile>
     <Compile Include="App_Code\Keys.cs" />
-    <Compile Include="Item Update Popup.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Item Update Popup.designer.cs">
-      <DependentUpon>Item Update Popup.cs</DependentUpon>
-    </Compile>
     <Compile Include="itemchk.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="itemchk.Designer.cs">
       <DependentUpon>itemchk.cs</DependentUpon>
-    </Compile>
-    <Compile Include="item_update_popup_no_insert.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="item_update_popup_no_insert.designer.cs">
-      <DependentUpon>item_update_popup_no_insert.cs</DependentUpon>
     </Compile>
     <Compile Include="ledger.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -322,12 +298,6 @@
     </Compile>
     <Compile Include="new ledger.designer.cs">
       <DependentUpon>new ledger.cs</DependentUpon>
-    </Compile>
-    <Compile Include="new_type_name%27.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="new_type_name%27.designer.cs">
-      <DependentUpon>new_type_name%27.cs</DependentUpon>
     </Compile>
     <Compile Include="Password.cs">
       <SubType>Form</SubType>
@@ -389,10 +359,6 @@
       <DependentUpon>ITEM_TYPE_MERGE.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="line_grp.resx">
-      <DependentUpon>line_grp.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="ManualBilling.resx">
       <DependentUpon>ManualBilling.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -437,10 +403,6 @@
       <SubType>Designer</SubType>
       <DependentUpon>form_billprint.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Insertion.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>Insertion.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="insupd.resx">
       <SubType>Designer</SubType>
       <DependentUpon>insupd.cs</DependentUpon>
@@ -449,17 +411,9 @@
       <DependentUpon>Item Check.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Item Update Popup.resx">
-      <DependentUpon>Item Update Popup.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="itemchk.resx">
       <SubType>Designer</SubType>
       <DependentUpon>itemchk.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="item_update_popup_no_insert.resx">
-      <DependentUpon>item_update_popup_no_insert.cs</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Ledger_showall.resx">
       <SubType>Designer</SubType>
@@ -475,10 +429,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="new ledger.resx">
       <DependentUpon>new ledger.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="new_type_name%27.resx">
-      <DependentUpon>new_type_name%27.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Password.resx">
@@ -530,17 +480,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_grp_balance.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Transport.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>Transport.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Item_Type.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Item_Type.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControl1.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>UserControl1.cs</DependentUpon>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -635,23 +577,11 @@
       <DependentUpon>rpt_grp_balance.rpt</DependentUpon>
     </Compile>
     <Compile Include="Supporter.cs" />
-    <Compile Include="Transport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Transport.Designer.cs">
-      <DependentUpon>Transport.cs</DependentUpon>
-    </Compile>
     <Compile Include="Item_Type.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Item_Type.Designer.cs">
       <DependentUpon>Item_Type.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControl1.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControl1.Designer.cs">
-      <DependentUpon>UserControl1.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
