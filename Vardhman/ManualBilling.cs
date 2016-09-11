@@ -987,7 +987,9 @@ namespace Vardhman
         private void button5_Click(object sender, EventArgs e)
         {
             Account_Head ah = new Account_Head();
-            ah.getdetail(comboBox1.Text, comboBox3.Text);
+            db.MainInternal internalData = ((Main)this.MdiParent).getInternalData();
+            ah.getdetail(comboBox1.Text, comboBox3.Text, internalData);
+            ah.internalData = internalData;
             ah.ShowDialog();
             ah.BringToFront();
         }

@@ -37,7 +37,12 @@ namespace Vardhman
         Price_List priceList;
         Deletion deletion;
         Ledger_showall ledger;
-
+        db.MainInternal internalData;
+        Connection con;
+        public db.MainInternal getInternalData()
+        {
+            return internalData;
+        }
         public void init_container(Vardhman.childContainer c)
         {
             switch(c)
@@ -103,6 +108,8 @@ namespace Vardhman
         public Main()
         {
             InitializeComponent();
+            con = new Connection();
+            internalData = new db.MainInternal(con);
         }
 
         private void backupToolStripMenuItem1_Click(object sender, EventArgs e)

@@ -233,7 +233,6 @@ namespace Vardhman
             this.label11.Size = new System.Drawing.Size(154, 24);
             this.label11.TabIndex = 20;
             this.label11.Text = "Account Number";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // label12
             // 

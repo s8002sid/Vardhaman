@@ -5,30 +5,27 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-
+using Vardhman.db;
 namespace Vardhman
 {
     public partial class Account_Head : Form
     {
-        Connection con = new Connection();
+        public db.MainInternal internalData = null;
         public Account_Head()
         {
             InitializeComponent();
         }
 
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Account_Head_Load(object sender, EventArgs e)
         {
-            con.connent();
             string x = comboBox4.Text;
-            comboBox4.DataSource = con.getTable("select distinct(city) as city from customer");
-            comboBox4.DisplayMember = "city";
+            if (internalData == null)
+                this.internalData = ((Main)this.MdiParent).getInternalData();
+            comboBox4.DataSource = internalData.customer.get(new e_columns[] { e_columns.e_city }, e_db_operation.e_getUnique);
+            comboBox4.DisplayMember = internalData.customer.column_to_str(e_columns.e_city);
             comboBox4.Text = x;
             panel2.Location = new Point(85, 337);
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -67,8 +64,8 @@ namespace Vardhman
             button1.Text = "Save";
             lblid.Text = "";
 
-            comboBox4.DataSource = con.getTable("select distinct(city) as city from customer");
-            comboBox4.DisplayMember = "city";
+            comboBox4.DataSource = internalData.customer.get(new e_columns[] { e_columns.e_city }, e_db_operation.e_getUnique);
+            comboBox4.DisplayMember = internalData.customer.column_to_str(e_columns.e_city);
             dateTimePicker1.Value = DateTime.Now;
             textBox1.Text = "";
             textBox11.Text = "";
@@ -100,18 +97,6 @@ namespace Vardhman
         }
         private void save()
         {
-            //if (textBox1.Text == "" || comboBox1.Text == "" || textBox7.Text == "" || comboBox3.Text == "" || dateTimePicker1.Value.ToString() == "")
-            //{
-            //    MessageBox.Show("Plase fill all basic entry", "Warnung", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    return;
-            //}
-            //if (!(comboBox1.Text == "CUSTOMER" || comboBox1.Text == "BANK" || comboBox1.Text == "ASSESTS" || comboBox1.Text == "EXPENSES" || comboBox1.Text == "INCOME" || comboBox1.Text == "LIABILITY" || comboBox1.Text == "SALARY"))
-            //{
-            //MessageBox.Show("Please select account type from dropdown list", "Waring", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //comboBox1.Select();
-            //comboBox1.Focus();
-            //return;
-            //}
             string open = textBox7.Text;
             if (open == "")
                 open = "0.00";
@@ -126,13 +111,63 @@ namespace Vardhman
                     MessageBox.Show("Account alreadt exists", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                con.exeNonQurey(string.Format("exec add_customer '{0}' , '{1}' , '{2}' , '{3}' , '{4}' , '{5}' , '{6}' , {7}  , '{8}' , '{9}' , '{10}' , '{11}' , {12}", textBox1.Text.Trim(), textBox11.Text, textBox2.Text, comboBox4.Text, textBox4.Text, textBox5.Text, textBox6.Text, open, dateTimePicker1.Text.ToString().Split(Convert.ToChar(" "))[0], comboBox1.Text, textBox9.Text, comboBox2.Text, "1"));
+                internalData.customer.add(new e_columns[] { e_columns.e_name,
+                                                            e_columns.e_note,
+                                                            e_columns.e_address,
+                                                            e_columns.e_city,
+                                                            e_columns.e_pincode,
+                                                            e_columns.e_phno_1,
+                                                            e_columns.e_phno_2,
+                                                            e_columns.e_openbalance,
+                                                            e_columns.e_date,
+                                                            e_columns.e_type,
+                                                            e_columns.e_accountnumber,
+                                                            e_columns.e_accounttype,
+                                                            e_columns.e_select},
+                                            new string[] {  textBox1.Text.Trim(), 
+                                                            textBox11.Text, 
+                                                            textBox2.Text, 
+                                                            comboBox4.Text, 
+                                                            textBox4.Text, 
+                                                            textBox5.Text, 
+                                                            textBox6.Text, 
+                                                            open, 
+                                                            dateTimePicker1.Text.ToString().Split(Convert.ToChar(" "))[0], 
+                                                            comboBox1.Text, 
+                                                            textBox9.Text, 
+                                                            comboBox2.Text, 
+                                                            "1"});
                 clear();
                 MessageBox.Show("items Saved successfully");
             }
             else
             {
-                con.exeNonQurey(string.Format("exec update_customer '{0}' , '{1}' , '{2}' , '{3}' , '{4}' , '{5}' , '{6}' , {7}  , '{8}' , '{9}' , '{10}' , '{11}' , {12}", textBox1.Text.Trim(), textBox11.Text, textBox2.Text, comboBox4.Text, textBox4.Text, textBox5.Text, textBox6.Text, open, dateTimePicker1.Text.ToString().Split(Convert.ToChar(" "))[0], comboBox1.Text, textBox9.Text, comboBox2.Text, lblid.Text));
+                internalData.customer.update(new e_columns[] { e_columns.e_name,
+                                                            e_columns.e_note,
+                                                            e_columns.e_address,
+                                                            e_columns.e_city,
+                                                            e_columns.e_pincode,
+                                                            e_columns.e_phno_1,
+                                                            e_columns.e_phno_2,
+                                                            e_columns.e_openbalance,
+                                                            e_columns.e_date,
+                                                            e_columns.e_type,
+                                                            e_columns.e_accountnumber,
+                                                            e_columns.e_accounttype,
+                                                            e_columns.e_id},
+                                            new string[] {  textBox1.Text.Trim(), 
+                                                            textBox11.Text, 
+                                                            textBox2.Text, 
+                                                            comboBox4.Text, 
+                                                            textBox4.Text, 
+                                                            textBox5.Text, 
+                                                            textBox6.Text, 
+                                                            open, 
+                                                            dateTimePicker1.Text.ToString().Split(Convert.ToChar(" "))[0], 
+                                                            comboBox1.Text, 
+                                                            textBox9.Text, 
+                                                            comboBox2.Text, 
+                                                            lblid.Text});
                 clear();
                 MessageBox.Show("items Updated successfully");
             }
@@ -169,7 +204,7 @@ namespace Vardhman
 
         private void button2_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = con.getTable("select name , city from customer");
+            dataGridView1.DataSource = internalData.customer.get(new e_columns[] {e_columns.e_name, e_columns.e_city}, e_db_operation.e_getAll);
             splitContainer1.Visible = true;
         }
 
@@ -183,7 +218,21 @@ namespace Vardhman
             string name, city;
             name = dataGridView1.Rows[dataGridView1.SelectedCells[0].RowIndex].Cells[0].Value.ToString();
             city = dataGridView1.Rows[dataGridView1.SelectedCells[0].RowIndex].Cells[1].Value.ToString();
-            DataTable dt = con.getTable(string.Format("select name , note , address , city , pincode , phno_1 , phno_2 , openbalance  , date , type , accountnumber , accounttype , id from customer where name = '{0}' and city = '{1}'", name, city));
+            DataTable dt = internalData.customer.get(new e_columns[] {e_columns.e_name,
+                                                        e_columns.e_note,
+                                                        e_columns.e_address,
+                                                        e_columns.e_city,
+                                                        e_columns.e_pincode,
+                                                        e_columns.e_phno_1,
+                                                        e_columns.e_phno_2,
+                                                        e_columns.e_openbalance,
+                                                        e_columns.e_date,
+                                                        e_columns.e_type,
+                                                        e_columns.e_accountnumber,
+                                                        e_columns.e_accounttype,
+                                                        e_columns.e_id}, e_db_operation.e_getAll, 
+                                                        string.Format("name='{0}' and city='{1}'", name, city));
+
             textBox1.Text = dt.Rows[0][0].ToString();
             comboBox4.Text = dt.Rows[0][3].ToString();
             comboBox1.Text = dt.Rows[0][9].ToString();
@@ -205,7 +254,10 @@ namespace Vardhman
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = con.getTable(string.Format("select name , city from customer where name like('{0}%')", textBox3.Text));
+            dataGridView1.DataSource = internalData.customer.get(new e_columns[] {e_columns.e_name, 
+                                                                                    e_columns.e_city},
+                                                                                    e_db_operation.e_getAll, 
+                                                                                    string.Format("name like('{0}%')", textBox3.Text));
 
         }
 
@@ -213,40 +265,55 @@ namespace Vardhman
         {
             splitContainer1.Visible = false;
         }
-        public void getdetail(string name, string city)
+        public void getdetail(string name, string city, MainInternal internalData)
         {
-            con.connent();
-            string x = con.exesclr(string.Format("select isnull(max(id),'0') from customer where name = '{0}' and city = '{1}'", name, city));
-            if (x == "0")
+            
+            DataTable max_id = internalData.customer.get(new e_columns[] { e_columns.e_id }, e_db_operation.e_getAll, string.Format("name = '{0}' and city = '{1}'", name, city));
+            if (max_id.Rows.Count == 0 || (name.Trim() == "" && city.Trim() == ""))
             {
                 textBox1.Text = name;
                 comboBox4.Text = city;
                 comboBox1.Text = "CUSTOMER";
                 textBox7.Focus();
                 textBox7.Select();
-                con.disconnect();
                 return;
             }
-            DataTable dt = con.getTable(string.Format("select name , note , address , city , pincode , phno_1 , phno_2 , openbalance , debcredit , dbo.inddatevar(date) , type , accountnumber , accounttype from customer where name = '{0}' and city = '{1}'", name, city));
+            DataTable dt = internalData.customer.get(new e_columns[] { e_columns.e_name,
+                                                                        e_columns.e_note,
+                                                                        e_columns.e_address,
+                                                                        e_columns.e_city,
+                                                                        e_columns.e_pincode,
+                                                                        e_columns.e_phno_1,
+                                                                        e_columns.e_phno_2,
+                                                                        e_columns.e_openbalance,
+                                                                        e_columns.e_debcredit,
+                                                                        e_columns.e_inddate,
+                                                                        e_columns.e_type,
+                                                                        e_columns.e_accounttype,
+                                                                        e_columns.e_accountnumber,
+                                                                        e_columns.e_id},
+                                                                        e_db_operation.e_getAll,
+                                                                        string.Format("name = '{0}' and city = '{1}'", name, city));
+
             textBox1.Text = dt.Rows[0][0].ToString();
-            string abc = comboBox4.Text;
+            //string abc = comboBox4.Text;
             comboBox4.Text = dt.Rows[0][3].ToString();
-            comboBox4.Text = abc;
-            comboBox1.Text = dt.Rows[0][9].ToString();
+            //comboBox4.Text = abc;
             textBox7.Text = dt.Rows[0][7].ToString();
-            dateTimePicker1.Text = dt.Rows[0][8].ToString();
+            dateTimePicker1.Text = dt.Rows[0][9].ToString();
             textBox2.Text = dt.Rows[0][2].ToString();
             textBox4.Text = dt.Rows[0][4].ToString();
             textBox5.Text = dt.Rows[0][5].ToString();
             textBox6.Text = dt.Rows[0][6].ToString();
             textBox11.Text = dt.Rows[0][1].ToString();
-            textBox9.Text = dt.Rows[0][10].ToString();
+            textBox9.Text = dt.Rows[0][12].ToString();
+            comboBox1.Text = dt.Rows[0][10].ToString();
             comboBox2.Text = dt.Rows[0][11].ToString();
+            lblid.Text = dt.Rows[0][13].ToString();
             splitContainer1.Visible = true;
             button1.Text = "Update";
             textBox1.ReadOnly = true;
             comboBox4.Enabled = false;
-            con.disconnect();
         }
 
         private void textBox7_KeyPress(object sender, KeyPressEventArgs e)
@@ -256,7 +323,7 @@ namespace Vardhman
         }
         private int chknamewidspace()
         {
-            DataTable dt = con.getTable("select name , city from customer");
+            DataTable dt = internalData.customer.get(new e_columns[] { e_columns.e_name, e_columns.e_city }, e_db_operation.e_getAll);
 
             string abox = textBox1.Text.Replace(" ", "");
             string bbox = comboBox4.Text.Replace(" ", "");
@@ -276,8 +343,8 @@ namespace Vardhman
         {
             if (textBox1.Text == "" || button1.Text != "Save")
                 return;
-            string query = "select name from customer";
-            string x = Supporter.compare(textBox1.Text, query, 3);
+            DataTable dt = internalData.customer.get(new e_columns[] { e_columns.e_name }, e_db_operation.e_getUnique);
+            string x = Supporter.compare(textBox1.Text, dt, 3);
             if (x != "")
             {
                 textBox1.Text = ""; textBox1.Focus();
@@ -287,7 +354,8 @@ namespace Vardhman
         private void Account_Head_FormClosing(object sender, FormClosingEventArgs e)
         {
             Main m = (Main)(this.MdiParent);
-            m.init_container(childContainer.e_AccountHead);
+            if (m != null)
+                m.init_container(childContainer.e_AccountHead);
         }
     }
 }

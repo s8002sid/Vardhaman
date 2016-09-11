@@ -123,6 +123,8 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="db\mainInternal.cs" />
+    <Compile Include="db\table.cs" />
     <Compile Include="interest caculator.cs">
       <SubType>Form</SubType>
     </Compile>

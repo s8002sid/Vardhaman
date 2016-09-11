@@ -445,11 +445,8 @@ namespace Vardhman
         /// <param name="query"></param>
         /// <param name="mat"></param>
         /// <returns></returns>
-        public static string compare(string x, string query , int mat)
+        public static string compare(string x, DataTable dt , int mat)
         {
-            Connection con = new Connection();
-            con.connent();
-            DataTable dt = con.getTable(query);
             if (dt == null) return "";
             DataTable output = new DataTable();
             output.Columns.Add("account_name" , Type.GetType("System.String"));
