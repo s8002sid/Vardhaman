@@ -90,12 +90,6 @@ namespace Vardhman
             }
         }
 
-        private void txt_openbal_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!(e.KeyChar == 8 || e.KeyChar == 9 || e.KeyChar == 10 || e.KeyChar == 11 || e.KeyChar == 12 || e.KeyChar == 46 || (e.KeyChar >= 48 && e.KeyChar <= 57)))
-                e.Handled = true;
-        }
-
         private void btn_save_Click(object sender, EventArgs e)
         {
             save();
@@ -191,11 +185,6 @@ namespace Vardhman
             {
                 panel_buttons.Location = new Point(85, 337);
             }
-        }
-
-        private void txt_acntname_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.KeyChar = Convert.ToChar(e.KeyChar.ToString().ToUpper());
         }
 
         private void btn_list_Click(object sender, EventArgs e)
@@ -342,6 +331,16 @@ namespace Vardhman
             Main m = (Main)(this.MdiParent);
             if (m != null)
                 m.init_container(childContainer.e_AccountHead);
+        }
+
+        private void caps_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.KeyChar = Convert.ToChar(e.KeyChar.ToString().ToUpper());
+        }
+        private void num_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(e.KeyChar == 8 || e.KeyChar == 9 || e.KeyChar == 10 || e.KeyChar == 11 || e.KeyChar == 12 || e.KeyChar == 46 || (e.KeyChar >= 48 && e.KeyChar <= 57)))
+                e.Handled = true;
         }
     }
 }

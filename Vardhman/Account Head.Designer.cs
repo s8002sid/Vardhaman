@@ -93,7 +93,7 @@ namespace Vardhman
             this.txt_acntname.Size = new System.Drawing.Size(275, 29);
             this.txt_acntname.TabIndex = 0;
             this.txt_acntname.Leave += new System.EventHandler(this.txt_acntname_Leave);
-            this.txt_acntname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_acntname_KeyPress);
+            this.txt_acntname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.caps_KeyPress);
             // 
             // txt_address
             // 
@@ -103,6 +103,7 @@ namespace Vardhman
             this.txt_address.Name = "txt_address";
             this.txt_address.Size = new System.Drawing.Size(200, 75);
             this.txt_address.TabIndex = 0;
+            this.txt_address.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.caps_KeyPress);
             // 
             // label2
             // 
@@ -121,6 +122,7 @@ namespace Vardhman
             this.txt_pincode.Name = "txt_pincode";
             this.txt_pincode.Size = new System.Drawing.Size(139, 29);
             this.txt_pincode.TabIndex = 2;
+            this.txt_pincode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.num_KeyPress);
             // 
             // label4
             // 
@@ -139,6 +141,7 @@ namespace Vardhman
             this.txt_phno_1.Name = "txt_phno_1";
             this.txt_phno_1.Size = new System.Drawing.Size(139, 29);
             this.txt_phno_1.TabIndex = 3;
+            this.txt_phno_1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.num_KeyPress);
             // 
             // label5
             // 
@@ -157,6 +160,7 @@ namespace Vardhman
             this.txt_phno_2.Name = "txt_phno_2";
             this.txt_phno_2.Size = new System.Drawing.Size(139, 29);
             this.txt_phno_2.TabIndex = 4;
+            this.txt_phno_2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.num_KeyPress);
             // 
             // label6
             // 
@@ -208,6 +212,7 @@ namespace Vardhman
             this.cmb_acnttype.TabIndex = 2;
             this.cmb_acnttype.SelectedIndexChanged += new System.EventHandler(this.cmb_acnttype_SelectedIndexChanged);
             this.cmb_acnttype.Leave += new System.EventHandler(this.cmb_acnttype_Leave);
+            this.cmb_acnttype.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.caps_KeyPress);
             // 
             // txt_bank_acnt_no
             // 
@@ -216,6 +221,7 @@ namespace Vardhman
             this.txt_bank_acnt_no.Name = "txt_bank_acnt_no";
             this.txt_bank_acnt_no.Size = new System.Drawing.Size(207, 29);
             this.txt_bank_acnt_no.TabIndex = 0;
+            this.txt_bank_acnt_no.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.num_KeyPress);
             // 
             // label11
             // 
@@ -270,6 +276,7 @@ namespace Vardhman
             this.cmb_bank_acnt_type.Name = "cmb_bank_acnt_type";
             this.cmb_bank_acnt_type.Size = new System.Drawing.Size(207, 32);
             this.cmb_bank_acnt_type.TabIndex = 1;
+            this.cmb_bank_acnt_type.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.caps_KeyPress);
             // 
             // panel_bank_detail
             // 
@@ -352,6 +359,7 @@ namespace Vardhman
             this.txt_note.Name = "txt_note";
             this.txt_note.Size = new System.Drawing.Size(200, 76);
             this.txt_note.TabIndex = 5;
+            this.txt_note.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.caps_KeyPress);
             // 
             // chk_advanceentry
             // 
@@ -378,6 +386,7 @@ namespace Vardhman
             this.cmb_city.Name = "cmb_city";
             this.cmb_city.Size = new System.Drawing.Size(275, 32);
             this.cmb_city.TabIndex = 1;
+            this.cmb_city.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.caps_KeyPress);
             // 
             // label18
             // 
@@ -484,7 +493,7 @@ namespace Vardhman
             this.txt_openbal.Size = new System.Drawing.Size(139, 29);
             this.txt_openbal.TabIndex = 4;
             this.txt_openbal.Leave += new System.EventHandler(this.txt_openbal_Leave);
-            this.txt_openbal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_openbal_KeyPress);
+            this.txt_openbal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.num_KeyPress);
             // 
             // lblid
             // 
