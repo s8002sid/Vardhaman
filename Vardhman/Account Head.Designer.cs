@@ -29,51 +29,50 @@ namespace Vardhman
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txt_acntname = new System.Windows.Forms.TextBox();
+            this.txt_address = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txt_pincode = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txt_phno_1 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txt_phno_2 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.cmb_acnttype = new System.Windows.Forms.ComboBox();
+            this.txt_bank_acnt_no = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.dtp_balancedate = new System.Windows.Forms.DateTimePicker();
+            this.cmb_bank_acnt_type = new System.Windows.Forms.ComboBox();
+            this.panel_bank_detail = new System.Windows.Forms.Panel();
+            this.btn_save = new System.Windows.Forms.Button();
+            this.btn_list = new System.Windows.Forms.Button();
+            this.btn_clear = new System.Windows.Forms.Button();
+            this.panel_buttons = new System.Windows.Forms.Panel();
+            this.panel_advanced_entry = new System.Windows.Forms.Panel();
+            this.txt_note = new System.Windows.Forms.TextBox();
+            this.chk_advanceentry = new System.Windows.Forms.CheckBox();
+            this.cmb_city = new System.Windows.Forms.ComboBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.dgv_list_customer = new System.Windows.Forms.DataGridView();
+            this.splt_customer_search = new System.Windows.Forms.SplitContainer();
             this.button4 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txt_search_cust = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txt_openbal = new System.Windows.Forms.TextBox();
             this.lblid = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
+            this.panel_bank_detail.SuspendLayout();
+            this.panel_buttons.SuspendLayout();
+            this.panel_advanced_entry.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_list_customer)).BeginInit();
+            this.splt_customer_search.Panel1.SuspendLayout();
+            this.splt_customer_search.Panel2.SuspendLayout();
+            this.splt_customer_search.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -86,25 +85,24 @@ namespace Vardhman
             this.label1.TabIndex = 0;
             this.label1.Text = "Account Name";
             // 
-            // textBox1
+            // txt_acntname
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(167, 29);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(275, 29);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
-            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.txt_acntname.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_acntname.Location = new System.Drawing.Point(167, 29);
+            this.txt_acntname.Name = "txt_acntname";
+            this.txt_acntname.Size = new System.Drawing.Size(275, 29);
+            this.txt_acntname.TabIndex = 0;
+            this.txt_acntname.Leave += new System.EventHandler(this.txt_acntname_Leave);
+            this.txt_acntname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_acntname_KeyPress);
             // 
-            // textBox2
+            // txt_address
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(161, 13);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(200, 75);
-            this.textBox2.TabIndex = 0;
-            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.txt_address.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_address.Location = new System.Drawing.Point(161, 13);
+            this.txt_address.Multiline = true;
+            this.txt_address.Name = "txt_address";
+            this.txt_address.Size = new System.Drawing.Size(200, 75);
+            this.txt_address.TabIndex = 0;
             // 
             // label2
             // 
@@ -116,14 +114,13 @@ namespace Vardhman
             this.label2.TabIndex = 2;
             this.label2.Text = "Address";
             // 
-            // textBox4
+            // txt_pincode
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(161, 102);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(139, 29);
-            this.textBox4.TabIndex = 2;
-            this.textBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.txt_pincode.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_pincode.Location = new System.Drawing.Point(161, 102);
+            this.txt_pincode.Name = "txt_pincode";
+            this.txt_pincode.Size = new System.Drawing.Size(139, 29);
+            this.txt_pincode.TabIndex = 2;
             // 
             // label4
             // 
@@ -135,14 +132,13 @@ namespace Vardhman
             this.label4.TabIndex = 6;
             this.label4.Text = "Pincode";
             // 
-            // textBox5
+            // txt_phno_1
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(161, 151);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(139, 29);
-            this.textBox5.TabIndex = 3;
-            this.textBox5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox7_KeyPress);
+            this.txt_phno_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_phno_1.Location = new System.Drawing.Point(161, 151);
+            this.txt_phno_1.Name = "txt_phno_1";
+            this.txt_phno_1.Size = new System.Drawing.Size(139, 29);
+            this.txt_phno_1.TabIndex = 3;
             // 
             // label5
             // 
@@ -154,14 +150,13 @@ namespace Vardhman
             this.label5.TabIndex = 8;
             this.label5.Text = "Phone Number";
             // 
-            // textBox6
+            // txt_phno_2
             // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(161, 198);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(139, 29);
-            this.textBox6.TabIndex = 4;
-            this.textBox6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox7_KeyPress);
+            this.txt_phno_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_phno_2.Location = new System.Drawing.Point(161, 198);
+            this.txt_phno_2.Name = "txt_phno_2";
+            this.txt_phno_2.Size = new System.Drawing.Size(139, 29);
+            this.txt_phno_2.TabIndex = 4;
             // 
             // label6
             // 
@@ -193,13 +188,13 @@ namespace Vardhman
             this.label10.TabIndex = 18;
             this.label10.Text = "Account Type";
             // 
-            // comboBox1
+            // cmb_acnttype
             // 
-            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmb_acnttype.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmb_acnttype.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmb_acnttype.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_acnttype.FormattingEnabled = true;
+            this.cmb_acnttype.Items.AddRange(new object[] {
             "CUSTOMER",
             "BANK",
             "ASSESTS",
@@ -207,22 +202,20 @@ namespace Vardhman
             "INCOME",
             "LIABILITY",
             "SALARY"});
-            this.comboBox1.Location = new System.Drawing.Point(167, 117);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(275, 32);
-            this.comboBox1.TabIndex = 2;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            this.comboBox1.Leave += new System.EventHandler(this.comboBox1_Leave);
-            this.comboBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.cmb_acnttype.Location = new System.Drawing.Point(167, 117);
+            this.cmb_acnttype.Name = "cmb_acnttype";
+            this.cmb_acnttype.Size = new System.Drawing.Size(275, 32);
+            this.cmb_acnttype.TabIndex = 2;
+            this.cmb_acnttype.SelectedIndexChanged += new System.EventHandler(this.cmb_acnttype_SelectedIndexChanged);
+            this.cmb_acnttype.Leave += new System.EventHandler(this.cmb_acnttype_Leave);
             // 
-            // textBox9
+            // txt_bank_acnt_no
             // 
-            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(163, 14);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(207, 29);
-            this.textBox9.TabIndex = 0;
-            this.textBox9.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.txt_bank_acnt_no.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_bank_acnt_no.Location = new System.Drawing.Point(163, 14);
+            this.txt_bank_acnt_no.Name = "txt_bank_acnt_no";
+            this.txt_bank_acnt_no.Size = new System.Drawing.Size(207, 29);
+            this.txt_bank_acnt_no.TabIndex = 0;
             // 
             // label11
             // 
@@ -254,142 +247,137 @@ namespace Vardhman
             this.label13.TabIndex = 24;
             this.label13.Text = "Note";
             // 
-            // dateTimePicker1
+            // dtp_balancedate
             // 
-            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(167, 261);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(139, 30);
-            this.dateTimePicker1.TabIndex = 6;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.dtp_balancedate.CustomFormat = "dd/MM/yyyy";
+            this.dtp_balancedate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_balancedate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_balancedate.Location = new System.Drawing.Point(167, 261);
+            this.dtp_balancedate.Name = "dtp_balancedate";
+            this.dtp_balancedate.Size = new System.Drawing.Size(139, 30);
+            this.dtp_balancedate.TabIndex = 6;
             // 
-            // comboBox2
+            // cmb_bank_acnt_type
             // 
-            this.comboBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cmb_bank_acnt_type.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmb_bank_acnt_type.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmb_bank_acnt_type.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_bank_acnt_type.FormattingEnabled = true;
+            this.cmb_bank_acnt_type.Items.AddRange(new object[] {
             "SAVING",
             "CURRENT"});
-            this.comboBox2.Location = new System.Drawing.Point(163, 49);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(207, 32);
-            this.comboBox2.TabIndex = 1;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
-            this.comboBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.cmb_bank_acnt_type.Location = new System.Drawing.Point(163, 49);
+            this.cmb_bank_acnt_type.Name = "cmb_bank_acnt_type";
+            this.cmb_bank_acnt_type.Size = new System.Drawing.Size(207, 32);
+            this.cmb_bank_acnt_type.TabIndex = 1;
             // 
-            // panel1
+            // panel_bank_detail
             // 
-            this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.textBox9);
-            this.panel1.Controls.Add(this.label12);
-            this.panel1.Controls.Add(this.comboBox2);
-            this.panel1.Location = new System.Drawing.Point(448, 104);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(390, 100);
-            this.panel1.TabIndex = 3;
-            this.panel1.Visible = false;
+            this.panel_bank_detail.Controls.Add(this.label11);
+            this.panel_bank_detail.Controls.Add(this.txt_bank_acnt_no);
+            this.panel_bank_detail.Controls.Add(this.label12);
+            this.panel_bank_detail.Controls.Add(this.cmb_bank_acnt_type);
+            this.panel_bank_detail.Location = new System.Drawing.Point(448, 104);
+            this.panel_bank_detail.Name = "panel_bank_detail";
+            this.panel_bank_detail.Size = new System.Drawing.Size(390, 100);
+            this.panel_bank_detail.TabIndex = 3;
+            this.panel_bank_detail.Visible = false;
             // 
-            // button1
+            // btn_save
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(14, 15);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(91, 32);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_save.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_save.Location = new System.Drawing.Point(14, 15);
+            this.btn_save.Name = "btn_save";
+            this.btn_save.Size = new System.Drawing.Size(91, 32);
+            this.btn_save.TabIndex = 0;
+            this.btn_save.Text = "Save";
+            this.btn_save.UseVisualStyleBackColor = true;
+            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
-            // button2
+            // btn_list
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(114, 15);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(91, 32);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "List";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btn_list.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_list.Location = new System.Drawing.Point(114, 15);
+            this.btn_list.Name = "btn_list";
+            this.btn_list.Size = new System.Drawing.Size(91, 32);
+            this.btn_list.TabIndex = 1;
+            this.btn_list.Text = "List";
+            this.btn_list.UseVisualStyleBackColor = true;
+            this.btn_list.Click += new System.EventHandler(this.btn_list_Click);
             // 
-            // button3
+            // btn_clear
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(211, 15);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(91, 32);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Clear";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btn_clear.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_clear.Location = new System.Drawing.Point(211, 15);
+            this.btn_clear.Name = "btn_clear";
+            this.btn_clear.Size = new System.Drawing.Size(91, 32);
+            this.btn_clear.TabIndex = 2;
+            this.btn_clear.Text = "Clear";
+            this.btn_clear.UseVisualStyleBackColor = true;
+            this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
             // 
-            // panel2
+            // panel_buttons
             // 
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Location = new System.Drawing.Point(62, 669);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(305, 55);
-            this.panel2.TabIndex = 9;
+            this.panel_buttons.Controls.Add(this.btn_clear);
+            this.panel_buttons.Controls.Add(this.btn_list);
+            this.panel_buttons.Controls.Add(this.btn_save);
+            this.panel_buttons.Location = new System.Drawing.Point(62, 669);
+            this.panel_buttons.Name = "panel_buttons";
+            this.panel_buttons.Size = new System.Drawing.Size(305, 55);
+            this.panel_buttons.TabIndex = 9;
             // 
-            // panel3
+            // panel_advanced_entry
             // 
-            this.panel3.Controls.Add(this.textBox11);
-            this.panel3.Controls.Add(this.label13);
-            this.panel3.Controls.Add(this.textBox6);
-            this.panel3.Controls.Add(this.label6);
-            this.panel3.Controls.Add(this.textBox5);
-            this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.textBox4);
-            this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.textBox2);
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Location = new System.Drawing.Point(6, 339);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(416, 321);
-            this.panel3.TabIndex = 8;
-            this.panel3.Visible = false;
+            this.panel_advanced_entry.Controls.Add(this.txt_note);
+            this.panel_advanced_entry.Controls.Add(this.label13);
+            this.panel_advanced_entry.Controls.Add(this.txt_phno_2);
+            this.panel_advanced_entry.Controls.Add(this.label6);
+            this.panel_advanced_entry.Controls.Add(this.txt_phno_1);
+            this.panel_advanced_entry.Controls.Add(this.label5);
+            this.panel_advanced_entry.Controls.Add(this.txt_pincode);
+            this.panel_advanced_entry.Controls.Add(this.label4);
+            this.panel_advanced_entry.Controls.Add(this.txt_address);
+            this.panel_advanced_entry.Controls.Add(this.label2);
+            this.panel_advanced_entry.Location = new System.Drawing.Point(6, 339);
+            this.panel_advanced_entry.Name = "panel_advanced_entry";
+            this.panel_advanced_entry.Size = new System.Drawing.Size(416, 321);
+            this.panel_advanced_entry.TabIndex = 8;
+            this.panel_advanced_entry.Visible = false;
             // 
-            // textBox11
+            // txt_note
             // 
-            this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox11.Location = new System.Drawing.Point(161, 233);
-            this.textBox11.Multiline = true;
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(200, 76);
-            this.textBox11.TabIndex = 5;
-            this.textBox11.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.txt_note.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_note.Location = new System.Drawing.Point(161, 233);
+            this.txt_note.Multiline = true;
+            this.txt_note.Name = "txt_note";
+            this.txt_note.Size = new System.Drawing.Size(200, 76);
+            this.txt_note.TabIndex = 5;
             // 
-            // checkBox1
+            // chk_advanceentry
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(140, 307);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(152, 28);
-            this.checkBox1.TabIndex = 7;
-            this.checkBox1.Text = "Advance Entry";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.chk_advanceentry.AutoSize = true;
+            this.chk_advanceentry.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chk_advanceentry.Location = new System.Drawing.Point(140, 307);
+            this.chk_advanceentry.Name = "chk_advanceentry";
+            this.chk_advanceentry.Size = new System.Drawing.Size(152, 28);
+            this.chk_advanceentry.TabIndex = 7;
+            this.chk_advanceentry.Text = "Advance Entry";
+            this.chk_advanceentry.UseVisualStyleBackColor = true;
+            this.chk_advanceentry.CheckedChanged += new System.EventHandler(this.chk_advanceentry_CheckedChanged);
             // 
-            // comboBox4
+            // cmb_city
             // 
-            this.comboBox4.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBox4.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
+            this.cmb_city.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmb_city.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmb_city.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_city.FormattingEnabled = true;
+            this.cmb_city.Items.AddRange(new object[] {
             "CREDIT",
             "DEBIT"});
-            this.comboBox4.Location = new System.Drawing.Point(167, 71);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(275, 32);
-            this.comboBox4.TabIndex = 1;
-            this.comboBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.cmb_city.Location = new System.Drawing.Point(167, 71);
+            this.cmb_city.Name = "cmb_city";
+            this.cmb_city.Size = new System.Drawing.Size(275, 32);
+            this.cmb_city.TabIndex = 1;
             // 
             // label18
             // 
@@ -411,41 +399,40 @@ namespace Vardhman
             this.label3.TabIndex = 21;
             this.label3.Text = "Account Creation";
             // 
-            // dataGridView1
+            // dgv_list_customer
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(485, 385);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dgv_list_customer.AllowUserToAddRows = false;
+            this.dgv_list_customer.AllowUserToDeleteRows = false;
+            this.dgv_list_customer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_list_customer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_list_customer.Location = new System.Drawing.Point(0, 0);
+            this.dgv_list_customer.MultiSelect = false;
+            this.dgv_list_customer.Name = "dgv_list_customer";
+            this.dgv_list_customer.ReadOnly = true;
+            this.dgv_list_customer.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_list_customer.Size = new System.Drawing.Size(485, 385);
+            this.dgv_list_customer.TabIndex = 0;
+            this.dgv_list_customer.DoubleClick += new System.EventHandler(this.dgv_list_customer_DoubleClick);
             // 
-            // splitContainer1
+            // splt_customer_search
             // 
-            this.splitContainer1.Location = new System.Drawing.Point(455, 29);
-            this.splitContainer1.Name = "splitContainer1";
-            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.splt_customer_search.Location = new System.Drawing.Point(455, 29);
+            this.splt_customer_search.Name = "splt_customer_search";
+            this.splt_customer_search.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
-            // splitContainer1.Panel1
+            // splt_customer_search.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.button4);
-            this.splitContainer1.Panel1.Controls.Add(this.textBox3);
-            this.splitContainer1.Panel1.Controls.Add(this.label8);
+            this.splt_customer_search.Panel1.Controls.Add(this.button4);
+            this.splt_customer_search.Panel1.Controls.Add(this.txt_search_cust);
+            this.splt_customer_search.Panel1.Controls.Add(this.label8);
             // 
-            // splitContainer1.Panel2
+            // splt_customer_search.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.dataGridView1);
-            this.splitContainer1.Size = new System.Drawing.Size(485, 435);
-            this.splitContainer1.SplitterDistance = 46;
-            this.splitContainer1.TabIndex = 23;
-            this.splitContainer1.Visible = false;
+            this.splt_customer_search.Panel2.Controls.Add(this.dgv_list_customer);
+            this.splt_customer_search.Size = new System.Drawing.Size(485, 435);
+            this.splt_customer_search.SplitterDistance = 46;
+            this.splt_customer_search.TabIndex = 23;
+            this.splt_customer_search.Visible = false;
             // 
             // button4
             // 
@@ -460,14 +447,14 @@ namespace Vardhman
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // textBox3
+            // txt_search_cust
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(68, 10);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(273, 29);
-            this.textBox3.TabIndex = 24;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.txt_search_cust.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_search_cust.Location = new System.Drawing.Point(68, 10);
+            this.txt_search_cust.Name = "txt_search_cust";
+            this.txt_search_cust.Size = new System.Drawing.Size(273, 29);
+            this.txt_search_cust.TabIndex = 24;
+            this.txt_search_cust.TextChanged += new System.EventHandler(this.txt_search_cust_TextChanged);
             // 
             // label8
             // 
@@ -489,32 +476,24 @@ namespace Vardhman
             this.label7.TabIndex = 12;
             this.label7.Text = "Open Balance";
             // 
-            // textBox7
+            // txt_openbal
             // 
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(167, 166);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(139, 29);
-            this.textBox7.TabIndex = 4;
-            this.textBox7.Leave += new System.EventHandler(this.textBox7_Leave);
-            this.textBox7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox7_KeyPress);
-            // 
-            // textBox8
-            // 
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(167, 72);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(275, 29);
-            this.textBox8.TabIndex = 24;
+            this.txt_openbal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_openbal.Location = new System.Drawing.Point(167, 166);
+            this.txt_openbal.Name = "txt_openbal";
+            this.txt_openbal.Size = new System.Drawing.Size(139, 29);
+            this.txt_openbal.TabIndex = 4;
+            this.txt_openbal.Leave += new System.EventHandler(this.txt_openbal_Leave);
+            this.txt_openbal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_openbal_KeyPress);
             // 
             // lblid
             // 
             this.lblid.AutoSize = true;
             this.lblid.Location = new System.Drawing.Point(299, 216);
             this.lblid.Name = "lblid";
-            this.lblid.Size = new System.Drawing.Size(41, 13);
+            this.lblid.Size = new System.Drawing.Size(90, 13);
             this.lblid.TabIndex = 25;
-            this.lblid.Text = "label14";
+            this.lblid.Text = "hidden label for id";
             this.lblid.Visible = false;
             // 
             // Account_Head
@@ -524,37 +503,36 @@ namespace Vardhman
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(868, 734);
             this.Controls.Add(this.lblid);
-            this.Controls.Add(this.splitContainer1);
+            this.Controls.Add(this.splt_customer_search);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox4);
+            this.Controls.Add(this.cmb_city);
             this.Controls.Add(this.label18);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.chk_advanceentry);
+            this.Controls.Add(this.panel_advanced_entry);
+            this.Controls.Add(this.panel_buttons);
+            this.Controls.Add(this.panel_bank_detail);
+            this.Controls.Add(this.dtp_balancedate);
+            this.Controls.Add(this.cmb_acnttype);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.txt_openbal);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_acntname);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox8);
             this.Name = "Account_Head";
             this.Text = "Account Creation";
             this.Load += new System.EventHandler(this.Account_Head_Load);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Account_Head_FormClosing);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.PerformLayout();
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            this.splitContainer1.ResumeLayout(false);
+            this.panel_bank_detail.ResumeLayout(false);
+            this.panel_bank_detail.PerformLayout();
+            this.panel_buttons.ResumeLayout(false);
+            this.panel_advanced_entry.ResumeLayout(false);
+            this.panel_advanced_entry.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_list_customer)).EndInit();
+            this.splt_customer_search.Panel1.ResumeLayout(false);
+            this.splt_customer_search.Panel1.PerformLayout();
+            this.splt_customer_search.Panel2.ResumeLayout(false);
+            this.splt_customer_search.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -563,43 +541,42 @@ namespace Vardhman
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_acntname;
+        private System.Windows.Forms.TextBox txt_address;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txt_pincode;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txt_phno_1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txt_phno_2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.ComboBox cmb_acnttype;
+        private System.Windows.Forms.TextBox txt_bank_acnt_no;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.DateTimePicker dtp_balancedate;
+        private System.Windows.Forms.ComboBox cmb_bank_acnt_type;
+        private System.Windows.Forms.Panel panel_bank_detail;
+        private System.Windows.Forms.Button btn_save;
+        private System.Windows.Forms.Button btn_list;
+        private System.Windows.Forms.Button btn_clear;
+        private System.Windows.Forms.Panel panel_buttons;
+        private System.Windows.Forms.Panel panel_advanced_entry;
+        private System.Windows.Forms.CheckBox chk_advanceentry;
+        private System.Windows.Forms.ComboBox cmb_city;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox txt_note;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.DataGridView dgv_list_customer;
+        private System.Windows.Forms.SplitContainer splt_customer_search;
+        private System.Windows.Forms.TextBox txt_search_cust;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txt_openbal;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label lblid;
     }
 }
