@@ -267,7 +267,7 @@ namespace Vardhman
                                                                         e_columns.e_phno_2,
                                                                         e_columns.e_openbalance,
                                                                         e_columns.e_debcredit,
-                                                                        e_columns.e_inddate,
+                                                                        e_columns.e_date,
                                                                         e_columns.e_type,
                                                                         e_columns.e_accounttype,
                                                                         e_columns.e_accountnumber,
