@@ -110,6 +110,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "ITEM_TYPE_MERGE";
             this.Text = "ITEM_TYPE_MERGE";
+            this.Load += new System.EventHandler(this.ITEM_TYPE_MERGE_Load);
             this.SizeChanged += new System.EventHandler(this.ITEM_TYPE_MERGE_SizeChanged);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ITEM_TYPE_MERGE_FormClosing);
             this.groupBox1.ResumeLayout(false);

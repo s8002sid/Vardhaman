@@ -5,11 +5,13 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using Vardhman.db;
 
 namespace Vardhman
 {
     public partial class ITEM_TYPE_MERGE : Form
     {
+        public db.MainInternal internalData = null;
         public ITEM_TYPE_MERGE()
         {
             InitializeComponent();
@@ -18,33 +20,25 @@ namespace Vardhman
         private void comboBox1_Enter(object sender, EventArgs e)
         {
             string x = comboBox1.Text;
-            Connection con = new Connection();
-            con.connent();
-            DataTable dt = con.getTable("select distinct(typename) as typename from itemtype");
-            comboBox1.DataSource = dt;
-            comboBox1.DisplayMember = "typename";
-            con.disconnect();
+            comboBox1.DataSource = internalData.itemType.get(new e_columns[] { e_columns.e_typename }, e_db_operation.e_getUnique);
+            comboBox1.DisplayMember = internalData.itemType.column_to_str(e_columns.e_typename);
             comboBox1.Text = x;
         }
 
         private void comboBox2_Enter(object sender, EventArgs e)
         {
             string x = comboBox2.Text;
-            Connection con = new Connection();
-            con.connent();
-            DataTable dt = con.getTable("select distinct(typename) as typename from itemtype");
-            comboBox2.DataSource = dt;
-            comboBox2.DisplayMember = "typename";
-            con.disconnect();
+            comboBox2.DataSource = internalData.itemType.get(new e_columns[] { e_columns.e_typename }, e_db_operation.e_getUnique);
+            comboBox2.DisplayMember = internalData.itemType.column_to_str(e_columns.e_typename);
             comboBox2.Text = x;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Connection con = new Connection();
-            con.connent();
-            con.exeNonQurey(string.Format("exec PROC_ITEM_TYPE_MERGE '{0}','{1}'", comboBox1.Text, comboBox2.Text));
-            con.disconnect();
+            internalData.itemType.merge(new e_columns[] { e_columns.e_typename,
+                                                            e_columns.e_to_typename},
+                                            new string[] {  comboBox1.Text,
+                                                            comboBox2.Text}); 
             MessageBox.Show("Done");
             comboBox1.Text = "";
             comboBox2.Text = "";
@@ -61,6 +55,12 @@ namespace Vardhman
         {
             Main m = (Main)(this.MdiParent);
             m.init_container(childContainer.e_ItemTypeMerge);
+        }
+
+        private void ITEM_TYPE_MERGE_Load(object sender, EventArgs e)
+        {
+            if (internalData == null)
+                this.internalData = ((Main)this.MdiParent).getInternalData();
         }
     }
 }

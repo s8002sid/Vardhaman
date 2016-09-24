@@ -24,7 +24,11 @@ namespace Vardhman.db
         e_debcredit,
         e_id,
         e_select,
-        e_inddate
+        e_inddate,
+        e_typename,
+        e_shortcut,
+        e_Metercount,
+        e_to_typename
     }
     public enum e_error
     {
@@ -57,6 +61,10 @@ namespace Vardhman.db
             col_mapping.Add(e_columns.e_type, "type");
             col_mapping.Add(e_columns.e_select, "select");
             col_mapping.Add(e_columns.e_inddate, "inddate");
+            col_mapping.Add(e_columns.e_typename, "typename");
+            col_mapping.Add(e_columns.e_shortcut, "shortcut");
+            col_mapping.Add(e_columns.e_Metercount, "Metercount");
+            col_mapping.Add(e_columns.e_to_typename, "typename");
         }
         public static Dictionary<e_columns, string> getColMapping()
         {
@@ -97,7 +105,6 @@ namespace Vardhman.db
                 col_mapping.Add(col, orig_mapping[col]);
             }
         }
-        abstract protected void populate();
         protected bool col_valid(e_columns[] cols)
         {
             foreach (e_columns col in cols)
@@ -147,6 +154,7 @@ namespace Vardhman.db
                 return "";
             return col_mapping[col];
         }
+        abstract protected void populate();
         abstract public e_error add(e_columns[] columns, string[] values);
         abstract public e_error update(e_columns[] columns, string[] values);
         abstract protected void populate_col_list();
@@ -278,6 +286,74 @@ namespace Vardhman.db
                 return;
             con.connent();
             string select_query = "select *, dbo.inddatevar(date) as inddate from " + table_name;
+            table = con.getTable(select_query);
+            con.disconnect();
+        }
+    }
+    public class ItemType : ATable
+    {
+        protected override void populate_col_list()
+        {
+            col_list = new e_columns[] {e_columns.e_id,
+                                        e_columns.e_typename,
+                                        e_columns.e_shortcut,
+                                        e_columns.e_Metercount,
+                                        e_columns.e_to_typename};
+        }
+        protected override string get_table_name()
+        {
+            return "itemtype";
+        }
+        public ItemType(Connection con)
+            : base(con)
+        {
+
+        }
+
+        public override e_error add(e_columns[] columns, string[] values)
+        {
+            return e_error.e_success;
+        }
+        private void merge_internal(Dictionary<e_columns, string> key_val)
+        {
+            if (key_val[e_columns.e_typename] == key_val[e_columns.e_to_typename])
+                return;
+            DataRow[] row = table.Select(string.Format("typename='{0}'", key_val[e_columns.e_typename]));
+            row[0].Delete();
+        }
+        public override e_error update(e_columns[] columns, string[] values)
+        {
+            return e_error.e_success;
+        }
+        public e_error merge(e_columns[] columns, string[] values)
+        {
+            if (!col_valid(columns))
+                return e_error.e_invalid_col_error;
+
+            if (columns.Length != values.Length || columns.Length < 2)
+                return e_error.e_invalid_col_error;
+
+            Dictionary<e_columns, string> key_val = new Dictionary<e_columns, string>();
+            for (int i = 0; i < columns.Length; i++)
+            {
+                key_val.Add(columns[i], values[i]);
+            }
+            if (key_val[e_columns.e_typename] == key_val[e_columns.e_to_typename])
+                return e_error.e_success;
+            con.connent();
+            con.exeNonQurey(string.Format("exec PROC_ITEM_TYPE_MERGE '{0}','{1}'",
+                                            key_val[e_columns.e_typename],
+                                            key_val[e_columns.e_to_typename]));
+            con.disconnect();
+            merge_internal(key_val);
+            return e_error.e_success;
+        }
+        protected override void populate()
+        {
+            if (table != null)
+                return;
+            con.connent();
+            string select_query = "select * from " + table_name;
             table = con.getTable(select_query);
             con.disconnect();
         }
