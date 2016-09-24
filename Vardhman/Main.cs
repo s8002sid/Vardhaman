@@ -120,17 +120,28 @@ namespace Vardhman
         private void Main_SizeChanged(object sender, EventArgs e)
         {
             pictureBox1.Location = new Point(this.Width / 2 - pictureBox1.Width / 2, this.Height / 2 - pictureBox1.Height / 2);
-            btn_empty_bill.Location = new Point(this.Width-btn_empty_bill.Width*2, this.Height-btn_empty_bill.Height*3);
+            btn_empty_bill.Location = new Point(this.Width-btn_empty_bill.Width*2, this.Height-btn_empty_bill.Height*4);
+        }
+
+        public void DisplayMessageStart(string msg)
+        {
+            tsslbl_message.Text = msg + "...";
+        }
+        public void DisplayMessageEnd()
+        {
+            tsslbl_message.Text = ".";
         }
 
         private void Main_Load(object sender, EventArgs e)
         {
+            DisplayMessageStart("Loading Main Window");
             pictureBox1.Location = new Point(this.Width / 2 - pictureBox1.Width / 2, this.Height / 2 - pictureBox1.Height / 2);
             btn_empty_bill.Anchor = (AnchorStyles.Bottom | AnchorStyles.Right);
             foreach (childContainer val in Enum.GetValues(typeof(childContainer)))
             {
                 init_container(val);
             }
+            DisplayMessageEnd();
         }
 
         private void btn_MouseHover(object sender, EventArgs e)

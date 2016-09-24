@@ -49,9 +49,13 @@ namespace Vardhman
             this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.recoveryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.status_label = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tsslbl_message = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -375,12 +379,37 @@ namespace Vardhman
             this.recoveryToolStripMenuItem.Text = "Recovery";
             this.recoveryToolStripMenuItem.Click += new System.EventHandler(this.recoveryToolStripMenuItem_Click);
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.status_label,
+            this.tsslbl_message});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 653);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(933, 42);
+            this.statusStrip1.TabIndex = 16;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // status_label
+            // 
+            this.status_label.Name = "status_label";
+            this.status_label.Size = new System.Drawing.Size(233, 37);
+            this.status_label.Text = "Vardhaman Textile";
+            // 
+            // tsslbl_message
+            // 
+            this.tsslbl_message.Name = "tsslbl_message";
+            this.tsslbl_message.Size = new System.Drawing.Size(23, 37);
+            this.tsslbl_message.Text = ".";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(933, 695);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.panel1);
             this.IsMdiContainer = true;
@@ -394,6 +423,8 @@ namespace Vardhman
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -421,5 +452,8 @@ namespace Vardhman
         private System.Windows.Forms.Button btn_manual_bill_entry;
         private System.Windows.Forms.Button btn_new_ledger;
         private System.Windows.Forms.Button btn_item_type_merge;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel status_label;
+        private System.Windows.Forms.ToolStripStatusLabel tsslbl_message;
     }
 }
