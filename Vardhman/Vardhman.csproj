@@ -101,12 +101,6 @@
       <DependentUpon>billreportworg.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Check_items.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Check_items.Designer.cs">
-      <DependentUpon>Check_items.cs</DependentUpon>
-    </Compile>
     <Compile Include="billreportOriginal.cs">
       <DependentUpon>billreportOriginal.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -285,10 +279,6 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>billreportworg.cs</LastGenOutput>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Check_items.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>Check_items.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="billreportOriginal.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

@@ -108,7 +108,6 @@ namespace Vardhman
         public Main()
         {
             InitializeComponent();
-            DisplayMessage("Loading Main Window");
             con = new Connection();
             con.MainForm = this;
             internalData = new db.MainInternal(con);
