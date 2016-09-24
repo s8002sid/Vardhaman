@@ -117,6 +117,10 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="db\ATable.cs" />
+    <Compile Include="db\Customer.cs" />
+    <Compile Include="db\enum.cs" />
+    <Compile Include="db\ItemType.cs" />
     <Compile Include="db\mainInternal.cs" />
     <Compile Include="db\table.cs" />
     <Compile Include="interest caculator.cs">
