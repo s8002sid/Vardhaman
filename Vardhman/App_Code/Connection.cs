@@ -14,6 +14,23 @@ public class Connection
     SqlDataAdapter ada;
     SqlDataReader dr;
     SqlConnectionStringBuilder str;
+    Vardhman.Main _mainFrm = null;
+    public Vardhman.Main MainForm
+    {
+        get { return _mainFrm; }
+        set { _mainFrm = value; }
+    }
+    private void DisplayMessage(string msg)
+    {
+        if (_mainFrm != null)
+            {
+                _mainFrm.DisplayMessage(msg);
+            }
+            else
+            {
+                MessageBox.Show(msg);
+            }
+    }
     public Connection()
     {
         try
@@ -26,7 +43,8 @@ public class Connection
         }
         catch (Exception e)
         {
-            MessageBox.Show(e.Message.ToString());
+            DisplayMessage(e.Message.ToString());
+            throw;
         }
     }
     public Connection(string initialCatalog)
@@ -41,7 +59,8 @@ public class Connection
         }
         catch (Exception e)
         {
-            MessageBox.Show(e.Message.ToString());
+            DisplayMessage(e.Message.ToString());
+            throw;
         }
     }
     public SqlConnectionStringBuilder connectionstring()
@@ -56,7 +75,8 @@ public class Connection
         }
         catch (Exception e)
         {
-            MessageBox.Show(e.Message.ToString());
+            DisplayMessage(e.Message.ToString());
+            throw;
         }
     }
     public void disconnect()
@@ -67,7 +87,8 @@ public class Connection
         }
         catch (Exception e)
         {
-            MessageBox.Show(e.Message.ToString());
+            DisplayMessage(e.Message.ToString());
+            throw;
         }
     }
     public DataTable getTable(String qurey)
@@ -79,9 +100,10 @@ public class Connection
             ada = new SqlDataAdapter(qurey, conn);
             ada.Fill(dt);
         }
-        catch (Exception ex)
+        catch (Exception e)
         {
-            System.Windows.Forms.MessageBox.Show(ex.Message.ToString());
+            DisplayMessage(e.Message.ToString());
+            throw;
         }
 
         return dt;
@@ -96,9 +118,10 @@ public class Connection
             cmd = new SqlCommand(qurey, conn);
             i = cmd.ExecuteNonQuery();
         }
-        catch (Exception ex)
+        catch (Exception e)
         {
-            System.Windows.Forms.MessageBox.Show(ex.Message.ToString());
+            DisplayMessage(e.Message.ToString());
+            throw;
         }
 
         return i;
@@ -116,14 +139,16 @@ public class Connection
             try { da.Fill(ds); }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message.ToString());
+                DisplayMessage(e.Message.ToString());
+                throw;
             }
             
         }
         catch (Exception e)
         {
-            MessageBox.Show(e.Message.ToString());
+            DisplayMessage(e.Message.ToString());
             ds = null;
+            throw;
         }
         return ds;
     }
@@ -134,9 +159,10 @@ public class Connection
             cmd = new SqlCommand(qurey, conn);
             dr = cmd.ExecuteReader();
         }
-        catch (Exception ex)
+        catch (Exception e)
         {
-            System.Windows.Forms.MessageBox.Show(ex.Message.ToString());
+            DisplayMessage(e.Message.ToString());
+            throw;
         }
         return dr;
     }
@@ -156,7 +182,8 @@ public class Connection
         }
         catch (Exception ex)
         {
-            System.Windows.Forms.MessageBox.Show(ex.Message.ToString());
+            DisplayMessage(ex.Message.ToString());
+            throw;
         }
 
         return i;

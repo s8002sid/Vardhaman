@@ -108,7 +108,9 @@ namespace Vardhman
         public Main()
         {
             InitializeComponent();
+            DisplayMessage("Loading Main Window");
             con = new Connection();
+            con.MainForm = this;
             internalData = new db.MainInternal(con);
         }
 
@@ -123,25 +125,51 @@ namespace Vardhman
             btn_empty_bill.Location = new Point(this.Width-btn_empty_bill.Width*2, this.Height-btn_empty_bill.Height*4);
         }
 
-        public void DisplayMessageStart(string msg)
+        public void DisplayMessage(string msg)
         {
-            tsslbl_message.Text = msg + "...";
-        }
-        public void DisplayMessageEnd()
-        {
-            tsslbl_message.Text = ".";
+            string newMsg = msg;
+            int maxMsgLen = 130;
+            int textWidth = TextRenderer.MeasureText(msg, tsslbl_message.Font).Width;
+            int labelWidth = this.Width - status_label.Width - 20;
+            maxMsgLen = (msg.Length * labelWidth) / textWidth;
+            if (msg.Length > maxMsgLen)
+            {
+                newMsg = "";
+                int to = 0;
+                for (int i = 0; i < msg.Length; i += maxMsgLen)
+                {
+                    to = i + maxMsgLen;
+                    if (to > msg.Length)
+                        to = msg.Length;
+                    newMsg += msg.Substring(i, to - i) + "\n";
+                }
+            }
+            tsslbl_message.Text = newMsg;
         }
 
         private void Main_Load(object sender, EventArgs e)
         {
-            DisplayMessageStart("Loading Main Window");
             pictureBox1.Location = new Point(this.Width / 2 - pictureBox1.Width / 2, this.Height / 2 - pictureBox1.Height / 2);
             btn_empty_bill.Anchor = (AnchorStyles.Bottom | AnchorStyles.Right);
             foreach (childContainer val in Enum.GetValues(typeof(childContainer)))
             {
                 init_container(val);
             }
-            DisplayMessageEnd();
+            try
+            {
+                con.connent();
+                con.disconnect();
+            }
+            catch
+            {
+                con.disconnect();
+                DisplayMessage("Unable to connect to database. Kindly run application as an administrator, If problem is not solved then there is some problem in database setup");
+                foreach (Control c in this.Controls)
+                {
+                    c.Enabled = false;
+                }
+                //this.Enabled = false;
+            }
         }
 
         private void btn_MouseHover(object sender, EventArgs e)
