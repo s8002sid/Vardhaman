@@ -19,31 +19,31 @@ namespace Vardhman
 
         private void comboBox1_Enter(object sender, EventArgs e)
         {
-            string x = comboBox1.Text;
-            comboBox1.DataSource = internalData.itemType.get(new e_columns[] { e_columns.e_typename }, e_db_operation.e_getUnique);
-            comboBox1.DisplayMember = internalData.itemType.column_to_str(e_columns.e_typename);
-            comboBox1.Text = x;
+            string x = cmb_fromType.Text;
+            cmb_fromType.DataSource = internalData.itemType.get(new e_columns[] { e_columns.e_typename }, e_db_operation.e_getUnique);
+            cmb_fromType.DisplayMember = internalData.itemType.column_to_str(e_columns.e_typename);
+            cmb_fromType.Text = x;
         }
 
         private void comboBox2_Enter(object sender, EventArgs e)
         {
-            string x = comboBox2.Text;
-            comboBox2.DataSource = internalData.itemType.get(new e_columns[] { e_columns.e_typename }, e_db_operation.e_getUnique);
-            comboBox2.DisplayMember = internalData.itemType.column_to_str(e_columns.e_typename);
-            comboBox2.Text = x;
+            string x = cmb_toType.Text;
+            cmb_toType.DataSource = internalData.itemType.get(new e_columns[] { e_columns.e_typename }, e_db_operation.e_getUnique);
+            cmb_toType.DisplayMember = internalData.itemType.column_to_str(e_columns.e_typename);
+            cmb_toType.Text = x;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             internalData.itemType.merge(new e_columns[] { e_columns.e_typename,
                                                             e_columns.e_to_typename},
-                                            new string[] {  comboBox1.Text,
-                                                            comboBox2.Text}); 
+                                            new string[] {  cmb_fromType.Text,
+                                                            cmb_toType.Text}); 
             MessageBox.Show("Done");
-            comboBox1.Text = "";
-            comboBox2.Text = "";
-            comboBox1.Focus();
-            comboBox1.Select();
+            cmb_fromType.Text = "";
+            cmb_toType.Text = "";
+            cmb_fromType.Focus();
+            cmb_fromType.Select();
         }
 
         private void ITEM_TYPE_MERGE_SizeChanged(object sender, EventArgs e)
