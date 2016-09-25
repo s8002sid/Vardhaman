@@ -5,40 +5,35 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using Vardhman.db;
 
 namespace Vardhman
 {
     public partial class ListManualBills : Form
     {
-        Connection con = new Connection();
         ManualBilling bde;
         string billno;
-        public ListManualBills()
+        public db.MainInternal internalData = null;
+        public ListManualBills(MainInternal t_internalData)
         {
             InitializeComponent();
+            internalData = t_internalData;
         }
 
         private void form_billprint_Load(object sender, EventArgs e)
         {
-            con.connent();
-            dataGridView1.DataSource = con.getTable("select name , city , billno , id from view_manual_bill_master order by billno desc");
+            dataGridView1.DataSource = internalData.viewManualBillMaster.get(new e_columns[] { e_columns.e_name, e_columns.e_city, e_columns.e_billno, e_columns.e_id },
+                                                                        e_db_operation.e_getAll, "", "billno desc");
             dataGridView1.Columns[3].Visible = false;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
-                int x = Convert.ToInt32(textBox1.Text);
-                dataGridView1.DataSource = con.getTable(string.Format("select name , city , billno , id from view_manual_bill_master where billno like('{0}%') order by billno desc" , textBox1.Text));
-                dataGridView1.Columns[3].Visible = false;
-            }
-            catch
-            {
-                string y = textBox1.Text;
-                dataGridView1.DataSource = con.getTable(string.Format("select name , city , billno , id from view_manual_bill_master where name like('{0}%') order by billno desc", textBox1.Text));
-                dataGridView1.Columns[3].Visible = false;
-            }
+            dataGridView1.DataSource = internalData.viewManualBillMaster.get(new e_columns[] { e_columns.e_name, e_columns.e_city, e_columns.e_billno, e_columns.e_id },
+                                                                            e_db_operation.e_getAll,
+                                                                            string.Format("Convert(billno,'System.String') like ('%{0}%') or name like ('%{0}%')", textBox1.Text) ,
+                                                                            "billno desc");
+            dataGridView1.Columns[3].Visible = false;
         }
         public void getbde(ManualBilling b)
         {
