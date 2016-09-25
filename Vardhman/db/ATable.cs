@@ -86,6 +86,27 @@ namespace Vardhman.db
             DataTable newTable = view.ToTable(distinct, str);
             return newTable;
         }
+
+        public DataTable get(e_columns[] cols, e_db_operation oper, string where, string sort)
+        {
+            if (!col_valid(cols))
+                return new DataTable();
+            populate();
+            DataView view = new DataView(table);
+            if (where.Trim() != "")
+                view.RowFilter = where;
+            if (sort.Trim() != "")
+                view.Sort = sort;
+            bool distinct = oper == e_db_operation.e_getUnique ? true : false;
+            string[] str = col_arr_to_str_arr(cols);
+            for (int i = 0; i < str.Length; i++)
+            {
+                str[i] = str[i].Replace("[", string.Empty).Replace("]", string.Empty);
+            }
+            DataTable newTable = view.ToTable(distinct, str);
+            return newTable;
+        }
+
         public string column_to_str(e_columns col)
         {
             if (!col_mapping.ContainsKey(col))

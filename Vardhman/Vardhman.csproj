@@ -124,6 +124,7 @@
     <Compile Include="db\ItemDetail.cs" />
     <Compile Include="db\ItemType.cs" />
     <Compile Include="db\mainInternal.cs" />
+    <Compile Include="db\ViewBillMaster.cs" />
     <Compile Include="interest caculator.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,11 +200,11 @@
     <Compile Include="dateselection.Designer.cs">
       <DependentUpon>dateselection.cs</DependentUpon>
     </Compile>
-    <Compile Include="form_billprint.cs">
+    <Compile Include="list_bills.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="form_billprint.Designer.cs">
-      <DependentUpon>form_billprint.cs</DependentUpon>
+    <Compile Include="list_bills.Designer.cs">
+      <DependentUpon>list_bills.cs</DependentUpon>
     </Compile>
     <Compile Include="insupd.cs">
       <SubType>Form</SubType>
@@ -326,9 +327,9 @@
       <SubType>Designer</SubType>
       <DependentUpon>dateselection.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="form_billprint.resx">
+    <EmbeddedResource Include="list_bills.resx">
       <SubType>Designer</SubType>
-      <DependentUpon>form_billprint.cs</DependentUpon>
+      <DependentUpon>list_bills.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="insupd.resx">
       <SubType>Designer</SubType>

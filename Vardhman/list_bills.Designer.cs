@@ -1,6 +1,6 @@
 namespace Vardhman
 {
-    partial class lisl_bills
+    partial class list_bills
     {
         /// <summary>
         /// Required designer variable.

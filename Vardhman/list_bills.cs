@@ -8,14 +8,16 @@ using System.Windows.Forms;
 
 namespace Vardhman
 {
-    public partial class lisl_bills : Form
+    public partial class list_bills : Form
     {
         Connection con = new Connection();
         Billing_dataentry bde;
         string billno;
-        public lisl_bills()
+        public db.MainInternal internalData = null;
+        public list_bills(db.MainInternal t_internalData)
         {
             InitializeComponent();
+            internalData = t_internalData;
         }
 
         private void form_billprint_Load(object sender, EventArgs e)

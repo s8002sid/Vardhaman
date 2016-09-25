@@ -29,7 +29,21 @@ namespace Vardhman.db
         e_item_name,
         e_company,
         e_price,
-        e_type_name
+        e_type_name,
+        e_billno,
+        e_total,
+        e_expenseper,
+        e_expenses,
+        e_transport,
+        e_transportcharge,
+        e_transportnumber,
+        e_grandtotal,
+        e_through,
+        e_paymenttype,
+        e_rgtotal,
+        e_iscd,
+        e_vatper,
+        e_vat
     }
     public enum e_error
     {
@@ -70,6 +84,20 @@ namespace Vardhman.db
             col_mapping.Add(e_columns.e_company, "Company");
             col_mapping.Add(e_columns.e_price, "price");
             col_mapping.Add(e_columns.e_type_name, "[Type Name]");
+            col_mapping.Add(e_columns.e_billno, "billno");
+            col_mapping.Add(e_columns.e_total, "total");
+            col_mapping.Add(e_columns.e_expenseper, "expenseper");
+            col_mapping.Add(e_columns.e_expenses, "expenses");
+            col_mapping.Add(e_columns.e_transport, "transport");
+            col_mapping.Add(e_columns.e_transportcharge, "transportcharge");
+            col_mapping.Add(e_columns.e_transportnumber, "transportnumber");
+            col_mapping.Add(e_columns.e_grandtotal, "grandtotal");
+            col_mapping.Add(e_columns.e_through, "through");
+            col_mapping.Add(e_columns.e_paymenttype, "paymenttype");
+            col_mapping.Add(e_columns.e_rgtotal, "rgtotal");
+            col_mapping.Add(e_columns.e_iscd, "iscd");
+            col_mapping.Add(e_columns.e_vatper, "vatper");
+            col_mapping.Add(e_columns.e_vat, "vat");       
         }
         public static Dictionary<e_columns, string> getColMapping()
         {
