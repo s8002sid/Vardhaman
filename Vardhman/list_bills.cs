@@ -5,12 +5,12 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using Vardhman.db;
 
 namespace Vardhman
 {
     public partial class list_bills : Form
     {
-        Connection con = new Connection();
         Billing_dataentry bde;
         string billno;
         public db.MainInternal internalData = null;
@@ -22,22 +22,15 @@ namespace Vardhman
 
         private void form_billprint_Load(object sender, EventArgs e)
         {
-            con.connent();
-            dataGridView1.DataSource = con.getTable("select name , city , billno from view_bill_master order by billno desc");
+            dataGridView1.DataSource = internalData.viewBillMaster.get(new e_columns[] { e_columns.e_name, e_columns.e_city, e_columns.e_billno },
+                                                                        e_db_operation.e_getAll, "", "billno desc");
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
-                int x = Convert.ToInt32(textBox1.Text);
-                dataGridView1.DataSource = con.getTable(string.Format("select name , city , billno from view_bill_master where billno like('{0}%') order by billno desc" , textBox1.Text));
-            }
-            catch
-            {
-                string y = textBox1.Text;
-                dataGridView1.DataSource = con.getTable(string.Format("select name , city , billno from view_bill_master where name like('{0}%') order by billno desc", textBox1.Text));
-            }
+            dataGridView1.DataSource = internalData.viewBillMaster.get(new e_columns[] { e_columns.e_name, e_columns.e_city, e_columns.e_billno },
+                                                                            e_db_operation.e_getAll,
+                                                                            "billno like ('{0}%') or name like ('{0}%')", "billno desc");
         }
         public void getbde(Billing_dataentry b)
         {

@@ -10,12 +10,14 @@ namespace Vardhman.db
         public ItemType itemType;
         public Company company;
         public ItemDetail itemDetail;
+        public ViewBillMaster viewBillMaster;
         public MainInternal(Connection con)
         {
             customer = new Customer(con, this);
             itemType = new ItemType(con, this);
             company = new Company(con, this);
             itemDetail = new ItemDetail(con, this);
+            viewBillMaster = new ViewBillMaster(con, this);
         }
     }
 }
