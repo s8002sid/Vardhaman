@@ -19,8 +19,8 @@ namespace Vardhman.db
         {
             return "itemtype";
         }
-        public ItemType(Connection con)
-            : base(con)
+        public ItemType(Connection con, MainInternal t_internalData)
+            : base(con, t_internalData)
         {
 
         }

@@ -8,10 +8,14 @@ namespace Vardhman.db
     {
         public Customer customer;
         public ItemType itemType;
+        public Company company;
+        public ItemDetail itemDetail;
         public MainInternal(Connection con)
         {
-            customer = new Customer(con);
-            itemType = new ItemType(con);
+            customer = new Customer(con, this);
+            itemType = new ItemType(con, this);
+            company = new Company(con, this);
+            itemDetail = new ItemDetail(con, this);
         }
     }
 }

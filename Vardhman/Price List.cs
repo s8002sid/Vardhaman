@@ -5,11 +5,17 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-
+using Vardhman.db;
+/*Price List is running a sql strord procedure for Inserting/Updating Item entry.
+  To avoid taking all these things in to consideration, we just made all relevant
+  tables empty. So whenever next time someone request for these tables, they will
+  get re-populated. This can also be taken care by just inserting values to datatable
+  However, by this operation our database and datatable will become inconsistent.*/
 namespace Vardhman
 {
     public partial class Price_List : Form
     {
+        public db.MainInternal internalData = null;
         public Price_List()
         {
             InitializeComponent();
@@ -32,6 +38,8 @@ namespace Vardhman
 
         private void Price_List_Load(object sender, EventArgs e)
         {
+            if (internalData == null)
+                this.internalData = ((Main)this.MdiParent).getInternalData();
             clear();
         }
         private string append_code(string name, string rate)
@@ -173,13 +181,12 @@ namespace Vardhman
 
         private void clear()
         {
-            Connection con = new Connection();
-            con.connent();
-            cbo_company.DataSource = con.getTable("select distinct(name) as name from company where name is not null and name <> ''");
-            cbo_company.DisplayMember = "name";
+            cbo_company.DataSource = internalData.company.get(new e_columns[] { e_columns.e_name }, e_db_operation.e_getUnique, "name is not null and name <> ''");
+            cbo_company.DisplayMember = internalData.company.column_to_str(e_columns.e_name);
             cbo_company.Text = "";
-            cbo_type.DataSource = con.getTable("select distinct(typename) as type from itemtype where typename is not null and typename <> ''");
-            cbo_type.DisplayMember = "type";
+
+            cbo_type.DataSource = internalData.itemType.get(new e_columns[] { e_columns.e_typename }, e_db_operation.e_getUnique, "typename is not null and typename <> ''");
+            cbo_type.DisplayMember = internalData.itemType.column_to_str(e_columns.e_typename);
             cbo_type.Text = "";
             dgv_item_entry.Rows.Clear();
         }
@@ -195,9 +202,11 @@ namespace Vardhman
             }
             
             AutoCompleteStringCollection acs = new AutoCompleteStringCollection();
-            Connection con = new Connection();
-            con.connent();
-            DataTable dt = con.getTable(string.Format("select distinct([Item Name]) from item_detail item where [Item Name] <> '' and [Item Name] is not null and Company like('{0}%') and  [Type Name] like('{1}%') " , cbo_company.Text.Trim() , cbo_type.Text.Trim()));
+            DataTable dt = internalData.itemDetail.get(new e_columns[] { e_columns.e_item_name },
+                                                       e_db_operation.e_getUnique,
+                                                       string.Format("[Item Name] <> '' and [Item Name] is not null and Company like('{0}%') and  [Type Name] like('{1}%') ",
+                                                            cbo_company.Text.Trim(),
+                                                            cbo_type.Text.Trim()));
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 acs.Add(dt.Rows[i][0].ToString());
@@ -232,10 +241,8 @@ namespace Vardhman
             string company = cbo_company.Text.Trim();
             string type = cbo_company.Text.Trim();
             string name = get_dgv_value(row, "itemname");
-            Connection con = new Connection();
-            con.connent();
-            string rate = con.exesclr(string.Format("exec get_price '{0}' , '{1}' , '{2}'", company, type, name));
-            if (rate == "-1")
+            double rate = internalData.itemDetail.getPrice(company, type, name);
+            if (rate == -1)
                 return;
             set_dgv_value(row, "rate",Vardhman.roundOff.withpoint(rate.ToString()));
         }
@@ -276,6 +283,9 @@ namespace Vardhman
             con.connent();
             con.exeNonQurey(query);
             con.disconnect();
+            internalData.company.emptyTable();
+            internalData.itemType.emptyTable();
+            internalData.itemDetail.emptyTable();
             MessageBox.Show("Item Saved / Updated Successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             clear();
         }

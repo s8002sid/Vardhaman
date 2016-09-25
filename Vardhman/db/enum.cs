@@ -25,7 +25,11 @@ namespace Vardhman.db
         e_typename,
         e_shortcut,
         e_Metercount,
-        e_to_typename
+        e_to_typename,
+        e_item_name,
+        e_company,
+        e_price,
+        e_type_name
     }
     public enum e_error
     {
@@ -62,6 +66,10 @@ namespace Vardhman.db
             col_mapping.Add(e_columns.e_shortcut, "shortcut");
             col_mapping.Add(e_columns.e_Metercount, "Metercount");
             col_mapping.Add(e_columns.e_to_typename, "typename");
+            col_mapping.Add(e_columns.e_item_name, "[Item Name]");
+            col_mapping.Add(e_columns.e_company, "Company");
+            col_mapping.Add(e_columns.e_price, "price");
+            col_mapping.Add(e_columns.e_type_name, "[Type Name]");
         }
         public static Dictionary<e_columns, string> getColMapping()
         {

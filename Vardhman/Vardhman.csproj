@@ -118,11 +118,12 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="db\ATable.cs" />
+    <Compile Include="db\Company.cs" />
     <Compile Include="db\Customer.cs" />
     <Compile Include="db\enum.cs" />
+    <Compile Include="db\ItemDetail.cs" />
     <Compile Include="db\ItemType.cs" />
     <Compile Include="db\mainInternal.cs" />
-    <Compile Include="db\table.cs" />
     <Compile Include="interest caculator.cs">
       <SubType>Form</SubType>
     </Compile>

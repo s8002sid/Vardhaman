@@ -12,7 +12,8 @@ namespace Vardhman.db
         protected string table_name;
         protected Connection con;
         protected DataTable table;
-        public ATable(Connection con)
+        protected MainInternal internalData;
+        public ATable(Connection con, MainInternal t_internalData)
         {
             this.con = con;
             col_mapping = null;
@@ -22,6 +23,11 @@ namespace Vardhman.db
             populate_col_list();
             populate_col_mapping();
             table_name = get_table_name();
+            internalData = t_internalData;
+        }
+        public void emptyTable()
+        {
+            table = null;
         }
         protected void populate_col_mapping()
         {
@@ -73,6 +79,10 @@ namespace Vardhman.db
             view.RowFilter = where;
             bool distinct = oper == e_db_operation.e_getUnique ? true : false;
             string[] str = col_arr_to_str_arr(cols);
+            for (int i = 0; i < str.Length; i++)
+            {
+                str[i] = str[i].Replace("[", string.Empty).Replace("]", string.Empty);
+            }
             DataTable newTable = view.ToTable(distinct, str);
             return newTable;
         }

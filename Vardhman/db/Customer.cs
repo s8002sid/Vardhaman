@@ -31,8 +31,8 @@ namespace Vardhman.db
         {
             return "customer";
         }
-        public Customer(Connection con)
-            : base(con)
+        public Customer(Connection con, MainInternal t_internalData)
+            : base(con, t_internalData)
         {
 
         }
