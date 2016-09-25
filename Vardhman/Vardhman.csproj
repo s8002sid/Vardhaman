@@ -124,8 +124,11 @@
     <Compile Include="db\ItemDetail.cs" />
     <Compile Include="db\ItemType.cs" />
     <Compile Include="db\mainInternal.cs" />
+    <Compile Include="db\Password.cs" />
     <Compile Include="db\ViewBillMaster.cs" />
+    <Compile Include="db\ViewCBE.cs" />
     <Compile Include="db\ViewManualBillMaster.cs" />
+    <Compile Include="db\ViewRecepit.cs" />
     <Compile Include="interest caculator.cs">
       <SubType>Form</SubType>
     </Compile>

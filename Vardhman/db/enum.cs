@@ -43,7 +43,18 @@ namespace Vardhman.db
         e_rgtotal,
         e_iscd,
         e_vatper,
-        e_vat
+        e_vat,
+        e_recepitno,
+        e_amount,
+        e_cd,
+        e_manualrecepit,
+        e_bank,
+        e_bank_city,
+        e_checknumber,
+        e_bank_name,
+        e_checkno,
+        e_bounce_charge,
+        e_passwd
     }
     public enum e_error
     {
@@ -97,7 +108,18 @@ namespace Vardhman.db
             col_mapping.Add(e_columns.e_rgtotal, "rgtotal");
             col_mapping.Add(e_columns.e_iscd, "iscd");
             col_mapping.Add(e_columns.e_vatper, "vatper");
-            col_mapping.Add(e_columns.e_vat, "vat");       
+            col_mapping.Add(e_columns.e_vat, "vat");
+            col_mapping.Add(e_columns.e_recepitno, "recepitno");
+            col_mapping.Add(e_columns.e_amount, "amount");
+            col_mapping.Add(e_columns.e_cd, "cd");
+            col_mapping.Add(e_columns.e_manualrecepit, "manualrecepit");
+            col_mapping.Add(e_columns.e_bank, "bank");
+            col_mapping.Add(e_columns.e_bank_city, "bank_city");
+            col_mapping.Add(e_columns.e_checknumber, "checknumber");
+            col_mapping.Add(e_columns.e_bank_name, "bank_name");
+            col_mapping.Add(e_columns.e_checkno, "checkno");
+            col_mapping.Add(e_columns.e_bounce_charge, "bounce_charge");
+            col_mapping.Add(e_columns.e_passwd, "passwd");
         }
         public static Dictionary<e_columns, string> getColMapping()
         {

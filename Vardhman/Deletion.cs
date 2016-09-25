@@ -5,12 +5,14 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using Vardhman.db;
 
 namespace Vardhman
 {
     public partial class Deletion : Form
     {
         Connection con = new Connection();
+        public db.MainInternal internalData = null;
         public Deletion()
         {
             InitializeComponent();
@@ -19,6 +21,8 @@ namespace Vardhman
         private void Deletion_Load(object sender, EventArgs e)
         {
             con.connent();
+            if (internalData == null)
+                this.internalData = ((Main)this.MdiParent).getInternalData();
             label1.Text = "Bill Deletion";
             fill();
         }
@@ -27,25 +31,64 @@ namespace Vardhman
             DataTable dt = null;
             if (radioButton1.Checked == true)
             {
-                dt = con.getTable(string.Format("select name , city from customer where name like('{0}%') order by name" , textBox1.Text));
+                dt = internalData.customer.get(new e_columns[] { e_columns.e_name, e_columns.e_city }, 
+                                                e_db_operation.e_getAll, 
+                                                string.Format("name like('{0}%')", textBox1.Text),
+                                                "name asc");
                 label1.Text = "Account Deletion";
                 splitContainer1.Panel1.BackColor = Color.LightBlue;
             }
             else if (radioButton2.Checked == true)
             {
-                dt = con.getTable(string.Format("select name , city , billno , dbo.inddatevar(date) as date , total , expenses , grandtotal from view_bill_master where name like('{0}%') order by billno", textBox1.Text));
+                dt = internalData.viewBillMaster.get(new e_columns[] {e_columns.e_name,
+                                                                        e_columns.e_city,
+                                                                        e_columns.e_billno,
+                                                                        e_columns.e_inddate,
+                                                                        e_columns.e_total,
+                                                                        e_columns.e_expenses,
+                                                                        e_columns.e_grandtotal},
+                                                                        e_db_operation.e_getAll,
+                                                                        string.Format("name like('{0}%')", textBox1.Text),
+                                                                        "billno asc");
+                dt.Columns[internalData.viewBillMaster.column_to_str(e_columns.e_inddate)].ColumnName = "date";
                 label1.Text = "Bill Deletion";
                 splitContainer1.Panel1.BackColor = Color.LightCoral;
             }
             else if (radioButton3.Checked == true)
             {
-                dt = con.getTable(string.Format("select name , city , recepitno , dbo.inddatevar(date) as date , amount as total , cd , total as grandtotal , bank as [bank name] , bank_city , checknumber from view_recepit where name like('{0}%') order by recepitno", textBox1.Text));
+                dt = internalData.viewRecepit.get(new e_columns[] { e_columns.e_name,
+                                                                    e_columns.e_city,
+                                                                    e_columns.e_recepitno,
+                                                                    e_columns.e_inddate,
+                                                                    e_columns.e_amount,
+                                                                    e_columns.e_total,
+                                                                    e_columns.e_bank,
+                                                                    e_columns.e_bank_city,
+                                                                    e_columns.e_checknumber},
+                                                                    e_db_operation.e_getAll,
+                                                                    string.Format("name like('{0}%')", textBox1.Text),
+                                                                    "recepitno asc");
+                dt.Columns[internalData.viewRecepit.column_to_str(e_columns.e_inddate)].ColumnName = "date";
+                dt.Columns[internalData.viewRecepit.column_to_str(e_columns.e_total)].ColumnName = "grandtotal";
+                dt.Columns[internalData.viewRecepit.column_to_str(e_columns.e_amount)].ColumnName = "total";
+                dt.Columns[internalData.viewRecepit.column_to_str(e_columns.e_bank)].ColumnName = "bank name";
                 label1.Text = "Recepit Deletion";
                 splitContainer1.Panel1.BackColor = Color.LightGoldenrodYellow;
             }
             else if (radioButton4.Checked == true)
             {
-                dt = con.getTable(string.Format("select date , name , city , bank_name , bank_city , checkno , bounce_charge , recepitno , id from view_cbe where  name like('{0}%') order by name", textBox1.Text));
+                dt = internalData.viewCBE.get(new e_columns[] {e_columns.e_date,
+                                                            e_columns.e_name,
+                                                            e_columns.e_city,
+                                                            e_columns.e_bank_name,
+                                                            e_columns.e_bank_city,
+                                                            e_columns.e_checkno,
+                                                            e_columns.e_bounce_charge,
+                                                            e_columns.e_recepitno,
+                                                            e_columns.e_id},
+                                                            e_db_operation.e_getAll,
+                                                            string.Format("name like('{0}%')", textBox1.Text),
+                                                            "name asc");
                 label1.Text = "Chk Bounce Entry Deletion";
                 splitContainer1.Panel1.BackColor = Color.LightSeaGreen;
             }
@@ -65,7 +108,7 @@ namespace Vardhman
                 return;
             string passwd = p.Passwd;
             string value1, value2;
-            string storedpass = con.exesclr("select min(passwd) as password from password_");
+            string storedpass = internalData.passsword.getPassword();
             if (storedpass != passwd)
             {
                 MessageBox.Show("Password donot match");
@@ -81,6 +124,7 @@ namespace Vardhman
             {
                 value1 = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["billno"].Value.ToString();
                 con.exeNonQurey(string.Format("exec bill_del {0}", value1));
+                internalData.viewBillMaster.delete(value1);
                 con.exeNonQurey(string.Format("exec insert_deletion_history 'Bill',{0}", value1));
                 MessageBox.Show("Bill Deleted Successfully");
             }
@@ -88,6 +132,7 @@ namespace Vardhman
             {
                 value1 = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["recepitno"].Value.ToString();
                 con.exeNonQurey(string.Format("delete from recepit where recepitno = {0}", value1));
+                internalData.viewRecepit.delete(value1);
                 con.exeNonQurey(string.Format("exec insert_deletion_history 'Receipt',{0}", value1));
                 MessageBox.Show("Recepit Deleted Successfully");
             }
