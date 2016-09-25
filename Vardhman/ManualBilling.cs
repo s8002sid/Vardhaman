@@ -16,6 +16,7 @@ namespace Vardhman
         int changed, company;
         int bill;
         int callmetercal;
+        public db.MainInternal internalData = null;
         public ManualBilling()
         {
             InitializeComponent();
@@ -32,6 +33,8 @@ namespace Vardhman
             changed = 0;
             callmetercal = 0;
             DataGridViewCellStyle cs = new DataGridViewCellStyle();
+            if (internalData == null)
+                this.internalData = ((Main)this.MdiParent).getInternalData();
             clear();
             //comboBox1.DataSource = con.getTable("select name from customer");
             //comboBox1.DisplayMember = "name";
@@ -1119,7 +1122,7 @@ namespace Vardhman
         }
         private void button6_Click(object sender, EventArgs e)
         {
-            ListManualBills l = new ListManualBills();
+            ListManualBills l = new ListManualBills(internalData);
             l.getbde(this);
             l.ShowDialog();
             l.BringToFront();

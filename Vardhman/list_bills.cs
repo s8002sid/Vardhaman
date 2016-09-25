@@ -30,7 +30,8 @@ namespace Vardhman
         {
             dataGridView1.DataSource = internalData.viewBillMaster.get(new e_columns[] { e_columns.e_name, e_columns.e_city, e_columns.e_billno },
                                                                             e_db_operation.e_getAll,
-                                                                            "billno like ('{0}%') or name like ('{0}%')", "billno desc");
+                                                                            string.Format("Convert(billno,'System.String') like ('%{0}%') or name like ('%{0}%')", textBox1.Text), 
+                                                                            "billno desc");
         }
         public void getbde(Billing_dataentry b)
         {

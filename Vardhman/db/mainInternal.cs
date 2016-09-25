@@ -11,6 +11,7 @@ namespace Vardhman.db
         public Company company;
         public ItemDetail itemDetail;
         public ViewBillMaster viewBillMaster;
+        public ViewManualBillMaster viewManualBillMaster;
         public MainInternal(Connection con)
         {
             customer = new Customer(con, this);
@@ -18,6 +19,7 @@ namespace Vardhman.db
             company = new Company(con, this);
             itemDetail = new ItemDetail(con, this);
             viewBillMaster = new ViewBillMaster(con, this);
+            viewManualBillMaster = new ViewManualBillMaster(con, this);
         }
     }
 }

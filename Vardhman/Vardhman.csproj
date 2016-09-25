@@ -125,6 +125,7 @@
     <Compile Include="db\ItemType.cs" />
     <Compile Include="db\mainInternal.cs" />
     <Compile Include="db\ViewBillMaster.cs" />
+    <Compile Include="db\ViewManualBillMaster.cs" />
     <Compile Include="interest caculator.cs">
       <SubType>Form</SubType>
     </Compile>
