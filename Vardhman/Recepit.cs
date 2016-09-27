@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using Vardhman.db;
 
 namespace Vardhman
 {
@@ -13,6 +14,7 @@ namespace Vardhman
     {
         Connection con = new Connection();
         int company;
+        public db.MainInternal internalData = null;
         public Recepit()
         {
             InitializeComponent();
@@ -24,20 +26,27 @@ namespace Vardhman
             company = 0;
             panel2.Location = new Point(173, 290);
             splitContainer1.Location = new Point(168, 109);
+            if (internalData == null)
+                this.internalData = ((Main)this.MdiParent).getInternalData();
             clear();
         }
         private void clear()
         {
-            textBox1.Text = con.exesclr("select isnull(max(recepitno) , 0) + 1 from recepit");
-            comboBox1.DataSource = con.getTable("select distinct(name) as name from customer where type = 'CUSTOMER' and name is not null");
+            DataTable dt = internalData.viewRecepit.get(new e_columns[] { e_columns.e_recepitno }, e_db_operation.e_getAll);
+            Int32 recepitno = Convert.ToInt32(dt.Compute(string.Format("max({0})", internalData.viewRecepit.column_to_str(e_columns.e_recepitno)), string.Empty)) +1;
+
+            textBox1.Text = recepitno.ToString();
+            comboBox1.DataSource = internalData.customer.get(new e_columns[] { e_columns.e_name }, e_db_operation.e_getUnique, "type = 'CUSTOMER' and name is not null");
             company = 0;
-            comboBox1.DisplayMember = "name";
-            comboBox2.DataSource = con.getTable("select distinct(city) as city from customer where type = 'CUSTOMER' and city <> '' and city is not null");
-            comboBox2.DisplayMember = "city";
+            comboBox1.DisplayMember = internalData.customer.column_to_str(e_columns.e_name);
+            comboBox2.DataSource = internalData.customer.get(new e_columns[] { e_columns.e_city }, 
+                                                                e_db_operation.e_getUnique, 
+                                                                "type = 'CUSTOMER' and city <> '' and city is not null");
+            comboBox2.DisplayMember = internalData.customer.column_to_str(e_columns.e_city);
             comboBox1.Text = "";
             comboBox2.Text = "";
-            comboBox3.DataSource = con.getTable("select name from customer where type = 'BANK'");
-            comboBox3.DisplayMember = "name";
+            comboBox3.DataSource = internalData.customer.get(new e_columns[] { e_columns.e_name }, e_db_operation.e_getUnique, "type = 'BANK'");
+            comboBox3.DisplayMember = internalData.customer.column_to_str(e_columns.e_name);
             comboBox3.Text = "";
             splitContainer1.Visible = false;
             button2.Text = "Print and Save";
@@ -63,6 +72,7 @@ namespace Vardhman
             textBox18.Text = "";
             textBox20.Text = "";
             comboBox1.Select(); comboBox1.Focus();
+            dateTimePicker1.Value = DateTime.Today;
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -109,11 +119,25 @@ namespace Vardhman
         {
             if (textBox8.Text == "")
                 return;
-            DataTable dt = con.getTable(string.Format("exec get_billdetail '{0}' , '{1}'", textBox8.Text, dateTimePicker1.Text.ToString().Split(Convert.ToChar(" "))[0]));
+            DataTable dt = internalData.viewBillMaster.get(new e_columns[] {e_columns.e_billno,
+                                                                            e_columns.e_name,
+                                                                            e_columns.e_city,
+                                                                            e_columns.e_inddate,
+                                                                            e_columns.e_total,
+                                                                            e_columns.e_expenses,
+                                                                            e_columns.e_transport,
+                                                                            e_columns.e_transportcharge,
+                                                                            e_columns.e_grandtotal,
+                                                                            e_columns.e_date},
+                                                                            e_db_operation.e_getUnique,
+                                                                            string.Format("billno = {0}", textBox8.Text));
+            //DataTable dt = con.getTable(string.Format("exec get_billdetail '{0}' , '{1}'", textBox8.Text, dateTimePicker1.Text.ToString().Split(Convert.ToChar(" "))[0]));
             if (dt.Rows[0][0].ToString() == "0")
                 return;
             else
             {
+                DateTime billDate = Convert.ToDateTime(dt.Rows[0][9].ToString());
+                TimeSpan ts = (dateTimePicker1.Value - billDate);
                 textBox10.Text = dt.Rows[0][1].ToString();
                 textBox11.Text = dt.Rows[0][2].ToString();
                 textBox12.Text = dt.Rows[0][3].ToString();
@@ -122,7 +146,7 @@ namespace Vardhman
                 textBox15.Text = dt.Rows[0][6].ToString();
                 textBox16.Text = dt.Rows[0][7].ToString();
                 textBox17.Text = dt.Rows[0][8].ToString();
-                textBox18.Text = dt.Rows[0][9].ToString();
+                textBox18.Text = ts.Days.ToString();
                 panel4.Visible = true;
                 //if (comboBox1.Text == "")
                 //    comboBox1.Text = textBox10.Text;
@@ -216,84 +240,86 @@ namespace Vardhman
         private int save()
         {
             int maxrecepitno, cuttent;
-                maxrecepitno = Convert.ToInt32(con.exesclr("select isnull(max(recepitno),0) + 1 from recepit"));
-                cuttent = Convert.ToInt32(textBox1.Text);
-                if (textBox1.Text == "" || comboBox2.Text == "" || comboBox1.Text == "" || textBox4.Text == "" || textBox2.Text == "")
+            DataTable dt = internalData.viewRecepit.get(new e_columns[] { e_columns.e_recepitno }, e_db_operation.e_getAll);
+            maxrecepitno = Convert.ToInt32(dt.Compute(string.Format("max({0})", internalData.viewRecepit.column_to_str(e_columns.e_recepitno)), string.Empty)) + 1;
+            cuttent = Convert.ToInt32(textBox1.Text);
+            if (textBox1.Text == "" || comboBox2.Text == "" || comboBox1.Text == "" || textBox4.Text == "" || textBox2.Text == "")
+            {
+                MessageBox.Show("Please fill all fields", "warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return 0;
+            }
+            string xxaabb = con.exesclr(string.Format("check_bill_receipt_number 'Receipt',{0}", textBox1.Text));
+            if (xxaabb == "1")
+            {
+                Supporter.message_error("Cannot use deleted Receipt number please change Receipt number");
+                textBox1.Select();
+                textBox1.Focus();
+                return 0;
+            }
+            if (textBox3.Text == "")
+                textBox3.Text = "0.00";
+            string zero = "null", four = "null", five = "null", six = "null", ten = "null";
+            if (textBox1.Text != "")
+                zero = textBox1.Text;
+            if (textBox2.Text != "")
+                four = textBox2.Text;
+            if (textBox3.Text != "")
+                five = textBox3.Text;
+            if (textBox4.Text != "")
+                six = textBox4.Text;
+            if (textBox8.Text != "")
+                ten = textBox8.Text;
+            string abc = dateTimePicker1.Text;
+            string x;
+            if (button1.Text == "Save") 
+            x = con.exesclr(string.Format("exec add_recepit {0} , '{1}' , '{2}' , '{3}' , {4} , {5} , {6} , '{7}' , '{8}' , '{9}' , '{10}' , '{11}' , '{12}'", zero, dateTimePicker1.Text.ToString().Split(Convert.ToChar(" "))[0], comboBox1.Text, comboBox2.Text, four, five, six, textBox7.Text, comboBox3.Text, textBox6.Text, ten, textBox9.Text , textBox20.Text));
+            else
+            x = con.exesclr(string.Format("exec add_recepit {0} , '{1}' , '{2}' , '{3}' , {4} , {5} , {6} , '{7}' , '{8}' , '{9}' , '{10}' , '{11}' , '{12}'", zero, dateTimePicker1.Text.ToString().Split(Convert.ToChar(" "))[0], comboBox1.Text, comboBox2.Text, four, five, six, textBox7.Text, comboBox3.Text, textBox6.Text, ten, textBox9.Text , textBox20.Text));
+            if (x == "0")
+            {
+                MessageBox.Show("Invalid customer name", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                comboBox1.Focus(); comboBox1.Select();
+                company = 1;
+            }
+            else if (x == "1")
+            {
+                MessageBox.Show("Invalid Bank name", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                comboBox3.Focus(); comboBox3.Select();
+                company = 1;
+            }
+            else
+            {
+                if (button1.Text == "Save")
                 {
-                    MessageBox.Show("Please fill all fields", "warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return 0;
-                }
-                string xxaabb = con.exesclr(string.Format("check_bill_receipt_number 'Receipt',{0}", textBox1.Text));
-                if (xxaabb == "1")
-                {
-                    Supporter.message_error("Cannot use deleted Receipt number please change Receipt number");
-                    textBox1.Select();
-                    textBox1.Focus();
-                    return 0;
-                }
-                if (textBox3.Text == "")
-                    textBox3.Text = "0.00";
-                string zero = "null", four = "null", five = "null", six = "null", ten = "null";
-                if (textBox1.Text != "")
-                    zero = textBox1.Text;
-                if (textBox2.Text != "")
-                    four = textBox2.Text;
-                if (textBox3.Text != "")
-                    five = textBox3.Text;
-                if (textBox4.Text != "")
-                    six = textBox4.Text;
-                if (textBox8.Text != "")
-                    ten = textBox8.Text;
-                string abc = dateTimePicker1.Text;
-                string x;
-                if (button1.Text == "Save") 
-                x = con.exesclr(string.Format("exec add_recepit {0} , '{1}' , '{2}' , '{3}' , {4} , {5} , {6} , '{7}' , '{8}' , '{9}' , '{10}' , '{11}' , '{12}'", zero, dateTimePicker1.Text.ToString().Split(Convert.ToChar(" "))[0], comboBox1.Text, comboBox2.Text, four, five, six, textBox7.Text, comboBox3.Text, textBox6.Text, ten, textBox9.Text , textBox20.Text));
-                else
-                x = con.exesclr(string.Format("exec add_recepit {0} , '{1}' , '{2}' , '{3}' , {4} , {5} , {6} , '{7}' , '{8}' , '{9}' , '{10}' , '{11}' , '{12}'", zero, dateTimePicker1.Text.ToString().Split(Convert.ToChar(" "))[0], comboBox1.Text, comboBox2.Text, four, five, six, textBox7.Text, comboBox3.Text, textBox6.Text, ten, textBox9.Text , textBox20.Text));
-                if (x == "0")
-                {
-                    MessageBox.Show("Invalid customer name", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    comboBox1.Focus(); comboBox1.Select();
-                    company = 1;
-                }
-                else if (x == "1")
-                {
-                    MessageBox.Show("Invalid Bank name", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    comboBox3.Focus(); comboBox3.Select();
-                    company = 1;
-                }
-                else
-                {
-                    if (button1.Text == "Save")
+                    for (int i = maxrecepitno; i < cuttent; i++)
                     {
-                        for (int i = maxrecepitno; i < cuttent; i++)
-                        {
-                            con.exeNonQurey(string.Format("insert into recepit(recepitno) values({0})", i.ToString()));
-                        }
-                        MessageBox.Show("Recepit Saved Successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        con.exeNonQurey(string.Format("insert into recepit(recepitno) values({0})", i.ToString()));
                     }
-                    else
-                    MessageBox.Show("Recepit Updated Successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    comboBox1.Focus(); comboBox1.Select();
-                    con.exeNonQurey("delete from temp_recepit");
-                    string zero1 = "null", four1 = "null", five1 = "null", six1 = "null", ten1 = "null";
-                    if (textBox1.Text != "")
-                        zero1 = textBox1.Text;
-                    if (textBox2.Text != "")
-                        four1 = textBox2.Text;
-                    if (textBox3.Text != "")
-                        five1 = textBox3.Text;
-                    if (textBox4.Text != "")
-                        six1 = textBox4.Text;
-                    if (textBox8.Text != "")
-                        ten1 = textBox8.Text;
-                    if (ten1.ToLower() == "null")
-                        ten1 = "    ------";
-                    create_backup.create();
-                    con.exeNonQurey(string.Format("insert into temp_recepit(recepitno , date , customername , city , amount , cd , total , bankname , checknumber , rupeeword , billno , through , manualrecepit , note) values({0} ,'{1}' ,'{2}'  ,'{3}' , {4},{5},{6},'{7}','{8}' , '{9}' , '{10}' , '{11}' , '{12}' , '{13}' )", zero1, dateTimePicker1.Text.ToString().Split(Convert.ToChar(Convert.ToChar(" ")))[0], comboBox1.Text + " " + comboBox2.Text, comboBox2.Text, four1, five1, six1, comboBox3.Text, textBox6.Text, textBox5.Text, ten1, textBox9.Text , textBox7.Text , textBox20.Text));
-                    clear();
+                    MessageBox.Show("Recepit Saved Successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                return 1;
+                else
+                    MessageBox.Show("Recepit Updated Successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                internalData.viewRecepit.emptyTable();
+                comboBox1.Focus(); comboBox1.Select();
+                con.exeNonQurey("delete from temp_recepit");
+                string zero1 = "null", four1 = "null", five1 = "null", six1 = "null", ten1 = "null";
+                if (textBox1.Text != "")
+                    zero1 = textBox1.Text;
+                if (textBox2.Text != "")
+                    four1 = textBox2.Text;
+                if (textBox3.Text != "")
+                    five1 = textBox3.Text;
+                if (textBox4.Text != "")
+                    six1 = textBox4.Text;
+                if (textBox8.Text != "")
+                    ten1 = textBox8.Text;
+                if (ten1.ToLower() == "null")
+                    ten1 = "    ------";
+                create_backup.create();
+                con.exeNonQurey(string.Format("insert into temp_recepit(recepitno , date , customername , city , amount , cd , total , bankname , checknumber , rupeeword , billno , through , manualrecepit , note) values({0} ,'{1}' ,'{2}'  ,'{3}' , {4},{5},{6},'{7}','{8}' , '{9}' , '{10}' , '{11}' , '{12}' , '{13}' )", zero1, dateTimePicker1.Text.ToString().Split(Convert.ToChar(Convert.ToChar(" ")))[0], comboBox1.Text + " " + comboBox2.Text, comboBox2.Text, four1, five1, six1, comboBox3.Text, textBox6.Text, textBox5.Text, ten1, textBox9.Text , textBox7.Text , textBox20.Text));
+                clear();
+            }
+            return 1;
         }
 
         private void comboBox2_Enter(object sender, EventArgs e)
@@ -301,8 +327,9 @@ namespace Vardhman
             string x = comboBox2.Text;
             if (comboBox1.Text == "")
                 return;
-            comboBox2.DataSource = con.getTable(string.Format("select distinct(city) as city from customer where name = '{0}' and city <> ''" , comboBox1.Text));
-            comboBox2.DisplayMember = "city";
+            comboBox2.DataSource = internalData.customer.get(new e_columns[] { e_columns.e_city }, e_db_operation.e_getUnique, 
+                                                                                string.Format("name = '{0}' and city <> ''", comboBox1.Text));
+            comboBox2.DisplayMember = internalData.customer.column_to_str(e_columns.e_city);
             //if(x!="")
             //comboBox2.Text = x;
         }
@@ -380,7 +407,8 @@ namespace Vardhman
 
         private void button4_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = con.getTable("select recepitno , name , city from view_recepit where date is not null order by recepitno desc");
+            dataGridView1.DataSource = internalData.viewRecepit.get(new e_columns[] { e_columns.e_recepitno, e_columns.e_name, e_columns.e_city },
+                                                                                        e_db_operation.e_getAll, "date is not null", "recepitno desc");
             splitContainer1.Visible = true;
         }
 
@@ -391,7 +419,10 @@ namespace Vardhman
 
         private void textBox19_TextChanged(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = con.getTable(string.Format("select recepitno , name , city from view_recepit where name like('{0}%') order by recepitno desc" , textBox19.Text));            
+            dataGridView1.DataSource = internalData.viewRecepit.get(new e_columns[] { e_columns.e_recepitno, e_columns.e_name, e_columns.e_city },
+                                                                                    e_db_operation.e_getAll,
+                                                                                    string.Format("name like('{0}%')", textBox19.Text),
+                                                                                    "recepitno desc");
         }
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
@@ -400,7 +431,35 @@ namespace Vardhman
             {
 
                 button1.Text = "Update";
-                DataTable dt = con.getTable(string.Format("select recepitno , date , name , city , amount , cd , total , isnull(manualrecepit , '') , isnull(bank , '') , isnull(bank_city , '') , isnull(checknumber , '') , isnull(billno , '') , isnull(through , '') from view_recepit where recepitno = {0}", dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString()));
+                DataTable dt = internalData.viewRecepit.get(new e_columns[] {e_columns.e_recepitno,
+                                                                             e_columns.e_date,
+                                                                             e_columns.e_name,
+                                                                             e_columns.e_city,
+                                                                             e_columns.e_amount,
+                                                                             e_columns.e_cd,
+                                                                             e_columns.e_total,
+                                                                             e_columns.e_manualrecepit,
+                                                                             e_columns.e_bank,
+                                                                             e_columns.e_bank_city,
+                                                                             e_columns.e_checknumber,
+                                                                             e_columns.e_billno,
+                                                                             e_columns.e_through},
+                                                                             e_db_operation.e_getAll,
+                                                                             string.Format("recepitno = {0}", dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString()));
+                if (dt.Rows[0][internalData.viewRecepit.column_to_str(e_columns.e_manualrecepit)] == DBNull.Value)
+                    dt.Rows[0][internalData.viewRecepit.column_to_str(e_columns.e_manualrecepit)] = "";
+                if (dt.Rows[0][internalData.viewRecepit.column_to_str(e_columns.e_bank)] == DBNull.Value)
+                    dt.Rows[0][internalData.viewRecepit.column_to_str(e_columns.e_bank)] = "";
+                if (dt.Rows[0][internalData.viewRecepit.column_to_str(e_columns.e_bank_city)] == DBNull.Value)
+                    dt.Rows[0][internalData.viewRecepit.column_to_str(e_columns.e_bank_city)] = "";
+                if (dt.Rows[0][internalData.viewRecepit.column_to_str(e_columns.e_checknumber)] == DBNull.Value)
+                    dt.Rows[0][internalData.viewRecepit.column_to_str(e_columns.e_checknumber)] = "";
+                if (dt.Rows[0][internalData.viewRecepit.column_to_str(e_columns.e_billno)] == DBNull.Value)
+                    dt.Rows[0][internalData.viewRecepit.column_to_str(e_columns.e_billno)] = "";
+                if (dt.Rows[0][internalData.viewRecepit.column_to_str(e_columns.e_through)] == DBNull.Value)
+                    dt.Rows[0][internalData.viewRecepit.column_to_str(e_columns.e_through)] = "";
+
+                //DataTable dt = con.getTable(string.Format("select recepitno , date , name , city , amount , cd , total , isnull(manualrecepit , '') , isnull(bank , '') , isnull(bank_city , '') , isnull(checknumber , '') , isnull(billno , '') , isnull(through , '') from view_recepit where recepitno = {0}", dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString()));
                 textBox1.Text = dt.Rows[0][0].ToString();
                 dateTimePicker1.Text = dt.Rows[0][1].ToString();
                 comboBox1.Text = dt.Rows[0][2].ToString();
@@ -440,7 +499,8 @@ namespace Vardhman
         private void textBox9_Enter(object sender, EventArgs e)
         {
             AutoCompleteStringCollection str1 = new AutoCompleteStringCollection();
-            DataTable dt = con.getTable("select distinct(through) from recepit where through <> '' and through is not null");
+            DataTable dt = internalData.viewRecepit.get(new e_columns[] { e_columns.e_through }, e_db_operation.e_getUnique,
+                                                        "through <> '' and through is not null");
             for(int i = 0;i<dt.Rows.Count;i++)
                 str1.Add(dt.Rows[i][0].ToString());
             textBox9.AutoCompleteCustomSource = str1;
@@ -450,8 +510,8 @@ namespace Vardhman
         private void comboBox1_Enter(object sender, EventArgs e)
         {
             string x = comboBox3.Text;
-            comboBox3.DataSource = con.getTable("select name from customer where type = 'BANK'");
-            comboBox3.DisplayMember = "name";
+            comboBox3.DataSource = internalData.customer.get(new e_columns[] { e_columns.e_name }, e_db_operation.e_getAll, "type = 'BANK'");
+            comboBox3.DisplayMember = internalData.viewRecepit.column_to_str(e_columns.e_name); ;
             comboBox3.Text = "";
             comboBox3.Text = x;
         }

@@ -61,6 +61,8 @@ namespace Vardhman.db
         e_success,
         e_duplicate_error,
         e_invalid_col_error,
+        e_invalid_bank_name,
+        e_invalid_customer_name,
         e_unknown_error
     }
     class ColMapping
