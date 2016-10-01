@@ -14,6 +14,7 @@ namespace Vardhman
             Connection con = new Connection();
             con.connent();
             DataTable dt = con.getTable("select path from autobackuppath");
+            con.disconnect();
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 if (!Directory.Exists(dt.Rows[i][0].ToString()))
@@ -27,15 +28,15 @@ namespace Vardhman
                 }
                 checknumberoffile(today);
                 string path = today + @"\" + DateTime.Now.TimeOfDay.Milliseconds.ToString() + "." + DateTime.Now.TimeOfDay.Seconds.ToString() + "." + DateTime.Now.TimeOfDay.Minutes.ToString() + "." + DateTime.Now.TimeOfDay.Hours.ToString() + ".bak";
-                con.exeNonQurey(string.Format("exec full_backup '{0}'", path));
+                db_backup_query(path);
             }
-            con.disconnect();
+            
         }
         public static void db_backup_query(string path)
         {
             Connection con = new Connection();
             con.connent();
-            con.exeNonQurey(string.Format("exec full_backup '{0}'", path));
+            con.exeNonQurey(string.Format("BACKUP DATABASE vardhman TO DISK = '{0}'", path));
             con.disconnect();
         }
 
@@ -44,6 +45,7 @@ namespace Vardhman
             Connection con = new Connection("master");
             con.connent();
             con.exeNonQurey(string.Format("BACKUP DATABASE vardhman TO DISK = '{0}'", backupPath));
+            con.exeNonQurey("ALTER DATABASE vardhman SET Single_User WITH Rollback IMMEDIATE");
             con.exeNonQurey(string.Format("RESTORE DATABASE vardhman FROM DISK = '{0}'", restorePath));
             con.disconnect();
         }
