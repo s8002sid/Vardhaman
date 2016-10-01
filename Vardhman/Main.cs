@@ -294,5 +294,11 @@ namespace Vardhman
         {
             ShowForm(itemTypeMerge);
         }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutBox ab = new AboutBox();
+            ab.ShowDialog();
+        }
     }
 }
