@@ -75,6 +75,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.button7 = new System.Windows.Forms.Button();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -110,7 +111,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(1028, 491);
+            this.splitContainer1.Size = new System.Drawing.Size(1072, 491);
             this.splitContainer1.SplitterDistance = 95;
             this.splitContainer1.TabIndex = 0;
             this.splitContainer1.TabStop = false;
@@ -130,7 +131,7 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.splitContainer4);
-            this.splitContainer3.Size = new System.Drawing.Size(1028, 95);
+            this.splitContainer3.Size = new System.Drawing.Size(1072, 95);
             this.splitContainer3.SplitterDistance = 64;
             this.splitContainer3.TabIndex = 30;
             this.splitContainer3.TabStop = false;
@@ -158,7 +159,7 @@
             // 
             this.splitContainer5.Panel2.Controls.Add(this.label1);
             this.splitContainer5.Panel2.Controls.Add(this.textBox1);
-            this.splitContainer5.Size = new System.Drawing.Size(1028, 64);
+            this.splitContainer5.Size = new System.Drawing.Size(1072, 64);
             this.splitContainer5.SplitterDistance = 30;
             this.splitContainer5.TabIndex = 30;
             this.splitContainer5.TabStop = false;
@@ -289,13 +290,14 @@
             // 
             // splitContainer4.Panel2
             // 
+            this.splitContainer4.Panel2.Controls.Add(this.button7);
             this.splitContainer4.Panel2.Controls.Add(this.checkBox1);
             this.splitContainer4.Panel2.Controls.Add(this.label8);
             this.splitContainer4.Panel2.Controls.Add(this.textBox5);
             this.splitContainer4.Panel2.Controls.Add(this.label11);
             this.splitContainer4.Panel2.Controls.Add(this.label9);
             this.splitContainer4.Panel2.Controls.Add(this.textBox3);
-            this.splitContainer4.Size = new System.Drawing.Size(1028, 27);
+            this.splitContainer4.Size = new System.Drawing.Size(1072, 27);
             this.splitContainer4.SplitterDistance = 460;
             this.splitContainer4.TabIndex = 23;
             // 
@@ -361,10 +363,10 @@
             // 
             this.textBox5.Location = new System.Drawing.Point(195, 5);
             this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
             this.textBox5.Size = new System.Drawing.Size(106, 20);
             this.textBox5.TabIndex = 22;
             this.textBox5.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox5_KeyDown);
+            this.textBox5.Leave += new System.EventHandler(this.textBox5_Leave);
             // 
             // label11
             // 
@@ -417,7 +419,7 @@
             this.splitContainer2.Panel2.Controls.Add(this.button5);
             this.splitContainer2.Panel2.Controls.Add(this.label3);
             this.splitContainer2.Panel2.Controls.Add(this.label2);
-            this.splitContainer2.Size = new System.Drawing.Size(1028, 392);
+            this.splitContainer2.Size = new System.Drawing.Size(1072, 392);
             this.splitContainer2.SplitterDistance = 322;
             this.splitContainer2.TabIndex = 0;
             this.splitContainer2.TabStop = false;
@@ -431,7 +433,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1028, 322);
+            this.dataGridView1.Size = new System.Drawing.Size(1072, 322);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             this.dataGridView1.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dataGridView1_RowsRemoved);
@@ -652,11 +654,21 @@
             this.label2.Text = "Date From";
             this.label2.Visible = false;
             // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(473, 4);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(108, 23);
+            this.button7.TabIndex = 24;
+            this.button7.Text = "Fill Open Interest";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
             // new_ledger
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1028, 491);
+            this.ClientSize = new System.Drawing.Size(1072, 491);
             this.Controls.Add(this.splitContainer1);
             this.Name = "new_ledger";
             this.Text = "new_ledger";
@@ -740,5 +752,6 @@
         private System.Windows.Forms.SplitContainer splitContainer5;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button button7;
     }
 }

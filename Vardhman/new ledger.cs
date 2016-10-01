@@ -197,6 +197,8 @@ namespace Vardhman
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex == -1)
+                return;
             if (level == 1)
             {
                 string city = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
@@ -826,6 +828,17 @@ namespace Vardhman
         {
             Main m = (Main)(this.MdiParent);
             m.init_container(childContainer.e_NewLedger);
+        }
+
+        private void textBox5_Leave(object sender, EventArgs e)
+        {
+            calculatetotal();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            ledger();
+            calculatetotal();
         }
     }
 }
