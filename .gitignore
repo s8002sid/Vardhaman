@@ -218,3 +218,8 @@ pip-log.txt
 .mr.developer.cfg
 *.suo
 Vardhman/obj/Vardhman.csproj.FileListAbsolute.txt
+*.exe
+Vardhman/bin/x86/Release/Vardhman.pdb
+*.Cache
+Vardhman/obj/x86/Release/Vardhman.Main.resources
+*.pdb
