@@ -728,6 +728,8 @@ namespace Vardhman
                 }
                 create_backup.create();
                 MessageBox.Show("Bill Saved Successfully", "Saved Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                internalData.viewManualBillMaster.emptyTable();
+                internalData.customer.emptyTable();
                 con.exeNonQurey(string.Format("exec temp_manual_bill_allocate {0} , '{1}'", textBox2.Text , dateTimePicker1.Text));
                 clear();
                 return 1;
@@ -807,6 +809,8 @@ namespace Vardhman
                 MessageBox.Show("Bill Updated Successfully", "Saved Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 con.exeNonQurey(string.Format("exec temp_manual_bill_allocate {0} , '{1}'", textBox2.Text , dateTimePicker1.Text));
                 clear();
+                internalData.viewManualBillMaster.emptyTable();
+                internalData.customer.emptyTable();
                 return 1;
             }
             return 1;

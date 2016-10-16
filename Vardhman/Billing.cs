@@ -737,6 +737,12 @@ namespace Vardhman
                 }
                 create_backup.create();
                 MessageBox.Show("Bill Saved Successfully", "Saved Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                internalData.viewBillMaster.emptyTable();
+                internalData.customer.emptyTable();
+                internalData.company.emptyTable();
+                internalData.customer.emptyTable();
+                internalData.itemDetail.emptyTable();
+                internalData.itemType.emptyTable();
                 con.exeNonQurey(string.Format("exec temp_bill_allocate {0}", textBox2.Text));
                 clear();
                 return 1;
@@ -816,6 +822,12 @@ namespace Vardhman
                 MessageBox.Show("Bill Updated Successfully", "Saved Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 con.exeNonQurey(string.Format("exec temp_bill_allocate {0}", textBox2.Text));
                 clear();
+                internalData.viewBillMaster.emptyTable();
+                internalData.customer.emptyTable();
+                internalData.company.emptyTable();
+                internalData.customer.emptyTable();
+                internalData.itemDetail.emptyTable();
+                internalData.itemType.emptyTable();
                 return 1;
             }
             return 1;
