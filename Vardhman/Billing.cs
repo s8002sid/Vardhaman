@@ -75,6 +75,10 @@ namespace Vardhman
         {
             total();
         }
+        public static string DataRowToString(DataRow dr)
+        {
+            return dr[0].ToString();
+        }
         private AutoCompleteStringCollection getAutocompletedata(int column, int row)
         {
             string col0, col1, col2, type = "";
@@ -98,13 +102,10 @@ namespace Vardhman
             param += "'" + col2 + "'";
             try
             {
-                SqlDataReader dr = con.exereader("exec get_autocomplete " + param);
-                while (dr.Read())
-                {
-                    src.Add(dr[0].ToString());
-                }
-                con.closereader();
-                dr.Close();
+                DataTable dt = con.getTable("exec get_autocomplete " + param);
+                DataRow[] dr = dt.Select();
+                string[] str_arr = Array.ConvertAll<DataRow,string>(dr, new Converter<DataRow, string>(DataRowToString));
+                src.AddRange(str_arr);
             }
             catch(Exception ex)
             {
