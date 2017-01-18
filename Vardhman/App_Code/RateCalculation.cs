@@ -13,7 +13,7 @@ namespace Vardhman
             {
                 tag = Convert.ToDouble(x);
                 string start, mid, end;
-                if (x.StartsWith("5") && x.EndsWith("5"))
+                if ((x.StartsWith("5") && x.EndsWith("5")) || x.StartsWith("8") && x.EndsWith("8"))
                 {
                     mid = x.Substring(1, x.Length - 2);
                     return Convert.ToDouble(mid);
