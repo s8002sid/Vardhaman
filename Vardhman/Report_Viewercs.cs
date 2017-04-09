@@ -92,7 +92,7 @@ namespace Vardhman
             else if (rptname == "Ledger")
             {
                 ledger_recepit_summary_rpt ds2 = new ledger_recepit_summary_rpt();
-                SqlCommand cmd = new SqlCommand(String.Format("select name , dbo.inddatevar(date) as date1 , detail , exp, payment, recepit from ledger where name = '{0}' order by date" , name + " " + city), con);
+                SqlCommand cmd = new SqlCommand(String.Format("select name , dbo.inddatevar(date) as date1 , detail , exp, payment, recepit, date as date_orig from ledger where name = '{0}' order by date", name + " " + city), con);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(ds2.Tables["Ledger"]);
 
@@ -106,7 +106,7 @@ namespace Vardhman
             else if (rptname == "newledger")
             {
                 ledger_recepit_summary_rpt ds2 = new ledger_recepit_summary_rpt();
-                SqlCommand cmd = new SqlCommand("select name , date as date1 , detail , exp, payment, recepit from printledger", con);
+                SqlCommand cmd = new SqlCommand("select name , date as date1 , detail , exp, payment, recepit, dbo.indvardate(date) as date_orig from printledger", con);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(ds2.Tables["Ledger"]);
 
