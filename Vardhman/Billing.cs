@@ -515,8 +515,9 @@ namespace Vardhman
             }
             if (textBox12.Text.Trim() == "")
             {
-                MessageBox.Show("cannot save Vat is empty", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return 0;
+                //MessageBox.Show("cannot save Vat is empty", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //return 0;
+                textBox12.Text = "0.00";
             }
             if (textBox5.Text.Trim() == "")
             {
@@ -744,7 +745,7 @@ namespace Vardhman
                 internalData.customer.emptyTable();
                 internalData.itemDetail.emptyTable();
                 internalData.itemType.emptyTable();
-                con.exeNonQurey(string.Format("exec temp_bill_allocate {0}", textBox2.Text));
+                con.exeNonQurey(string.Format("exec temp_bill_allocate {0}, '{1}'", textBox2.Text, lbl_tax.Text));
                 clear();
                 return 1;
             }
@@ -821,7 +822,7 @@ namespace Vardhman
                 }
 
                 MessageBox.Show("Bill Updated Successfully", "Saved Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                con.exeNonQurey(string.Format("exec temp_bill_allocate {0}", textBox2.Text));
+                con.exeNonQurey(string.Format("exec temp_bill_allocate {0}, '{1}'", textBox2.Text, lbl_tax.Text));
                 clear();
                 internalData.viewBillMaster.emptyTable();
                 internalData.customer.emptyTable();
@@ -869,7 +870,17 @@ namespace Vardhman
             dateTimePicker1.Enabled = true;
             comboBox1.Select();
             comboBox1.Focus();
-
+            lbl_tax.Text = VatGst.CurrentTaxStr(dateTimePicker1.Value);
+            lbl_taxper.Text = lbl_tax.Text + "%";
+            textBox11.Enabled = textBox12.Enabled = VatGst.IsGstEnabled(dateTimePicker1.Value) | VatGst.IsVatEnabled(dateTimePicker1.Value);
+            if (VatGst.IsGstEnabled(dateTimePicker1.Value))
+            {
+                textBox11.Text = "5.00";
+            }
+            else if (VatGst.IsVatEnabled(dateTimePicker1.Value))
+            {
+                textBox11.Text = "1.00";
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -990,6 +1001,9 @@ namespace Vardhman
             DataTable dt = con.getTable(string.Format("exec check_billdate {0} , '{1}' , {2}", textBox2.Text, dateTimePicker1.Text.ToString().Split(Convert.ToChar(" "))[0] , abc));
             if (dt.Rows[0][0].ToString() != "0" && dt.Rows[0][0].ToString() != "1")
                 MessageBox.Show("Date should be between " + dt.Rows[0][0].ToString() + " " + dt.Rows[0][1].ToString());
+            lbl_tax.Text = VatGst.CurrentTaxStr(dateTimePicker1.Value);
+            lbl_taxper.Text = lbl_tax.Text + "%";
+            textBox11.Enabled = textBox12.Enabled = VatGst.IsGstEnabled(dateTimePicker1.Value) | VatGst.IsVatEnabled(dateTimePicker1.Value);
         }
 
         private void dataGridView1_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
@@ -1142,7 +1156,11 @@ namespace Vardhman
             }
             textBox9.Text = rgamt.ToString();
             textBox2.ReadOnly = true;
+            lbl_tax.Text = VatGst.CurrentTaxStr(dateTimePicker1.Value);
+            lbl_taxper.Text = lbl_tax.Text + "%";
+            textBox11.Enabled = textBox12.Enabled = VatGst.IsGstEnabled(dateTimePicker1.Value) | VatGst.IsVatEnabled(dateTimePicker1.Value);
             //dateTimePicker1.Enabled = false;
+
         }
         private bool is_cd(string grandtotal, string total, string rgtotal, string transportcharge)
         {
