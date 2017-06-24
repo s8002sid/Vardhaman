@@ -515,6 +515,7 @@
     <Compile Include="Item_Type.Designer.cs">
       <DependentUpon>Item_Type.cs</DependentUpon>
     </Compile>
+    <Compile Include="VatGst.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Logo_Shop.png" />

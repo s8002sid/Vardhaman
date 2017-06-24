@@ -129,14 +129,17 @@ namespace Vardhman
             if (x == "Bill")
             {
                 string billno = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["Detail"].Value.ToString();
+                string date = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["date of trans"].Value.ToString();
+                DateTime datevar = DateTime.ParseExact(date, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
                 if (billno[0] == 'M')
                 {
                     billno = billno.Substring(1);
-                    string date = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["date of trans"].Value.ToString();
-                    con.exeNonQurey(string.Format("exec temp_manual_bill_allocate {0} , '{1}'", billno , date));
+                    con.exeNonQurey(string.Format("exec temp_manual_bill_allocate {0} , '{1}', '{2}'", billno, date, VatGst.CurrentTaxStr(datevar)));
                 }
                 else
-                    con.exeNonQurey(string.Format("exec temp_bill_allocate {0}", billno));
+                {
+                    con.exeNonQurey(string.Format("exec temp_bill_allocate {0}, '{1}'", billno, VatGst.CurrentTaxStr(datevar)));
+                }
                 rv = new Report_Viewercs();
                 rv.loadrpt("worg1");
                 rv.ShowDialog();

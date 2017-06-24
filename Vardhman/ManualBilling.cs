@@ -526,8 +526,9 @@ namespace Vardhman
 
             if (textBox12.Text.Trim() == "")
             {
-                MessageBox.Show("cannot save Vat is empty", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return 0;
+                //MessageBox.Show("cannot save Vat is empty", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //return 0;
+                textBox12.Text = "0.00";
             }
 
             if (textBox5.Text.Trim() == "")
@@ -730,7 +731,7 @@ namespace Vardhman
                 MessageBox.Show("Bill Saved Successfully", "Saved Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 internalData.viewManualBillMaster.emptyTable();
                 internalData.customer.emptyTable();
-                con.exeNonQurey(string.Format("exec temp_manual_bill_allocate {0} , '{1}'", textBox2.Text , dateTimePicker1.Text));
+                con.exeNonQurey(string.Format("exec temp_manual_bill_allocate {0} , '{1}', '{2}'", textBox2.Text , dateTimePicker1.Text, VatGst.CurrentTaxStr(dateTimePicker1.Value)));
                 clear();
                 return 1;
             }
@@ -807,7 +808,7 @@ namespace Vardhman
                 }
 
                 MessageBox.Show("Bill Updated Successfully", "Saved Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                con.exeNonQurey(string.Format("exec temp_manual_bill_allocate {0} , '{1}'", textBox2.Text , dateTimePicker1.Text));
+                con.exeNonQurey(string.Format("exec temp_manual_bill_allocate {0} , '{1}', '{2}'", textBox2.Text , dateTimePicker1.Text, VatGst.CurrentTaxStr(dateTimePicker1.Value)));
                 clear();
                 internalData.viewManualBillMaster.emptyTable();
                 internalData.customer.emptyTable();
@@ -833,7 +834,7 @@ namespace Vardhman
             checkBox1.Checked = false;
             textBox9.Text = "0.00";
             textBox6.Text = "2.00";
-            textBox11.Text = "1.00";
+            textBox11.Text = "0.00";
             textBox12.Text = "0.00";
             rad_cd.Checked = false;
             rad_exp.Checked = true;
@@ -853,7 +854,18 @@ namespace Vardhman
             dateTimePicker1.Enabled = true;
             comboBox1.Select();
             comboBox1.Focus();
+            lbl_vat.Text = VatGst.CurrentTaxStr(dateTimePicker1.Value);
+            lbl_vatper.Text = lbl_vat.Text + "%";
+            textBox11.Enabled = textBox12.Enabled = VatGst.IsGstEnabled(dateTimePicker1.Value) | VatGst.IsVatEnabled(dateTimePicker1.Value);
 
+            if (VatGst.IsGstEnabled(dateTimePicker1.Value))
+            {
+                textBox11.Text = "5.00";
+            }
+            else if (VatGst.IsVatEnabled(dateTimePicker1.Value))
+            {
+                textBox11.Text = "1.00";
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -953,6 +965,9 @@ namespace Vardhman
             //    textBox2.Select();
             //    return;
             //}
+            lbl_vat.Text = VatGst.CurrentTaxStr(dateTimePicker1.Value);
+            lbl_vatper.Text = lbl_vat.Text + "%";
+            textBox11.Enabled = textBox12.Enabled = VatGst.IsGstEnabled(dateTimePicker1.Value) | VatGst.IsVatEnabled(dateTimePicker1.Value);
          }
 
         private void dataGridView1_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
@@ -1105,6 +1120,9 @@ namespace Vardhman
             }
             //textBox9.Text = rgamt.ToString();
             textBox2.ReadOnly = true;
+            lbl_vat.Text = VatGst.CurrentTaxStr(dateTimePicker1.Value);
+            lbl_vatper.Text = lbl_vat.Text + "%";
+            textBox11.Enabled = textBox12.Enabled = VatGst.IsGstEnabled(dateTimePicker1.Value) | VatGst.IsVatEnabled(dateTimePicker1.Value);
             //dateTimePicker1.Enabled = false;
         }
         private bool is_cd(string grandtotal, string total, string rgtotal, string transportcharge)
