@@ -87,6 +87,7 @@ namespace Vardhman
             this.Name = "ItemTypeEdit";
             this.Text = "ItemTypeEdit";
             this.Load += new System.EventHandler(this.ItemTypeEdit_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ItemTypeEdit_FormClosing);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.ResumeLayout(false);

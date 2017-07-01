@@ -35,5 +35,11 @@ namespace Vardhman
             }
             MessageBox.Show("All Data Saved Successfully", "Data Save Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void ItemTypeEdit_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Main m = (Main)(this.MdiParent);
+            m.init_container(childContainer.e_ItemTypeEdit);
+        }
     }
 }
