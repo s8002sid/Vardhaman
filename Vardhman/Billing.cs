@@ -429,11 +429,15 @@ namespace Vardhman
             {
                 lbl_exp_per.Text = "CD%";
                 lbl_exp.Text = "CD";
+                rad_cd.Checked = true;
+                rad_exp.Checked = false;
             }
             else
             {
                 lbl_exp.Text = "EXP";
                 lbl_exp_per.Text = "EXP%";
+                rad_cd.Checked = false;
+                rad_exp.Checked = true;
             }
         }
 
