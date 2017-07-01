@@ -10,6 +10,8 @@ namespace Vardhman
         static DateTime VatStartDate = new DateTime(2013, 12, 5);
         static DateTime GSTStartDate = new DateTime(2017, 7, 1);
         static DateTime GSTEndDate = new DateTime(5000, 3, 31);
+        static double PreGSTMaxRecepitAmount = 20000.0;
+        static double postGSTMaxRecepitAmount = 10000.0;
         public static string CurrentTaxStr(DateTime date)
         {
             string taxstr;
@@ -42,6 +44,13 @@ namespace Vardhman
                 return true;
             }
             return false;
+        }
+        public static double MaxRecepitAmount(DateTime date)
+        {
+            if (IsGstEnabled(date))
+                return postGSTMaxRecepitAmount;
+            else
+                return PreGSTMaxRecepitAmount;
         }
     }
 }

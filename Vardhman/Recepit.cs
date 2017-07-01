@@ -344,8 +344,9 @@ namespace Vardhman
             try
             {
                 double val =Convert.ToDouble(textBox4.Text);
-                if (val > 20000)
-                    MessageBox.Show("Amount exceeded limit its above 20000");
+                double maxRecepit = VatGst.MaxRecepitAmount(dateTimePicker1.Value);
+                if (val > maxRecepit)
+                    MessageBox.Show(String.Format("Amount exceeded limit its above {0}", maxRecepit));
             }
             catch { }
         }
@@ -538,8 +539,9 @@ namespace Vardhman
             try
             {
                 double val = Convert.ToDouble(textBox4.Text);
-                if (val > 20000)
-                    MessageBox.Show("Amount exceeded limit its above 20000");
+                double maxRecepit = VatGst.MaxRecepitAmount(dateTimePicker1.Value);
+                if (val > maxRecepit)
+                    MessageBox.Show(String.Format("Amount exceeded limit its above {0}", maxRecepit));
             }
             catch { }
         }
