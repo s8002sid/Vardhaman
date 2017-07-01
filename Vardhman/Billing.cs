@@ -47,7 +47,19 @@ namespace Vardhman
             dataGridView1.AlternatingRowsDefaultCellStyle = cs;
             dataGridView2.AlternatingRowsDefaultCellStyle = cs;
             company = 0;
+            ModifyDataGridColumnName();
             //MessageBox.Show(Vardhman.App_Code.number.num2text(12345));
+        }
+        private void ModifyDataGridColumnName()
+        {
+            if (VatGst.IsGstEnabled(dateTimePicker1.Value))
+            {
+                dataGridView1.Columns["Company"].HeaderText = "HSNCode";
+            }
+            else
+            {
+                dataGridView1.Columns["Company"].HeaderText = "Company";
+            }
         }
         private void dataGridView1_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
@@ -84,7 +96,17 @@ namespace Vardhman
         private AutoCompleteStringCollection getAutocompletedata(int column, int row)
         {
             string col0, col1, col2, type = "";
-            try { col0 = dataGridView1.Rows[row].Cells["Company"].Value.ToString(); }
+            try 
+            {
+                if (VatGst.IsGstEnabled(dateTimePicker1.Value))
+                {
+                    col0 = "";
+                }
+                else
+                {
+                    col0 = dataGridView1.Rows[row].Cells["Company"].Value.ToString();
+                }
+            }
             catch { col0 = ""; }
 
             try { col1 = dataGridView1.Rows[row].Cells["Group"].Value.ToString(); }
@@ -167,7 +189,11 @@ namespace Vardhman
                 string company, group, item;
                 try
                 {
-                    company = dataGridView1.Rows[e.RowIndex].Cells["Company"].Value.ToString();
+                    if (VatGst.IsGstEnabled(dateTimePicker1.Value))
+                        company = "";
+                    else
+                        company = dataGridView1.Rows[e.RowIndex].Cells["Company"].Value.ToString();
+                        
                 }
                 catch
                 {
@@ -232,7 +258,7 @@ namespace Vardhman
                 meter = dataGridView1.Rows[r].Cells["Note"].Value.ToString();
             else
                 return;
-            if (dataGridView1.Rows[r].Cells["Company"].Value != null)
+            if (dataGridView1.Rows[r].Cells["Company"].Value != null && !VatGst.IsGstEnabled(dateTimePicker1.Value))
                 company = dataGridView1.Rows[r].Cells["Company"].Value.ToString();
             else company = "";
             if (dataGridView1.Rows[r].Cells["Group"].Value != null)
@@ -292,27 +318,39 @@ namespace Vardhman
                 changed = 0;
                 return;
             }
-                string x = dataGridView1.Columns[e.ColumnIndex].HeaderText;
-                if (x == "Rate")
-                    try
-                    {
-                        string xyz;
-                        Supporter.set_zero(dataGridView1.Rows[e.RowIndex].Cells["Rate"].Value.ToString() , out xyz);
-                        dataGridView1.Rows[e.RowIndex].Cells["Rate"].Value = xyz;
-                    }
-                    catch { }
-                if (x == "Quantity" || x == "Meter" || x == "Rate")
-                    amtCalculation(e.RowIndex);
-                if (e.ColumnIndex >= 0 && e.RowIndex >= 0)
+            string x = dataGridView1.Columns[e.ColumnIndex].HeaderText;
+            if (x == "Rate")
+                try
                 {
-                    try
-                    {
-                        dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString().ToUpper();
-                    }
-                    catch { }
+                    string xyz;
+                    Supporter.set_zero(dataGridView1.Rows[e.RowIndex].Cells["Rate"].Value.ToString() , out xyz);
+                    dataGridView1.Rows[e.RowIndex].Cells["Rate"].Value = xyz;
                 }
-        if (x == "Amount")
-            total();
+                catch { }
+            if (x == "Quantity" || x == "Meter" || x == "Rate")
+                amtCalculation(e.RowIndex);
+            if (e.ColumnIndex >= 0 && e.RowIndex >= 0)
+            {
+                try
+                {
+                    dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString().ToUpper();
+                }
+                catch { }
+            }
+            if (x == "Amount")
+                total();
+            if (x == "Group")
+            {
+                try
+                {
+                    if(VatGst.IsGstEnabled(dateTimePicker1.Value))
+                    {
+                        dataGridView1.Rows[e.RowIndex].Cells["Company"].Value = 
+                    con.exesclr(String.Format("select max(hsnCode) as hsnCode from itemtype where typename like( '{0}' )", dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value));
+                    }
+                }
+                catch{}
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -1027,6 +1065,7 @@ namespace Vardhman
             lbl_tax.Text = VatGst.CurrentTaxStr(dateTimePicker1.Value);
             lbl_taxper.Text = lbl_tax.Text + "%";
             textBox11.Enabled = textBox12.Enabled = VatGst.IsGstEnabled(dateTimePicker1.Value) | VatGst.IsVatEnabled(dateTimePicker1.Value);
+            ModifyDataGridColumnName();
         }
 
         private void dataGridView1_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)

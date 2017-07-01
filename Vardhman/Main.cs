@@ -22,7 +22,8 @@ namespace Vardhman
         e_ManualBilling,
         e_PriceList,
         e_Deletion,
-        e_Ledger
+        e_Ledger,
+        e_ItemTypeEdit
     };
     public partial class Main : Form
     {
@@ -37,6 +38,7 @@ namespace Vardhman
         Price_List priceList;
         Deletion deletion;
         Ledger_showall ledger;
+        ItemTypeEdit itemTypeEdit;
         db.MainInternal internalData;
         Connection con;
         public db.MainInternal getInternalData()
@@ -94,6 +96,10 @@ namespace Vardhman
                 case childContainer.e_Ledger:
                     ledger = new Ledger_showall();
                     ledger.MdiParent = this;
+                    break;
+                case childContainer.e_ItemTypeEdit:
+                    itemTypeEdit = new ItemTypeEdit();
+                    itemTypeEdit.MdiParent = this;
                     break;
             }
             panel1.Show();
@@ -299,6 +305,11 @@ namespace Vardhman
         {
             AboutBox ab = new AboutBox();
             ab.ShowDialog();
+        }
+
+        private void btm_item_type_edit_Click(object sender, EventArgs e)
+        {
+            ShowForm(itemTypeEdit);
         }
     }
 }

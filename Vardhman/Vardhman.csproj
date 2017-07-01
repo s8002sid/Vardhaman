@@ -142,6 +142,12 @@
       <DependentUpon>interest caculator.cs</DependentUpon>
     </Compile>
     <Compile Include="intrest_calculation.cs" />
+    <Compile Include="ItemTypeEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemTypeEdit.Designer.cs">
+      <DependentUpon>ItemTypeEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="ITEM_TYPE_MERGE.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -308,6 +314,10 @@
     <EmbeddedResource Include="interest caculator.resx">
       <SubType>Designer</SubType>
       <DependentUpon>interest caculator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemTypeEdit.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ItemTypeEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ITEM_TYPE_MERGE.resx">
       <DependentUpon>ITEM_TYPE_MERGE.cs</DependentUpon>

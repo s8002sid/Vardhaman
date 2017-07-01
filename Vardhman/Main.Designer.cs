@@ -31,14 +31,7 @@ namespace Vardhman
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.backupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.recoveryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.status_label = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tsslbl_message = new System.Windows.Forms.ToolStripStatusLabel();
-            this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btm_item_type_edit = new System.Windows.Forms.Button();
             this.btn_item_type_merge = new System.Windows.Forms.Button();
             this.btn_new_ledger = new System.Windows.Forms.Button();
             this.btn_manual_recepit_entry = new System.Windows.Forms.Button();
@@ -52,11 +45,19 @@ namespace Vardhman
             this.btn_recepit = new System.Windows.Forms.Button();
             this.btn_billing = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.backupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.recoveryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.status_label = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tsslbl_message = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -67,6 +68,7 @@ namespace Vardhman
             // panel1
             // 
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.btm_item_type_edit);
             this.panel1.Controls.Add(this.btn_item_type_merge);
             this.panel1.Controls.Add(this.btn_new_ledger);
             this.panel1.Controls.Add(this.btn_manual_recepit_entry);
@@ -86,69 +88,24 @@ namespace Vardhman
             this.panel1.Size = new System.Drawing.Size(933, 695);
             this.panel1.TabIndex = 14;
             // 
-            // menuStrip1
+            // btm_item_type_edit
             // 
-            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.homeToolStripMenuItem,
-            this.backupToolStripMenuItem,
-            this.recoveryToolStripMenuItem,
-            this.aboutToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(933, 25);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // backupToolStripMenuItem
-            // 
-            this.backupToolStripMenuItem.Name = "backupToolStripMenuItem";
-            this.backupToolStripMenuItem.Size = new System.Drawing.Size(61, 21);
-            this.backupToolStripMenuItem.Text = "Backup";
-            this.backupToolStripMenuItem.Click += new System.EventHandler(this.backupToolStripMenuItem_Click);
-            // 
-            // recoveryToolStripMenuItem
-            // 
-            this.recoveryToolStripMenuItem.Name = "recoveryToolStripMenuItem";
-            this.recoveryToolStripMenuItem.Size = new System.Drawing.Size(73, 21);
-            this.recoveryToolStripMenuItem.Text = "Recovery";
-            this.recoveryToolStripMenuItem.Click += new System.EventHandler(this.recoveryToolStripMenuItem_Click);
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.status_label,
-            this.tsslbl_message});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 653);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(933, 42);
-            this.statusStrip1.TabIndex = 16;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // status_label
-            // 
-            this.status_label.Name = "status_label";
-            this.status_label.Size = new System.Drawing.Size(233, 37);
-            this.status_label.Text = "Vardhaman Textile";
-            // 
-            // tsslbl_message
-            // 
-            this.tsslbl_message.Name = "tsslbl_message";
-            this.tsslbl_message.Size = new System.Drawing.Size(23, 37);
-            this.tsslbl_message.Text = ".";
-            // 
-            // homeToolStripMenuItem
-            // 
-            this.homeToolStripMenuItem.AutoSize = false;
-            this.homeToolStripMenuItem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("homeToolStripMenuItem.BackgroundImage")));
-            this.homeToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.homeToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.homeToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("homeToolStripMenuItem.Image")));
-            this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
-            this.homeToolStripMenuItem.Size = new System.Drawing.Size(40, 21);
-            this.homeToolStripMenuItem.Text = "              ";
-            this.homeToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
+            this.btm_item_type_edit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btm_item_type_edit.AutoEllipsis = true;
+            this.btm_item_type_edit.BackColor = System.Drawing.Color.White;
+            this.btm_item_type_edit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btm_item_type_edit.BackgroundImage")));
+            this.btm_item_type_edit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btm_item_type_edit.FlatAppearance.BorderSize = 0;
+            this.btm_item_type_edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btm_item_type_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btm_item_type_edit.ForeColor = System.Drawing.Color.Black;
+            this.btm_item_type_edit.Location = new System.Drawing.Point(703, 510);
+            this.btm_item_type_edit.Name = "btm_item_type_edit";
+            this.btm_item_type_edit.Size = new System.Drawing.Size(218, 78);
+            this.btm_item_type_edit.TabIndex = 24;
+            this.btm_item_type_edit.Text = "Item Type Edit";
+            this.btm_item_type_edit.UseVisualStyleBackColor = false;
+            this.btm_item_type_edit.Click += new System.EventHandler(this.btm_item_type_edit_Click);
             // 
             // btn_item_type_merge
             // 
@@ -325,7 +282,7 @@ namespace Vardhman
             this.btn_empty_bill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_empty_bill.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_empty_bill.ForeColor = System.Drawing.Color.Black;
-            this.btn_empty_bill.Location = new System.Drawing.Point(834, 534);
+            this.btn_empty_bill.Location = new System.Drawing.Point(565, 605);
             this.btn_empty_bill.Name = "btn_empty_bill";
             this.btn_empty_bill.Size = new System.Drawing.Size(39, 31);
             this.btn_empty_bill.TabIndex = 8;
@@ -405,12 +362,76 @@ namespace Vardhman
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.homeToolStripMenuItem,
+            this.backupToolStripMenuItem,
+            this.recoveryToolStripMenuItem,
+            this.aboutToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(933, 25);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // homeToolStripMenuItem
+            // 
+            this.homeToolStripMenuItem.AutoSize = false;
+            this.homeToolStripMenuItem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("homeToolStripMenuItem.BackgroundImage")));
+            this.homeToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.homeToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.homeToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("homeToolStripMenuItem.Image")));
+            this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
+            this.homeToolStripMenuItem.Size = new System.Drawing.Size(40, 21);
+            this.homeToolStripMenuItem.Text = "              ";
+            this.homeToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
+            // 
+            // backupToolStripMenuItem
+            // 
+            this.backupToolStripMenuItem.Name = "backupToolStripMenuItem";
+            this.backupToolStripMenuItem.Size = new System.Drawing.Size(61, 21);
+            this.backupToolStripMenuItem.Text = "Backup";
+            this.backupToolStripMenuItem.Click += new System.EventHandler(this.backupToolStripMenuItem_Click);
+            // 
+            // recoveryToolStripMenuItem
+            // 
+            this.recoveryToolStripMenuItem.Name = "recoveryToolStripMenuItem";
+            this.recoveryToolStripMenuItem.Size = new System.Drawing.Size(73, 21);
+            this.recoveryToolStripMenuItem.Text = "Recovery";
+            this.recoveryToolStripMenuItem.Click += new System.EventHandler(this.recoveryToolStripMenuItem_Click);
+            // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(55, 21);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.status_label,
+            this.tsslbl_message});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 653);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(933, 42);
+            this.statusStrip1.TabIndex = 16;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // status_label
+            // 
+            this.status_label.Name = "status_label";
+            this.status_label.Size = new System.Drawing.Size(233, 37);
+            this.status_label.Text = "Vardhaman Textile";
+            // 
+            // tsslbl_message
+            // 
+            this.tsslbl_message.Name = "tsslbl_message";
+            this.tsslbl_message.Size = new System.Drawing.Size(23, 37);
+            this.tsslbl_message.Text = ".";
             // 
             // Main
             // 
@@ -429,11 +450,11 @@ namespace Vardhman
             this.Load += new System.EventHandler(this.Main_Load);
             this.SizeChanged += new System.EventHandler(this.Main_SizeChanged);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -465,5 +486,6 @@ namespace Vardhman
         private System.Windows.Forms.ToolStripStatusLabel status_label;
         private System.Windows.Forms.ToolStripStatusLabel tsslbl_message;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.Button btm_item_type_edit;
     }
 }
