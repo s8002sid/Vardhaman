@@ -389,7 +389,15 @@ namespace Vardhman
             }
 
             if (manual_vat == false)
-                vat = Convert.ToDouble(roundOff.round(total * vatper / 100));
+            {
+                double transportCharge = 0.0;
+                if (VatGst.IsGstEnabled(dateTimePicker1.Value))
+                {
+                    if (textBox1.Text.Trim() != "")
+                        transportCharge = Convert.ToDouble(textBox1.Text);
+                }
+                vat = Convert.ToDouble(roundOff.round((total + transportCharge) * vatper / 100));
+            }
             else
             {
                 string abc;
@@ -490,7 +498,7 @@ namespace Vardhman
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            
+            total();
         }
         private int chkb4save()
         {

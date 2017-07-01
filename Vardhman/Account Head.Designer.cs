@@ -328,7 +328,7 @@ namespace Vardhman
             this.panel_buttons.Controls.Add(this.btn_clear);
             this.panel_buttons.Controls.Add(this.btn_list);
             this.panel_buttons.Controls.Add(this.btn_save);
-            this.panel_buttons.Location = new System.Drawing.Point(62, 669);
+            this.panel_buttons.Location = new System.Drawing.Point(62, 713);
             this.panel_buttons.Name = "panel_buttons";
             this.panel_buttons.Size = new System.Drawing.Size(305, 55);
             this.panel_buttons.TabIndex = 9;
@@ -347,7 +347,7 @@ namespace Vardhman
             this.panel_advanced_entry.Controls.Add(this.label2);
             this.panel_advanced_entry.Location = new System.Drawing.Point(6, 339);
             this.panel_advanced_entry.Name = "panel_advanced_entry";
-            this.panel_advanced_entry.Size = new System.Drawing.Size(416, 321);
+            this.panel_advanced_entry.Size = new System.Drawing.Size(416, 368);
             this.panel_advanced_entry.TabIndex = 8;
             this.panel_advanced_entry.Visible = false;
             // 
@@ -357,7 +357,8 @@ namespace Vardhman
             this.txt_note.Location = new System.Drawing.Point(161, 233);
             this.txt_note.Multiline = true;
             this.txt_note.Name = "txt_note";
-            this.txt_note.Size = new System.Drawing.Size(200, 76);
+            this.txt_note.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txt_note.Size = new System.Drawing.Size(251, 132);
             this.txt_note.TabIndex = 5;
             this.txt_note.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.caps_KeyPress);
             // 

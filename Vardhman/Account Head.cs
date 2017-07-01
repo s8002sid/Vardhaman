@@ -179,7 +179,7 @@ namespace Vardhman
             if (chk_advanceentry.Checked == true)
             {
                 panel_advanced_entry.Location = new Point(6, 339);
-                panel_buttons.Location = new Point(62, 669);
+                panel_buttons.Location = new Point(62, 713);
             }
             else
             {

@@ -98,7 +98,7 @@ namespace Vardhman
             this.labelVersion.Name = "labelVersion";
             this.labelVersion.Size = new System.Drawing.Size(271, 17);
             this.labelVersion.TabIndex = 0;
-            this.labelVersion.Text = "Version: 1.7";
+            this.labelVersion.Text = "Version: 1.8";
             this.labelVersion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // labelCopyright
@@ -137,7 +137,7 @@ namespace Vardhman
             this.textBoxDescription.Size = new System.Drawing.Size(271, 126);
             this.textBoxDescription.TabIndex = 23;
             this.textBoxDescription.TabStop = false;
-            this.textBoxDescription.Text = "All code is propriotry. Any changes in the code is not allowed. (c) 2016 Siddhart" +
+            this.textBoxDescription.Text = "All code is propriotry. Any changes in the code is not allowed. (c) 2017 Siddhart" +
                 "h";
             // 
             // okButton
