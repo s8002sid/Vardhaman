@@ -11,7 +11,7 @@ namespace Vardhman
     public partial class Billing_dataentry : Form
     {
         AutoCompleteStringCollection src = new AutoCompleteStringCollection();
-        bool manual, manual_vat;
+        bool manual, manual_vat, do_calculation, total_called;
         Connection con = new Connection();
         int changed, company;
         int bill;
@@ -26,6 +26,7 @@ namespace Vardhman
         {
             con.connent();
             manual = manual_vat = false;
+            do_calculation = total_called = true;
             company = 1;
             changed = 0;
             callmetercal = 0;
@@ -348,6 +349,9 @@ namespace Vardhman
         }
         private void total()
         {
+            if (!do_calculation)
+                return;
+            total_called = true;
             double total = 0,expper,exp,trans,grandtotal , rg, vatper, vat;
             if (textBox9.Text == "")
                 rg = 0;
@@ -377,15 +381,18 @@ namespace Vardhman
                 Supporter.set_two_digit_precision(textBox4.Text, out abc);
                 exp =Convert.ToDouble(abc);
             }
+            if (textBox1.Text == "")
+                trans = 0;
+            else
+                trans = Convert.ToDouble(textBox1.Text);
             if (manual_vat == false)
             {
-                double transportCharge = 0.0;
+                double extra = 0.0;
                 if (VatGst.IsGstEnabled(dateTimePicker1.Value))
                 {
-                    if (textBox1.Text.Trim() != "")
-                        transportCharge = Convert.ToDouble(textBox1.Text);
+                    extra = trans + exp;
                 }
-                vat = Convert.ToDouble(roundOff.round((total+transportCharge) * vatper / 100));
+                vat = Convert.ToDouble(roundOff.round((total + extra) * vatper / 100));
             }
             else
             {
@@ -393,10 +400,6 @@ namespace Vardhman
                 Supporter.set_two_digit_precision(textBox12.Text, out abc);
                 vat = Convert.ToDouble(abc);
             }
-            if (textBox1.Text == "")
-                trans = 0;
-            else
-                trans = Convert.ToDouble(textBox1.Text);
             if (rad_cd.Checked == true)
             {
                 grandtotal =Convert.ToDouble(roundOff.round(Convert.ToString(total - exp + trans + vat)));
@@ -608,10 +611,13 @@ namespace Vardhman
             label16.BackColor = Color.Green;
             label16.ForeColor = Color.Green;
             //MessageBox.Show(correction, "Corrections Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            total();
-            for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+            if (total_called)
             {
-                amtCalculation(i);
+                total();
+                for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+                {
+                    amtCalculation(i);
+                }
             }
             if (textBox2.Text.Trim() == "")
             {
@@ -889,6 +895,10 @@ namespace Vardhman
             {
                 textBox11.Text = "1.00";
             }
+            manual_vat = false;
+            manual = false;
+            do_calculation = true;
+            total_called = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -1098,6 +1108,8 @@ namespace Vardhman
             rgtotal = dt.Rows[0][13].ToString();
             vatper = dt.Rows[0][14].ToString();
             vat = dt.Rows[0][15].ToString();
+
+            do_calculation = false;
             comboBox1.Text = name;
             comboBox3.Text = city;
             textBox7.Text = through;
@@ -1167,6 +1179,8 @@ namespace Vardhman
             lbl_tax.Text = VatGst.CurrentTaxStr(dateTimePicker1.Value);
             lbl_taxper.Text = lbl_tax.Text + "%";
             textBox11.Enabled = textBox12.Enabled = VatGst.IsGstEnabled(dateTimePicker1.Value) | VatGst.IsVatEnabled(dateTimePicker1.Value);
+            do_calculation = true;
+            total_called = false;
             //dateTimePicker1.Enabled = false;
 
         }
