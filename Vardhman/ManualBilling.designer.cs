@@ -612,6 +612,7 @@ namespace Vardhman
             this.textBox12.Size = new System.Drawing.Size(148, 22);
             this.textBox12.TabIndex = 37;
             this.textBox12.Leave += new System.EventHandler(this.textBox12_Leave);
+            this.textBox12.Enter += new System.EventHandler(this.textBox12_Enter);
             // 
             // lbl_vat
             // 

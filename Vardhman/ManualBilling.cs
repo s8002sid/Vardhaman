@@ -11,6 +11,7 @@ namespace Vardhman
     public partial class ManualBilling : Form
     {
         bool manual, manual_vat, do_calculation, total_called;
+        string vat_amt;
         AutoCompleteStringCollection src = new AutoCompleteStringCollection();
         Connection con = new Connection();
         int changed, company;
@@ -502,7 +503,7 @@ namespace Vardhman
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            total();
+            
         }
         private int chkb4save()
         {
@@ -1411,8 +1412,14 @@ namespace Vardhman
 
         private void textBox12_Leave(object sender, EventArgs e)
         {
-            manual_vat = true;
+            if (vat_amt != textBox12.Text)
+                manual_vat = true;
             total();
+        }
+
+        private void textBox12_Enter(object sender, EventArgs e)
+        {
+            vat_amt = textBox12.Text;
         }
     }
 }

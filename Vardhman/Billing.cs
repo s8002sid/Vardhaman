@@ -16,6 +16,7 @@ namespace Vardhman
         int changed, company;
         int bill;
         int callmetercal;
+        string vat_amt;
         public db.MainInternal internalData = null;
         public Billing_dataentry()
         {
@@ -491,7 +492,7 @@ namespace Vardhman
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            total();
+            
         }
         private int chkb4save()
         {
@@ -1410,8 +1411,19 @@ namespace Vardhman
 
         private void textBox12_Leave(object sender, EventArgs e)
         {
-            manual_vat = true;
+            if (vat_amt != textBox12.Text)
+                manual_vat = true;
             total();
+        }
+
+        private void textBox1_Enter(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void textBox12_Enter(object sender, EventArgs e)
+        {
+            vat_amt = textBox12.Text;
         }
     }
 }
