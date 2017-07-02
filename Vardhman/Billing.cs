@@ -1468,5 +1468,10 @@ namespace Vardhman
         {
             vat_amt = textBox12.Text;
         }
+
+        private void dataGridView1_ColumnRemoved(object sender, DataGridViewColumnEventArgs e)
+        {
+            total();
+        }
     }
 }
