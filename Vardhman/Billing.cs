@@ -426,10 +426,14 @@ namespace Vardhman
                 trans = Convert.ToDouble(textBox1.Text);
             if (manual_vat == false)
             {
-                double extra = 0.0;
+                double extra = 0.0, exp1;
+                if (rad_cd.Checked)
+                    exp1 = -exp;
+                else
+                    exp1 = exp;
                 if (VatGst.IsGstEnabled(dateTimePicker1.Value))
                 {
-                    extra = trans + exp;
+                    extra = trans + exp1;
                 }
                 vat = Convert.ToDouble(roundOff.round((total + extra) * vatper / 100));
             }
