@@ -176,7 +176,7 @@ namespace Vardhman
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(40, 267);
+            this.label9.Location = new System.Drawing.Point(40, 216);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(121, 24);
             this.label9.TabIndex = 16;
@@ -258,7 +258,7 @@ namespace Vardhman
             this.dtp_balancedate.CustomFormat = "dd/MM/yyyy";
             this.dtp_balancedate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_balancedate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_balancedate.Location = new System.Drawing.Point(167, 261);
+            this.dtp_balancedate.Location = new System.Drawing.Point(167, 210);
             this.dtp_balancedate.Name = "dtp_balancedate";
             this.dtp_balancedate.Size = new System.Drawing.Size(139, 30);
             this.dtp_balancedate.TabIndex = 6;
@@ -328,7 +328,7 @@ namespace Vardhman
             this.panel_buttons.Controls.Add(this.btn_clear);
             this.panel_buttons.Controls.Add(this.btn_list);
             this.panel_buttons.Controls.Add(this.btn_save);
-            this.panel_buttons.Location = new System.Drawing.Point(62, 713);
+            this.panel_buttons.Location = new System.Drawing.Point(62, 662);
             this.panel_buttons.Name = "panel_buttons";
             this.panel_buttons.Size = new System.Drawing.Size(305, 55);
             this.panel_buttons.TabIndex = 9;
@@ -345,7 +345,7 @@ namespace Vardhman
             this.panel_advanced_entry.Controls.Add(this.label4);
             this.panel_advanced_entry.Controls.Add(this.txt_address);
             this.panel_advanced_entry.Controls.Add(this.label2);
-            this.panel_advanced_entry.Location = new System.Drawing.Point(6, 339);
+            this.panel_advanced_entry.Location = new System.Drawing.Point(6, 288);
             this.panel_advanced_entry.Name = "panel_advanced_entry";
             this.panel_advanced_entry.Size = new System.Drawing.Size(416, 368);
             this.panel_advanced_entry.TabIndex = 8;
@@ -366,7 +366,7 @@ namespace Vardhman
             // 
             this.chk_advanceentry.AutoSize = true;
             this.chk_advanceentry.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chk_advanceentry.Location = new System.Drawing.Point(140, 307);
+            this.chk_advanceentry.Location = new System.Drawing.Point(140, 256);
             this.chk_advanceentry.Name = "chk_advanceentry";
             this.chk_advanceentry.Size = new System.Drawing.Size(152, 28);
             this.chk_advanceentry.TabIndex = 7;
@@ -499,7 +499,7 @@ namespace Vardhman
             // lblid
             // 
             this.lblid.AutoSize = true;
-            this.lblid.Location = new System.Drawing.Point(299, 216);
+            this.lblid.Location = new System.Drawing.Point(332, 172);
             this.lblid.Name = "lblid";
             this.lblid.Size = new System.Drawing.Size(90, 13);
             this.lblid.TabIndex = 25;

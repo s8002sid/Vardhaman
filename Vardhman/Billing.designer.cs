@@ -306,7 +306,7 @@ namespace Vardhman
             // 
             this.groupBox2.Controls.Add(this.radioButton2);
             this.groupBox2.Controls.Add(this.radioButton1);
-            this.groupBox2.Location = new System.Drawing.Point(483, 51);
+            this.groupBox2.Location = new System.Drawing.Point(428, 50);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(173, 27);
             this.groupBox2.TabIndex = 28;
@@ -406,7 +406,7 @@ namespace Vardhman
             this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox7.Location = new System.Drawing.Point(694, 9);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(124, 22);
+            this.textBox7.Size = new System.Drawing.Size(262, 22);
             this.textBox7.TabIndex = 2;
             this.textBox7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox1_KeyPress);
             this.textBox7.Enter += new System.EventHandler(this.textBox7_Enter);
@@ -416,9 +416,9 @@ namespace Vardhman
             this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.Red;
-            this.button5.Location = new System.Drawing.Point(180, 49);
+            this.button5.Location = new System.Drawing.Point(173, 49);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(281, 37);
+            this.button5.Size = new System.Drawing.Size(249, 37);
             this.button5.TabIndex = 5;
             this.button5.Text = "Add more customer details";
             this.button5.UseVisualStyleBackColor = false;
@@ -449,7 +449,7 @@ namespace Vardhman
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(824, 15);
+            this.label2.Location = new System.Drawing.Point(611, 60);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 16);
             this.label2.TabIndex = 4;
@@ -470,7 +470,7 @@ namespace Vardhman
             this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(867, 12);
+            this.dateTimePicker1.Location = new System.Drawing.Point(654, 57);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(89, 22);
             this.dateTimePicker1.TabIndex = 3;

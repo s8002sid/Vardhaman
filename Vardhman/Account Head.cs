@@ -24,7 +24,7 @@ namespace Vardhman
             cmb_city.DataSource = internalData.customer.get(new e_columns[] { e_columns.e_city }, e_db_operation.e_getUnique);
             cmb_city.DisplayMember = internalData.customer.column_to_str(e_columns.e_city);
             cmb_city.Text = x;
-            panel_buttons.Location = new Point(85, 337);
+            panel_buttons.Location = new Point(85, 286);
 
         }
 
@@ -178,12 +178,12 @@ namespace Vardhman
             panel_advanced_entry.Visible = chk_advanceentry.Checked;
             if (chk_advanceentry.Checked == true)
             {
-                panel_advanced_entry.Location = new Point(6, 339);
-                panel_buttons.Location = new Point(62, 713);
+                panel_advanced_entry.Location = new Point(6, 288);
+                panel_buttons.Location = new Point(62, 662);
             }
             else
             {
-                panel_buttons.Location = new Point(85, 337);
+                panel_buttons.Location = new Point(85, 286);
             }
         }
 
