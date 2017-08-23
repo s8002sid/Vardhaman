@@ -177,12 +177,6 @@
     <Compile Include="ManualRecepit.Designer.cs">
       <DependentUpon>ManualRecepit.cs</DependentUpon>
     </Compile>
-    <Compile Include="Copy of recepit_border chk.cs">
-      <DependentUpon>Copy of recepit_border chk.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <Compile Include="dataset_pricelist.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -335,10 +329,6 @@
       <DependentUpon>ManualRecepit.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Copy of recepit_border chk.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Copy of recepit_border chk.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Deletion.resx">
       <DependentUpon>Deletion.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -432,6 +422,10 @@
       <SubType>Designer</SubType>
       <DependentUpon>Item_Type.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="smallbill.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>smallbill.cs</LastGenOutput>
+    </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
@@ -517,6 +511,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rpt_grp_balance.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="smallbill.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>smallbill.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Supporter.cs" />
     <Compile Include="Item_Type.cs">

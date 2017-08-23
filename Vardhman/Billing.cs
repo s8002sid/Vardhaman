@@ -1012,16 +1012,38 @@ namespace Vardhman
                 textBox7.Text = "SELF";
         }
 
+        private bool UseSmallBill()
+        {
+            if (!checkBox1.Checked)
+                return false;
+            if (textBox9.Text.Trim() != "" && Convert.ToDouble(textBox9.Text) != 0.0)
+                return false;
+            int noOfCol = 1; //grandTotal
+            if (textBox4.Text.Trim() != "" && Convert.ToDouble(textBox4.Text) != 0.0)
+                noOfCol++;
+            if (textBox12.Text.Trim() != "" && Convert.ToDouble(textBox12.Text) != 0.0)
+                noOfCol += 2;
+            if (textBox1.Text.Trim() != "" && Convert.ToDouble(textBox1.Text) != 0.0)
+                noOfCol++;
+            noOfCol += dataGridView1.RowCount-1;
+            if (noOfCol > 11)
+                return false;
+            return true;
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
+            bool useSmallBill = UseSmallBill();
             int x = save();
             if (company == 0 && x == 1)
             {
                 Report_Viewercs RP = new Report_Viewercs();
-                if(radioButton2.Checked == true)
-                RP.loadrpt("worg1");
+                if (useSmallBill/*radioButton3.Checked == true*/)
+                    RP.loadrpt("smallbill");
+                else if (radioButton2.Checked == true)
+                    RP.loadrpt("worg1");
                 else
-                RP.loadrpt("worg2");
+                    RP.loadrpt("worg2");
                 RP.Show();
             }
             company = 0;
