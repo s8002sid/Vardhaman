@@ -113,6 +113,12 @@
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="billreportworg_enhanced.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>billreportworg_enhanced.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="create_backup.cs" />
     <Compile Include="dataset_newledger.cs">
       <DependentUpon>dataset_newledger.xsd</DependentUpon>
@@ -304,6 +310,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>billreportOriginal.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="billreportworg_enhanced.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>billreportworg_enhanced.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="interest caculator.resx">
       <SubType>Designer</SubType>
