@@ -104,6 +104,8 @@ namespace Vardhman
             this.label6 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -467,6 +469,8 @@ namespace Vardhman
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.AutoScroll = true;
+            this.splitContainer2.Panel2.Controls.Add(this.textBox13);
+            this.splitContainer2.Panel2.Controls.Add(this.label7);
             this.splitContainer2.Panel2.Controls.Add(this.textBox11);
             this.splitContainer2.Panel2.Controls.Add(this.lbl_vatper);
             this.splitContainer2.Panel2.Controls.Add(this.textBox12);
@@ -600,16 +604,16 @@ namespace Vardhman
             this.lbl_vatper.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_vatper.Location = new System.Drawing.Point(587, 65);
             this.lbl_vatper.Name = "lbl_vatper";
-            this.lbl_vatper.Size = new System.Drawing.Size(40, 16);
+            this.lbl_vatper.Size = new System.Drawing.Size(48, 16);
             this.lbl_vatper.TabIndex = 39;
-            this.lbl_vatper.Text = "Vat%";
+            this.lbl_vatper.Text = "GST%";
             // 
             // textBox12
             // 
             this.textBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox12.Location = new System.Drawing.Point(761, 66);
             this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(148, 22);
+            this.textBox12.Size = new System.Drawing.Size(81, 22);
             this.textBox12.TabIndex = 37;
             this.textBox12.Leave += new System.EventHandler(this.textBox12_Leave);
             this.textBox12.Enter += new System.EventHandler(this.textBox12_Enter);
@@ -618,11 +622,11 @@ namespace Vardhman
             // 
             this.lbl_vat.AutoSize = true;
             this.lbl_vat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_vat.Location = new System.Drawing.Point(726, 67);
+            this.lbl_vat.Location = new System.Drawing.Point(717, 68);
             this.lbl_vat.Name = "lbl_vat";
-            this.lbl_vat.Size = new System.Drawing.Size(28, 16);
+            this.lbl_vat.Size = new System.Drawing.Size(45, 16);
             this.lbl_vat.TabIndex = 38;
-            this.lbl_vat.Text = "Vat";
+            this.lbl_vat.Text = "CGST";
             // 
             // button12
             // 
@@ -959,6 +963,24 @@ namespace Vardhman
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
+            // textBox13
+            // 
+            this.textBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox13.Location = new System.Drawing.Point(895, 65);
+            this.textBox13.Name = "textBox13";
+            this.textBox13.Size = new System.Drawing.Size(81, 22);
+            this.textBox13.TabIndex = 40;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(851, 67);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(45, 16);
+            this.label7.TabIndex = 41;
+            this.label7.Text = "SGST";
+            // 
             // ManualBilling
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1066,5 +1088,7 @@ namespace Vardhman
         private System.Windows.Forms.Label lbl_vatper;
         private System.Windows.Forms.TextBox textBox12;
         private System.Windows.Forms.Label lbl_vat;
+        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.Label label7;
     }
 }

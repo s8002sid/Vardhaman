@@ -119,6 +119,19 @@
       <DependentUpon>billreportworg_enhanced.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="ledger_recepit_summary_rpt.cs">
+      <DependentUpon>ledger_recepit_summary_rpt.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ledger_recepit_summary_rpt.designer.cs">
+      <DependentUpon>ledger_recepit_summary_rpt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report_summary_New.cs">
+      <DependentUpon>Report_summary_New.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="create_backup.cs" />
     <Compile Include="dataset_newledger.cs">
       <DependentUpon>dataset_newledger.xsd</DependentUpon>
@@ -159,10 +172,6 @@
     </Compile>
     <Compile Include="ITEM_TYPE_MERGE.designer.cs">
       <DependentUpon>ITEM_TYPE_MERGE.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ledger_recepit_summary_rpt.cs">
-      <DependentUpon>ledger_recepit_summary_rpt.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="line_group_creation.cs" />
     <Compile Include="ManualBilling.cs">
@@ -246,11 +255,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ledger.xsd</DependentUpon>
     </Compile>
-    <Compile Include="ledger_recepit_summary_rpt.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ledger_recepit_summary_rpt.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Ledger_showall.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -314,6 +318,10 @@
     <EmbeddedResource Include="billreportworg_enhanced.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>billreportworg_enhanced.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report_summary_New.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Report_summary_New.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="interest caculator.resx">
       <SubType>Designer</SubType>
@@ -568,7 +576,6 @@
     <None Include="ledger_recepit_summary_rpt.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ledger_recepit_summary_rpt.Designer.cs</LastGenOutput>
     </None>
     <None Include="ledger_recepit_summary_rpt.xss">
       <DependentUpon>ledger_recepit_summary_rpt.xsd</DependentUpon>

@@ -110,6 +110,8 @@ namespace Vardhman
             this.label6 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -172,7 +174,7 @@ namespace Vardhman
             dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle17;
-            this.dataGridView1.Size = new System.Drawing.Size(1028, 261);
+            this.dataGridView1.Size = new System.Drawing.Size(1028, 262);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             this.dataGridView1.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dataGridView1_CellBeginEdit);
@@ -300,7 +302,7 @@ namespace Vardhman
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
             this.splitContainer1.Size = new System.Drawing.Size(1028, 540);
-            this.splitContainer1.SplitterDistance = 88;
+            this.splitContainer1.SplitterDistance = 92;
             this.splitContainer1.TabIndex = 0;
             // 
             // groupBox2
@@ -524,6 +526,8 @@ namespace Vardhman
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.AutoScroll = true;
+            this.splitContainer2.Panel2.Controls.Add(this.textBox13);
+            this.splitContainer2.Panel2.Controls.Add(this.label7);
             this.splitContainer2.Panel2.Controls.Add(this.textBox11);
             this.splitContainer2.Panel2.Controls.Add(this.lbl_taxper);
             this.splitContainer2.Panel2.Controls.Add(this.textBox12);
@@ -555,8 +559,8 @@ namespace Vardhman
             this.splitContainer2.Panel2.Controls.Add(this.label6);
             this.splitContainer2.Panel2.Controls.Add(this.label14);
             this.splitContainer2.Panel2.Controls.Add(this.checkBox1);
-            this.splitContainer2.Size = new System.Drawing.Size(1028, 448);
-            this.splitContainer2.SplitterDistance = 261;
+            this.splitContainer2.Size = new System.Drawing.Size(1028, 444);
+            this.splitContainer2.SplitterDistance = 262;
             this.splitContainer2.TabIndex = 1;
             // 
             // splitContainer3
@@ -697,11 +701,11 @@ namespace Vardhman
             // 
             this.lbl_tax.AutoSize = true;
             this.lbl_tax.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_tax.Location = new System.Drawing.Point(725, 69);
+            this.lbl_tax.Location = new System.Drawing.Point(717, 69);
             this.lbl_tax.Name = "lbl_tax";
-            this.lbl_tax.Size = new System.Drawing.Size(36, 16);
+            this.lbl_tax.Size = new System.Drawing.Size(45, 16);
             this.lbl_tax.TabIndex = 38;
-            this.lbl_tax.Text = "GST";
+            this.lbl_tax.Text = "CGST";
             // 
             // groupBox1
             // 
@@ -1014,6 +1018,24 @@ namespace Vardhman
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
+            // textBox13
+            // 
+            this.textBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox13.Location = new System.Drawing.Point(889, 66);
+            this.textBox13.Name = "textBox13";
+            this.textBox13.Size = new System.Drawing.Size(78, 22);
+            this.textBox13.TabIndex = 40;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(845, 68);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(45, 16);
+            this.label7.TabIndex = 41;
+            this.label7.Text = "SGST";
+            // 
             // Billing_dataentry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1124,5 +1146,7 @@ namespace Vardhman
         private System.Windows.Forms.TextBox textBox12;
         private System.Windows.Forms.Label lbl_tax;
         private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.Label label7;
     }
 }

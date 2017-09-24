@@ -19,6 +19,7 @@ namespace Vardhman
         private void insupd_Load(object sender, EventArgs e)
         {
             update = true;
+            button1.Select();
             button1.Focus();
         }
 

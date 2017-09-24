@@ -29,6 +29,9 @@
               <xs:element name="Vat" msprop:Generator_UserColumnName="Vat" msprop:Generator_ColumnPropNameInRow="Vat" msprop:Generator_ColumnVarNameInTable="columnVat" msprop:Generator_ColumnPropNameInTable="VatColumn" type="xs:double" minOccurs="0" />
               <xs:element name="date_orig" msprop:Generator_UserColumnName="date_orig" msprop:Generator_ColumnVarNameInTable="columndate_orig" msprop:Generator_ColumnPropNameInRow="date_orig" msprop:Generator_ColumnPropNameInTable="date_origColumn" type="xs:dateTime" minOccurs="0" />
               <xs:element name="transport" msprop:Generator_UserColumnName="transport" msprop:Generator_ColumnVarNameInTable="columntransport" msprop:Generator_ColumnPropNameInRow="transport" msprop:Generator_ColumnPropNameInTable="transportColumn" type="xs:double" minOccurs="0" />
+			  <xs:element name="bill_total" msprop:Generator_UserColumnName="bill_total" msprop:Generator_ColumnVarNameInTable="columnbill_total" msprop:Generator_ColumnPropNameInRow="bill_total" msprop:Generator_ColumnPropNameInTable="bill_totalColumn" type="xs:double" minOccurs="0" />
+			  <xs:element name="recepit_total" msprop:Generator_UserColumnName="recepit_total" msprop:Generator_ColumnVarNameInTable="columnrecepit_total" msprop:Generator_ColumnPropNameInRow="recepit_total" msprop:Generator_ColumnPropNameInTable="recepit_totalColumn" type="xs:double" minOccurs="0" />
+			  <xs:element name="sgst" msprop:Generator_UserColumnName="sgst" msprop:Generator_ColumnVarNameInTable="columnsgst" msprop:Generator_ColumnPropNameInRow="sgst" msprop:Generator_ColumnPropNameInTable="sgstColumn" type="xs:double" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

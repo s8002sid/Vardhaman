@@ -870,6 +870,8 @@ namespace Vardhman {
             
             private global::System.Data.DataColumn columntax_str;
             
+            private global::System.Data.DataColumn columnsgst;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public billmasterDataTable() {
                 this.TableName = "billmaster";
@@ -1048,6 +1050,13 @@ namespace Vardhman {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn sgstColumn {
+                get {
+                    return this.columnsgst;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1097,7 +1106,8 @@ namespace Vardhman {
                         string cdexp, 
                         string vatper, 
                         double vat, 
-                        string tax_str) {
+                        string tax_str, 
+                        string sgst) {
                 billmasterRow rowbillmasterRow = ((billmasterRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Billid,
@@ -1120,7 +1130,8 @@ namespace Vardhman {
                         cdexp,
                         vatper,
                         vat,
-                        tax_str};
+                        tax_str,
+                        sgst};
                 rowbillmasterRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowbillmasterRow);
                 return rowbillmasterRow;
@@ -1172,6 +1183,7 @@ namespace Vardhman {
                 this.columnvatper = base.Columns["vatper"];
                 this.columnvat = base.Columns["vat"];
                 this.columntax_str = base.Columns["tax_str"];
+                this.columnsgst = base.Columns["sgst"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1218,6 +1230,8 @@ namespace Vardhman {
                 base.Columns.Add(this.columnvat);
                 this.columntax_str = new global::System.Data.DataColumn("tax_str", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntax_str);
+                this.columnsgst = new global::System.Data.DataColumn("sgst", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsgst);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("billmasterKey1", new global::System.Data.DataColumn[] {
                                 this.columnBillid}, true));
                 this.columnBillid.AllowDBNull = false;
@@ -3266,6 +3280,21 @@ namespace Vardhman {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public string sgst {
+                get {
+                    try {
+                        return ((string)(this[this.tablebillmaster.sgstColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'sgst\' in table \'billmaster\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablebillmaster.sgstColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public bool IsbillnoNull() {
                 return this.IsNull(this.tablebillmaster.billnoColumn);
             }
@@ -3463,6 +3492,16 @@ namespace Vardhman {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public void Settax_strNull() {
                 this[this.tablebillmaster.tax_strColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool IssgstNull() {
+                return this.IsNull(this.tablebillmaster.sgstColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void SetsgstNull() {
+                this[this.tablebillmaster.sgstColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

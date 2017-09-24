@@ -379,6 +379,12 @@ namespace Vardhman {
             private global::System.Data.DataColumn columndate_orig;
             
             private global::System.Data.DataColumn columntransport;
+			
+			private global::System.Data.DataColumn columnbill_total;
+			
+			private global::System.Data.DataColumn columnrecepit_total;
+			
+			private global::System.Data.DataColumn columnsgst;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public LedgerDataTable() {
@@ -486,7 +492,28 @@ namespace Vardhman {
                     return this.columntransport;
                 }
             }
+			
+			[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn bill_totalColumn {
+                get {
+                    return this.columnbill_total;
+                }
+            }
+			
+			[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn recepit_totalColumn {
+                get {
+                    return this.columnrecepit_total;
+                }
+            }
             
+			[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn sgstColumn {
+                get {
+                    return this.columnsgst;
+                }
+            }
+			
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
@@ -516,7 +543,7 @@ namespace Vardhman {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public LedgerRow AddLedgerRow(string Name, string Date1, string Detail, double Exp, double Payment, double Recepit, double Expense, double CD, double Vat, System.DateTime date_orig, double transport) {
+            public LedgerRow AddLedgerRow(string Name, string Date1, string Detail, double Exp, double Payment, double Recepit, double Expense, double CD, double Vat, System.DateTime date_orig, double transport, double bill_total, double recepit_total, double sgst) {
                 LedgerRow rowLedgerRow = ((LedgerRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Name,
@@ -529,7 +556,10 @@ namespace Vardhman {
                         CD,
                         Vat,
                         date_orig,
-                        transport};
+                        transport,
+						bill_total,
+						recepit_total,
+						sgst};
                 rowLedgerRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowLedgerRow);
                 return rowLedgerRow;
@@ -565,6 +595,9 @@ namespace Vardhman {
                 this.columnVat = base.Columns["Vat"];
                 this.columndate_orig = base.Columns["date_orig"];
                 this.columntransport = base.Columns["transport"];
+				this.columnbill_total = base.Columns["bill_total"];
+				this.columnrecepit_total = base.Columns["recepit_total"];
+				this.columnsgst = base.Columns["sgst"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -591,6 +624,12 @@ namespace Vardhman {
                 base.Columns.Add(this.columndate_orig);
                 this.columntransport = new global::System.Data.DataColumn("transport", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntransport);
+				this.columnbill_total = new global::System.Data.DataColumn("bill_total", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnbill_total);
+				this.columnrecepit_total = new global::System.Data.DataColumn("recepit_total", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnrecepit_total);
+				this.columnsgst = new global::System.Data.DataColumn("sgst", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsgst);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1765,6 +1804,48 @@ namespace Vardhman {
                     this[this.tableLedger.transportColumn] = value;
                 }
             }
+			
+			public double bill_total {
+                get {
+                    try {
+                        return ((double)(this[this.tableLedger.bill_totalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'bill_total\' in table \'Ledger\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLedger.bill_totalColumn] = value;
+                }
+            }
+			
+			public double recepit_total {
+                get {
+                    try {
+                        return ((double)(this[this.tableLedger.recepit_totalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'recepit_total\' in table \'Ledger\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLedger.recepit_totalColumn] = value;
+                }
+            }
+			
+			public double sgst {
+                get {
+                    try {
+                        return ((double)(this[this.tableLedger.sgstColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'sgst\' in table \'Ledger\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLedger.sgstColumn] = value;
+                }
+            }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public bool IsNameNull() {
@@ -1874,6 +1955,36 @@ namespace Vardhman {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public void SettransportNull() {
                 this[this.tableLedger.transportColumn] = global::System.Convert.DBNull;
+            }
+			
+			[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool Isbill_totalNull() {
+                return this.IsNull(this.tableLedger.bill_totalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void Setbill_totalNull() {
+                this[this.tableLedger.bill_totalColumn] = global::System.Convert.DBNull;
+            }
+			
+			[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool Isrecepit_totalNull() {
+                return this.IsNull(this.tableLedger.bill_totalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void Setrecepit_totalNull() {
+                this[this.tableLedger.recepit_totalColumn] = global::System.Convert.DBNull;
+            }
+			
+			[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool IssgstNull() {
+                return this.IsNull(this.tableLedger.sgstColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void SetsgstNull() {
+                this[this.tableLedger.sgstColumn] = global::System.Convert.DBNull;
             }
         }
         

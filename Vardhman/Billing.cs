@@ -391,7 +391,7 @@ namespace Vardhman
             if (!do_calculation)
                 return;
             total_called = true;
-            double total = 0,expper,exp,trans,grandtotal , rg, vatper, vat;
+            double total = 0,expper,exp,trans,grandtotal , rg, vatper, vat, sgst; /*Vat will be ysed for cgst.*/
             if (textBox9.Text == "")
                 rg = 0;
             else rg = Convert.ToDouble(textBox9.Text);
@@ -435,27 +435,36 @@ namespace Vardhman
                 {
                     extra = trans + exp1;
                 }
-                vat = Convert.ToDouble(roundOff.round((total + extra) * vatper / 100));
+                int divFactor = 1;
+                sgst = 0.00;
+                if (VatGst.IsGstEnabled(dateTimePicker1.Value))
+                    divFactor = 2;
+                vat = Convert.ToDouble(roundOff.round((total + extra) * vatper / (divFactor * 100)));
+                if (VatGst.IsGstEnabled(dateTimePicker1.Value))
+                    sgst = vat;
             }
             else
             {
                 string abc;
                 Supporter.set_two_digit_precision(textBox12.Text, out abc);
                 vat = Convert.ToDouble(abc);
+                Supporter.set_two_digit_precision(textBox13.Text, out abc);
+                sgst = Convert.ToDouble(abc);
             }
             if (rad_cd.Checked == true)
             {
-                grandtotal =Convert.ToDouble(roundOff.round(Convert.ToString(total - exp + trans + vat)));
+                grandtotal =Convert.ToDouble(roundOff.round(Convert.ToString(total - exp + trans + vat + sgst)));
             }
             else
-                grandtotal =Convert.ToDouble(roundOff.round(Convert.ToString(total + exp + trans + vat)));
+                grandtotal =Convert.ToDouble(roundOff.round(Convert.ToString(total + exp + trans + vat + sgst)));
             textBox3.Text = roundOff.round(total1);
             if (rad_cd.Checked == true)
-                textBox4.Text = roundOff.withpoint(Convert.ToString(Math.Abs(grandtotal - total - trans - vat)));
+                textBox4.Text = roundOff.withpoint(Convert.ToString(Math.Abs(grandtotal - total - trans - vat - sgst)));
             else
-                textBox4.Text = roundOff.withpoint(Convert.ToString(Math.Abs((grandtotal-total-trans -vat))));
+                textBox4.Text = roundOff.withpoint(Convert.ToString(Math.Abs((grandtotal-total-trans -vat - sgst))));
             textBox1.Text = roundOff.withpoint(trans.ToString());
             textBox12.Text = roundOff.withpoint(vat.ToString());
+            textBox13.Text = roundOff.withpoint(sgst.ToString());
             textBox5.Text =roundOff.withpoint(grandtotal.ToString());
         }
 
@@ -576,6 +585,12 @@ namespace Vardhman
                 //MessageBox.Show("cannot save Vat is empty", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 //return 0;
                 textBox12.Text = "0.00";
+            }
+            if (textBox13.Text.Trim() == "")
+            {
+                //MessageBox.Show("cannot save Vat is empty", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //return 0;
+                textBox13.Text = "0.00";
             }
             if (textBox5.Text.Trim() == "")
             {
@@ -745,7 +760,7 @@ namespace Vardhman
                     iscd = "0";
                 else
                     iscd = "1";
-                string z = con.exesclr(string.Format("exec add_bill_master'{0}' , '{1}' , '{2}' ,  {3} , {4} , {5} , {6} , '{7}' , {8} , '{9}' , {10} , '{11}' , '{12}' , '{13}' , {14} , {15}, {16}, {17}", comboBox1.Text.Trim(), comboBox3.Text.Trim(), dateTimePicker1.Text.ToString().Trim().Split(Convert.ToChar(" "))[0], textBox2.Text.Trim(), textBox3.Text.Trim(), textBox6.Text.Trim(), textBox4.Text.Trim(), comboBox2.Text.Trim(), textBox1.Text.Trim(), textBox8.Text.Trim(), textBox5.Text.Trim(), textBox7.Text.Trim(), type, textBox10.Text, rgtotal, iscd, textBox11.Text.Trim(), textBox12.Text.Trim()));
+                string z = con.exesclr(string.Format("exec add_bill_master'{0}' , '{1}' , '{2}' ,  {3} , {4} , {5} , {6} , '{7}' , {8} , '{9}' , {10} , '{11}' , '{12}' , '{13}' , {14} , {15}, {16}, {17}, {18}", comboBox1.Text.Trim(), comboBox3.Text.Trim(), dateTimePicker1.Text.ToString().Trim().Split(Convert.ToChar(" "))[0], textBox2.Text.Trim(), textBox3.Text.Trim(), textBox6.Text.Trim(), textBox4.Text.Trim(), comboBox2.Text.Trim(), textBox1.Text.Trim(), textBox8.Text.Trim(), textBox5.Text.Trim(), textBox7.Text.Trim(), type, textBox10.Text, rgtotal, iscd, textBox11.Text.Trim(), textBox12.Text.Trim(), textBox13.Text.Trim()));
                 if (z == "0")
                 {
                     MessageBox.Show("Company not created first create the company", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -831,7 +846,7 @@ namespace Vardhman
                     iscd = "0";
                 else
                     iscd = "1";
-                string z = con.exesclr(string.Format("exec upd_bill_master'{0}' , '{1}' , '{2}' ,  {3} , {4} , {5} , {6} , '{7}' , {8} , '{9}' , {10} , '{11}' , '{12}' , {13} , '{14}' , {15}, {16}, {17}", comboBox1.Text.Trim(), comboBox3.Text.Trim(), dateTimePicker1.Text.ToString().Trim().Split(Convert.ToChar(" "))[0], textBox2.Text.Trim(), textBox3.Text.Trim(), textBox6.Text.Trim(), textBox4.Text.Trim(), comboBox2.Text.Trim(), textBox1.Text.Trim(), textBox8.Text.Trim(), textBox5.Text.Trim(), textBox7.Text.Trim(), type, rgtotal, textBox10.Text, iscd, textBox11.Text.Trim(), textBox12.Text.Trim()));
+                string z = con.exesclr(string.Format("exec upd_bill_master'{0}' , '{1}' , '{2}' ,  {3} , {4} , {5} , {6} , '{7}' , {8} , '{9}' , {10} , '{11}' , '{12}' , {13} , '{14}' , {15}, {16}, {17}, {18}", comboBox1.Text.Trim(), comboBox3.Text.Trim(), dateTimePicker1.Text.ToString().Trim().Split(Convert.ToChar(" "))[0], textBox2.Text.Trim(), textBox3.Text.Trim(), textBox6.Text.Trim(), textBox4.Text.Trim(), comboBox2.Text.Trim(), textBox1.Text.Trim(), textBox8.Text.Trim(), textBox5.Text.Trim(), textBox7.Text.Trim(), type, rgtotal, textBox10.Text, iscd, textBox11.Text.Trim(), textBox12.Text.Trim(), textBox13.Text.Trim()));
                 if (z == "0")
                 {
                     MessageBox.Show("Company not created first create the company", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -913,6 +928,7 @@ namespace Vardhman
             textBox6.Text = "2.00";
             textBox11.Text = "0.00";
             textBox12.Text = "0.00";
+            textBox13.Text = "0.00";
             rad_cd.Checked = false;
             rad_exp.Checked = true;
             textBox7.Text = "";
@@ -933,7 +949,7 @@ namespace Vardhman
             comboBox1.Focus();
             lbl_tax.Text = VatGst.CurrentTaxStr(dateTimePicker1.Value);
             lbl_taxper.Text = lbl_tax.Text + "%";
-            textBox11.Enabled = textBox12.Enabled = VatGst.IsGstEnabled(dateTimePicker1.Value) | VatGst.IsVatEnabled(dateTimePicker1.Value);
+            textBox11.Enabled = textBox12.Enabled = textBox13.Enabled =VatGst.IsGstEnabled(dateTimePicker1.Value) | VatGst.IsVatEnabled(dateTimePicker1.Value);
             if (VatGst.IsGstEnabled(dateTimePicker1.Value))
             {
                 textBox11.Text = "5.00";
@@ -1022,7 +1038,9 @@ namespace Vardhman
             if (textBox4.Text.Trim() != "" && Convert.ToDouble(textBox4.Text) != 0.0)
                 noOfCol++;
             if (textBox12.Text.Trim() != "" && Convert.ToDouble(textBox12.Text) != 0.0)
-                noOfCol += 2;
+                noOfCol++;
+            if (textBox13.Text.Trim() != "" && Convert.ToDouble(textBox13.Text) != 0.0)
+                noOfCol++;
             if (textBox1.Text.Trim() != "" && Convert.ToDouble(textBox1.Text) != 0.0)
                 noOfCol++;
             noOfCol += dataGridView1.RowCount-1;
@@ -1090,7 +1108,7 @@ namespace Vardhman
                 MessageBox.Show("Date should be between " + dt.Rows[0][0].ToString() + " " + dt.Rows[0][1].ToString());
             lbl_tax.Text = VatGst.CurrentTaxStr(dateTimePicker1.Value);
             lbl_taxper.Text = lbl_tax.Text + "%";
-            textBox11.Enabled = textBox12.Enabled = VatGst.IsGstEnabled(dateTimePicker1.Value) | VatGst.IsVatEnabled(dateTimePicker1.Value);
+            textBox11.Enabled = textBox12.Enabled = textBox13.Enabled =VatGst.IsGstEnabled(dateTimePicker1.Value) | VatGst.IsVatEnabled(dateTimePicker1.Value);
             ModifyDataGridColumnName();
         }
 
@@ -1160,8 +1178,8 @@ namespace Vardhman
                 return;
             clear();
             textBox2.ReadOnly = true;
-            DataTable dt = con.getTable(string.Format("select name , city , date as date , total , expensesper , expenses , transport , transportcharge , transportnumber , grandtotal , through , paymenttype , note , rgtotal, vatper, vat from view_bill_master where billno = '{0}'", bill.ToString()));
-            string rgtotal , name, city, date, total, expensesper, expenses, transport, transportcharge, transportnumber, grandtotal, through, paymenttype, vatper, vat;
+            DataTable dt = con.getTable(string.Format("select name , city , date as date , total , expensesper , expenses , transport , transportcharge , transportnumber , grandtotal , through , paymenttype , note , rgtotal, vatper, vat, sgst from view_bill_master where billno = '{0}'", bill.ToString()));
+            string rgtotal , name, city, date, total, expensesper, expenses, transport, transportcharge, transportnumber, grandtotal, through, paymenttype, vatper, vat, sgst;
             name = dt.Rows[0][0].ToString();
             city = dt.Rows[0][1].ToString();
             date = dt.Rows[0][2].ToString();
@@ -1178,6 +1196,7 @@ namespace Vardhman
             rgtotal = dt.Rows[0][13].ToString();
             vatper = dt.Rows[0][14].ToString();
             vat = dt.Rows[0][15].ToString();
+            sgst = dt.Rows[0][16].ToString();
 
             do_calculation = false;
             comboBox1.Text = name;
@@ -1195,6 +1214,7 @@ namespace Vardhman
             textBox6.Text = expensesper;
             textBox11.Text = vatper;
             textBox12.Text = vat;
+            textBox13.Text = sgst;
             comboBox2.Text = transport;
             textBox8.Text = transportnumber;
             textBox3.Text = total;
