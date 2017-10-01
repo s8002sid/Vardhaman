@@ -1034,7 +1034,7 @@ namespace Vardhman
                 return false;
             if (textBox9.Text.Trim() != "" && Convert.ToDouble(textBox9.Text) != 0.0)
                 return false;
-            int noOfCol = 1; //grandTotal
+            int noOfCol = 2; //Total, grandTotal
             if (textBox4.Text.Trim() != "" && Convert.ToDouble(textBox4.Text) != 0.0)
                 noOfCol++;
             if (textBox12.Text.Trim() != "" && Convert.ToDouble(textBox12.Text) != 0.0)

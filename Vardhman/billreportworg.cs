@@ -128,7 +128,7 @@ namespace Vardhman {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection6 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection22 {
             get {
                 return this.ReportDefinition.Sections[12];
             }
@@ -136,7 +136,7 @@ namespace Vardhman {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection7 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection6 {
             get {
                 return this.ReportDefinition.Sections[13];
             }
@@ -144,7 +144,7 @@ namespace Vardhman {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection5 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection7 {
             get {
                 return this.ReportDefinition.Sections[14];
             }
@@ -152,7 +152,7 @@ namespace Vardhman {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection4 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection5 {
             get {
                 return this.ReportDefinition.Sections[15];
             }
@@ -160,7 +160,7 @@ namespace Vardhman {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection19 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection4 {
             get {
                 return this.ReportDefinition.Sections[16];
             }
@@ -168,7 +168,7 @@ namespace Vardhman {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection20 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection19 {
             get {
                 return this.ReportDefinition.Sections[17];
             }
@@ -176,7 +176,7 @@ namespace Vardhman {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection3 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection20 {
             get {
                 return this.ReportDefinition.Sections[18];
             }
@@ -184,7 +184,7 @@ namespace Vardhman {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection10 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection3 {
             get {
                 return this.ReportDefinition.Sections[19];
             }
@@ -192,7 +192,7 @@ namespace Vardhman {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection11 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection10 {
             get {
                 return this.ReportDefinition.Sections[20];
             }
@@ -200,7 +200,7 @@ namespace Vardhman {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection12 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection11 {
             get {
                 return this.ReportDefinition.Sections[21];
             }
@@ -208,7 +208,7 @@ namespace Vardhman {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection17 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection12 {
             get {
                 return this.ReportDefinition.Sections[22];
             }
@@ -216,7 +216,7 @@ namespace Vardhman {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection16 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection17 {
             get {
                 return this.ReportDefinition.Sections[23];
             }
@@ -224,7 +224,7 @@ namespace Vardhman {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection15 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection16 {
             get {
                 return this.ReportDefinition.Sections[24];
             }
@@ -232,7 +232,7 @@ namespace Vardhman {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection14 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection15 {
             get {
                 return this.ReportDefinition.Sections[25];
             }
@@ -240,7 +240,7 @@ namespace Vardhman {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection13 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection14 {
             get {
                 return this.ReportDefinition.Sections[26];
             }
@@ -248,7 +248,7 @@ namespace Vardhman {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section ReportFooterSection2 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection13 {
             get {
                 return this.ReportDefinition.Sections[27];
             }
@@ -256,7 +256,7 @@ namespace Vardhman {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section ReportFooterSection1 {
+        public CrystalDecisions.CrystalReports.Engine.Section ReportFooterSection2 {
             get {
                 return this.ReportDefinition.Sections[28];
             }
@@ -264,7 +264,7 @@ namespace Vardhman {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section PageFooterSection2 {
+        public CrystalDecisions.CrystalReports.Engine.Section ReportFooterSection1 {
             get {
                 return this.ReportDefinition.Sections[29];
             }
@@ -272,9 +272,17 @@ namespace Vardhman {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
+        public CrystalDecisions.CrystalReports.Engine.Section PageFooterSection2 {
             get {
                 return this.ReportDefinition.Sections[30];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
+            get {
+                return this.ReportDefinition.Sections[31];
             }
         }
     }
