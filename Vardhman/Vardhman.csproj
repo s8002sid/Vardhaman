@@ -126,6 +126,12 @@
     <Compile Include="ledger_recepit_summary_rpt.designer.cs">
       <DependentUpon>ledger_recepit_summary_rpt.cs</DependentUpon>
     </Compile>
+    <Compile Include="PendingReceivavles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PendingReceivavles.Designer.cs">
+      <DependentUpon>PendingReceivavles.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report_summary_New.cs">
       <DependentUpon>Report_summary_New.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -318,6 +324,10 @@
     <EmbeddedResource Include="billreportworg_enhanced.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>billreportworg_enhanced.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PendingReceivavles.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PendingReceivavles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report_summary_New.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

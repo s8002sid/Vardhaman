@@ -136,7 +136,7 @@ namespace Vardhman
             else if (rptname == "Summary")
             {
                 ledger_recepit_summary_rpt ds3 = new ledger_recepit_summary_rpt();
-                SqlCommand cmd = new SqlCommand(String.Format("select name , dbo.inddatevar(date) as date1 , detail , exp, payment, recepit, expense, cd, vat, date as date_orig, transport, bill_total, recepit_total, sgst from summary where date between dbo.indvardate('{0}') and dbo.indvardate('{1}') order by date , id , detail", datefrom, dateto), con);
+                SqlCommand cmd = new SqlCommand(String.Format("select name , dbo.inddatevar(date) as date1 , detail , exp, payment, recepit, expense, cd, vat, date as date_orig, transport, bill_total, recepit_total, sgst, rgtotal from summary where date between dbo.indvardate('{0}') and dbo.indvardate('{1}') order by date , id , detail", datefrom, dateto), con);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(ds3.Tables["Ledger"]);
 

@@ -54,6 +54,7 @@ namespace Vardhman
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.status_label = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsslbl_message = new System.Windows.Forms.ToolStripStatusLabel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -68,6 +69,7 @@ namespace Vardhman
             // panel1
             // 
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.btm_item_type_edit);
             this.panel1.Controls.Add(this.btn_item_type_merge);
             this.panel1.Controls.Add(this.btn_new_ledger);
@@ -99,7 +101,7 @@ namespace Vardhman
             this.btm_item_type_edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btm_item_type_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btm_item_type_edit.ForeColor = System.Drawing.Color.Black;
-            this.btm_item_type_edit.Location = new System.Drawing.Point(703, 510);
+            this.btm_item_type_edit.Location = new System.Drawing.Point(703, 522);
             this.btm_item_type_edit.Name = "btm_item_type_edit";
             this.btm_item_type_edit.Size = new System.Drawing.Size(218, 78);
             this.btm_item_type_edit.TabIndex = 24;
@@ -118,7 +120,7 @@ namespace Vardhman
             this.btn_item_type_merge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_item_type_merge.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_item_type_merge.ForeColor = System.Drawing.Color.Black;
-            this.btn_item_type_merge.Location = new System.Drawing.Point(703, 420);
+            this.btn_item_type_merge.Location = new System.Drawing.Point(703, 432);
             this.btn_item_type_merge.Name = "btn_item_type_merge";
             this.btn_item_type_merge.Size = new System.Drawing.Size(218, 78);
             this.btn_item_type_merge.TabIndex = 23;
@@ -159,7 +161,7 @@ namespace Vardhman
             this.btn_manual_recepit_entry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_manual_recepit_entry.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_manual_recepit_entry.ForeColor = System.Drawing.Color.Black;
-            this.btn_manual_recepit_entry.Location = new System.Drawing.Point(703, 221);
+            this.btn_manual_recepit_entry.Location = new System.Drawing.Point(703, 233);
             this.btn_manual_recepit_entry.Name = "btn_manual_recepit_entry";
             this.btn_manual_recepit_entry.Size = new System.Drawing.Size(218, 78);
             this.btn_manual_recepit_entry.TabIndex = 20;
@@ -180,7 +182,7 @@ namespace Vardhman
             this.btn_manual_bill_entry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_manual_bill_entry.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_manual_bill_entry.ForeColor = System.Drawing.Color.Black;
-            this.btn_manual_bill_entry.Location = new System.Drawing.Point(703, 124);
+            this.btn_manual_bill_entry.Location = new System.Drawing.Point(703, 136);
             this.btn_manual_bill_entry.Name = "btn_manual_bill_entry";
             this.btn_manual_bill_entry.Size = new System.Drawing.Size(218, 78);
             this.btn_manual_bill_entry.TabIndex = 19;
@@ -201,7 +203,7 @@ namespace Vardhman
             this.btn_deletion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_deletion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_deletion.ForeColor = System.Drawing.Color.Black;
-            this.btn_deletion.Location = new System.Drawing.Point(703, 28);
+            this.btn_deletion.Location = new System.Drawing.Point(703, 40);
             this.btn_deletion.Name = "btn_deletion";
             this.btn_deletion.Size = new System.Drawing.Size(218, 78);
             this.btn_deletion.TabIndex = 16;
@@ -262,7 +264,7 @@ namespace Vardhman
             this.btn_price_list.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_price_list.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_price_list.ForeColor = System.Drawing.Color.Black;
-            this.btn_price_list.Location = new System.Drawing.Point(703, 322);
+            this.btn_price_list.Location = new System.Drawing.Point(703, 334);
             this.btn_price_list.Name = "btn_price_list";
             this.btn_price_list.Size = new System.Drawing.Size(218, 78);
             this.btn_price_list.TabIndex = 11;
@@ -433,6 +435,27 @@ namespace Vardhman
             this.tsslbl_message.Size = new System.Drawing.Size(23, 37);
             this.tsslbl_message.Text = ".";
             // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.AutoEllipsis = true;
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(341, 40);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(218, 78);
+            this.button1.TabIndex = 25;
+            this.button1.Text = "Pending Receivables";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.MouseEnter += new System.EventHandler(this.btn_MouseHover);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -487,5 +510,6 @@ namespace Vardhman
         private System.Windows.Forms.ToolStripStatusLabel tsslbl_message;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.Button btm_item_type_edit;
+        private System.Windows.Forms.Button button1;
     }
 }

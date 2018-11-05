@@ -23,7 +23,8 @@ namespace Vardhman
         e_PriceList,
         e_Deletion,
         e_Ledger,
-        e_ItemTypeEdit
+        e_ItemTypeEdit,
+        e_pendingReceivables
     };
     public partial class Main : Form
     {
@@ -39,6 +40,7 @@ namespace Vardhman
         Deletion deletion;
         Ledger_showall ledger;
         ItemTypeEdit itemTypeEdit;
+        PendingReceivavles pendingReceivables;
         db.MainInternal internalData;
         Connection con;
         public db.MainInternal getInternalData()
@@ -100,6 +102,10 @@ namespace Vardhman
                 case childContainer.e_ItemTypeEdit:
                     itemTypeEdit = new ItemTypeEdit();
                     itemTypeEdit.MdiParent = this;
+                    break;
+                case childContainer.e_pendingReceivables:
+                    pendingReceivables = new PendingReceivavles();
+                    pendingReceivables.MdiParent = this;
                     break;
             }
             panel1.Show();
@@ -310,6 +316,11 @@ namespace Vardhman
         private void btm_item_type_edit_Click(object sender, EventArgs e)
         {
             ShowForm(itemTypeEdit);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ShowForm(pendingReceivables);
         }
     }
 }
