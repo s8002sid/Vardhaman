@@ -385,6 +385,8 @@ namespace Vardhman {
 			private global::System.Data.DataColumn columnrecepit_total;
 			
 			private global::System.Data.DataColumn columnsgst;
+
+            private global::System.Data.DataColumn columnrgtotal;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public LedgerDataTable() {
@@ -513,6 +515,13 @@ namespace Vardhman {
                     return this.columnsgst;
                 }
             }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn rgtotalColumn {
+                get {
+                    return this.columnrgtotal;
+                }
+            }
 			
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.ComponentModel.Browsable(false)]
@@ -543,7 +552,7 @@ namespace Vardhman {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public LedgerRow AddLedgerRow(string Name, string Date1, string Detail, double Exp, double Payment, double Recepit, double Expense, double CD, double Vat, System.DateTime date_orig, double transport, double bill_total, double recepit_total, double sgst) {
+            public LedgerRow AddLedgerRow(string Name, string Date1, string Detail, double Exp, double Payment, double Recepit, double Expense, double CD, double Vat, System.DateTime date_orig, double transport, double bill_total, double recepit_total, double sgst, double rgtotal) {
                 LedgerRow rowLedgerRow = ((LedgerRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Name,
@@ -559,7 +568,8 @@ namespace Vardhman {
                         transport,
 						bill_total,
 						recepit_total,
-						sgst};
+						sgst,
+                        rgtotal};
                 rowLedgerRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowLedgerRow);
                 return rowLedgerRow;
@@ -598,6 +608,7 @@ namespace Vardhman {
 				this.columnbill_total = base.Columns["bill_total"];
 				this.columnrecepit_total = base.Columns["recepit_total"];
 				this.columnsgst = base.Columns["sgst"];
+                this.columnrgtotal = base.Columns["rgtotal"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -630,6 +641,8 @@ namespace Vardhman {
                 base.Columns.Add(this.columnrecepit_total);
 				this.columnsgst = new global::System.Data.DataColumn("sgst", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnsgst);
+                this.columnrgtotal = new global::System.Data.DataColumn("rgtotal", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnrgtotal);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1846,6 +1859,20 @@ namespace Vardhman {
                     this[this.tableLedger.sgstColumn] = value;
                 }
             }
+
+            public double rgtotal {
+                get {
+                    try {
+                        return ((double)(this[this.tableLedger.rgtotalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'rgtotal\' in table \'Ledger\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLedger.rgtotalColumn] = value;
+                }
+            }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public bool IsNameNull() {
@@ -1985,6 +2012,16 @@ namespace Vardhman {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public void SetsgstNull() {
                 this[this.tableLedger.sgstColumn] = global::System.Convert.DBNull;
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool IsrgtotalNull() {
+                return this.IsNull(this.tableLedger.rgtotalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void SetrgtotalNull() {
+                this[this.tableLedger.rgtotalColumn] = global::System.Convert.DBNull;
             }
         }
         

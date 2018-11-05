@@ -32,7 +32,7 @@
               <xs:element name="bill_total" msprop:Generator_UserColumnName="bill_total" msprop:Generator_ColumnPropNameInRow="bill_total" msprop:Generator_ColumnVarNameInTable="columnbill_total" msprop:Generator_ColumnPropNameInTable="bill_totalColumn" type="xs:double" minOccurs="0" />
               <xs:element name="recepit_total" msprop:Generator_UserColumnName="recepit_total" msprop:Generator_ColumnPropNameInRow="recepit_total" msprop:Generator_ColumnVarNameInTable="columnrecepit_total" msprop:Generator_ColumnPropNameInTable="recepit_totalColumn" type="xs:double" minOccurs="0" />
               <xs:element name="sgst" msprop:Generator_UserColumnName="sgst" msprop:Generator_ColumnPropNameInRow="sgst" msprop:Generator_ColumnVarNameInTable="columnsgst" msprop:Generator_ColumnPropNameInTable="sgstColumn" type="xs:double" minOccurs="0" />
-              <xs:element name="rgtotal" msprop:Generator_UserColumnName="rgtotal" msprop:Generator_ColumnPropNameInRow="rgtotal" msprop:Generator_ColumnVarNameInTable="columnrgtotal" msprop:Generator_ColumnPropNameInTable="rgtotalColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="rgtotal" msprop:Generator_UserColumnName="rgtotal" msprop:Generator_ColumnPropNameInRow="rgtotal" msprop:Generator_ColumnVarNameInTable="columnrgtotal" msprop:Generator_ColumnPropNameInTable="rgtotalColumn" type="xs:double" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
