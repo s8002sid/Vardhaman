@@ -41,13 +41,30 @@ namespace Vardhman
         }
         private void FillEntry()
         {
-            String query = String.Format("select name, sum(payment)-sum(recepit) as balance from ledger_showall " +
-                            "where (transtype = 'Bill' and date < Getdate()-{0}) or (transtype = 'Recepit') " +
-                            "group by name having sum(payment)-sum(recepit) > 0 order by balance desc", textBox1.Text);
+            String query = "select name, sum(payment) - sum(recepit) as balance from ledger_showall " +
+                            "where ((payment != 0 and payment is not null and date < Getdate()-{0}) or " +
+                            "(recepit != 0 and recepit is not null)) and name != 'VAT' and name != 'CGST' and name != 'SGST'" +
+                            "group by name having sum(payment)-sum(recepit) {1} 0 order by balance desc";
+            if (checkBox1.Checked)
+            {
+                query = String.Format(query, "0", "<");
+            }
+            else
+            {
+                query = String.Format(query, textBox1.Text, ">");
+            }
             DataTable dt = con.getTable(query);
             dataGridView1.DataSource = dt;
             dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+
+            double count = 0;
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                count += Double.Parse(dr[1].ToString());
+            }
+            textBox2.Text = count.ToString();
         }
 
         private void button2_Click(object sender, EventArgs e)
